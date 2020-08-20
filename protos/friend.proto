@@ -1,0 +1,91 @@
+// ------------------------
+// 好友
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 好友搜索
+message FriendSearchReq {
+	required int32 acct = 1; // 对方玩家acct
+}
+
+message FriendSearchResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_USER_NOT_EXIST = -2; // 失败, 用户不存在
+	}
+	required Code code = 1; // 返回码
+	optional User user = 2; // 用户数据(帐号，名字，图标，等级，是否在线)
+	optional Vips vips = 3; // VIP数据(等级)
+}
+
+// 好友添加(用好友同步)
+message FriendAppendReq {
+	required int32 acct = 1; // 对方玩家acct
+}
+
+message FriendAppendResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_MINE_FULLED = -2; // 失败，自己好友已满
+		FAILED_USER_FULLED = -3; // 失败，对方好友已满
+		FAILED_USER_NOT_EXIST = -4; // 失败, 用户不存在
+	}
+	required Code code = 1; // 返回码
+}
+
+// 好友删除
+message FriendRemoveReq {
+	repeated int32 accts = 1; // 对方玩家acct
+}
+
+message FriendRemoveResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 好友赠送
+message FriendGiveReq {
+	required int32 acct = 1; // 对方玩家acct(-1表示一键操作所有)
+}
+
+message FriendGiveResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	repeated int32 accts = 2; // 被赠送的玩家acct列表
+}
+
+// 好友赠送收取(通过资源同步，道具同步)
+message FriendRecvReq {
+	required int32 acct = 1; // 对方玩家acct(-1表示一键操作所有)
+}
+
+message FriendRecvResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	repeated int32 accts = 2; // 接收到赠送的玩家acct列表
+}
+
+// 同步好友数据
+message FriendSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1; // 模式
+	optional Friend friend = 2; // 好友数据
+}

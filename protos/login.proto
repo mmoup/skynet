@@ -1,0 +1,66 @@
+// ------------------------
+// 登录
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 发起认证
+message LoginAuthReq {
+	required string token = 1; // TOKEN
+	optional string ip = 2; // IP
+	optional string lang = 3; // 语言
+	optional string zone = 4; // 国家
+	optional int32 time = 5; // 时间戳(1970年以来的秒数)
+	optional bool conn = 6; // 是否是重连
+	optional bool force = 7; // 强制登录
+}
+
+// 回应认证
+message LoginAuthResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		SUCCEED_NEW_USER = 1; // 成功, 新用户
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional Acct acct = 2; // 帐户(code == SUCCEED时返回; 部队，聊天，关卡，好友，屏蔽以同步方式写入)
+	optional string gg_major = 3; // Google大版本
+	optional string gg_minor = 4; // Google小版本
+	optional string gc_major = 5; // GameCenter大版本
+	optional string gc_minor = 6; // GameCenter小版本
+	optional int32 req_id = 7; // 上一次收到的消息ID
+}
+
+// 发起PING
+message LoginPingReq {
+}
+
+// 回应GCM码
+message LoginPingResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 发起GCM码
+message LoginGCMReq {
+	required string code = 1;
+}
+
+// 回应GCM码
+message LoginGCMResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 同步登录数据
+message LoginSyncResp {
+	optional string ip = 1; // IP
+	optional string msg = 2; // 消息
+}

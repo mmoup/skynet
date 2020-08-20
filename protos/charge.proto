@@ -1,0 +1,24 @@
+// ------------------------
+// 付费
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 同步商品数据
+message ChargeSyncGoodsResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	optional Charge charge = 2; // 商品数据
+}
+
+// 同步购买结果
+message ChargeSyncGainsResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	repeated Charge.Gains gains = 2; // 获得物品数据
+}

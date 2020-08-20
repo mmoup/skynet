@@ -1,0 +1,44 @@
+// ------------------------
+// 资源购买
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 资源购买
+message ResourcesBuyReq {
+	enum Type {
+		COINS = 1; //金币购买
+		FEEDS = 2; //粮草购买
+		REVENGE = 3; //复仇次数购买
+	}
+	enum Amount {
+		HALF = 1; //补充到百分之五十
+		FULL = 2; //补充满
+	}
+	required Type type = 1; // 购买什么
+	optional Amount amount = 2; // 补充道多少
+}
+
+message ResourcesBuyResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_JEWEL_NOT_ENOUGH = -2; // 失败，钻石不足
+	}
+	required Code code = 1; // 返回码
+	optional DailyResourcesBuy res = 2; // 资源购买信息
+	optional int32 coins =3;//玩家当前金币数量
+	optional int32 feeds = 4;//玩家当前粮草数量
+	optional int32 jewel = 5;//玩家当前钻石数量
+}
+
+
+// 同步资源购买数据
+message DailyResourcesBuyResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	optional DailyResourcesBuy res = 2; // 资源购买信息
+}

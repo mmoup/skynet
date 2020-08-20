@@ -1,0 +1,98 @@
+// ------------------------
+// 讨论组
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 创建讨论组
+message ForumCreateReq {
+	required string name = 1; // 讨论组名字
+	repeated int32 accts = 2; // 好友的帐号列表
+}
+
+message ForumCreateResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional int32 uuid = 2; // 讨论组uuid
+}
+
+// 删除讨论组
+message ForumDeleteReq {
+}
+
+message ForumDeleteResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 邀请加入讨论组
+message ForumAppendReq {
+	repeated int32 accts = 1; // 好友的帐号列表
+}
+
+message ForumAppendResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 踢出讨论组
+message ForumRemoveReq {
+	required int32 acct = 1; // 被踢人帐号
+}
+
+message ForumRemoveResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 讨论组禁言
+message ForumForbidReq {
+	required int32 acct = 1; // 被禁言人帐号
+}
+
+message ForumForbidResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 讨论组解禁
+message ForumPermitReq {
+	required int32 acct = 1; // 被禁言人帐号
+}
+
+message ForumPermitResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 同步讨论组数据
+message ForumSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+		DELETE = 2; // 删除
+		APPEND = 3; // 添加成员
+		REMOVE = 4; // 删除成员
+		MODIFY = 5; // 修改成员
+	}
+	required Mode mode = 1; // 模式
+	optional Forum forum = 2; // 讨论组数据
+}

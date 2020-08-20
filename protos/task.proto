@@ -1,0 +1,31 @@
+// ------------------------
+// 成就/任务
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 成就提交(成就刷新通过同步，奖励使用道具同步，装备同步，用户同步)
+message TaskCommitReq {
+	required int32 uuid = 1; // 成就的uuid
+}
+
+message TaskCommitResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 同步成就数据
+message TaskSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1; // 模式
+	required Task task = 2; // 成就数据
+}

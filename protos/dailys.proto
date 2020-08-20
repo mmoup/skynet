@@ -1,0 +1,46 @@
+// ------------------------
+// 活动
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 签到-签到
+message DailysSigninDoitReq {
+}
+
+message DailysSigninDoitResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional int32 coins = 2; //玩家当前金币数
+	optional int32 feeds = 3; //玩家当前粮草数
+	optional int32 jewel = 4;// 玩家当前钻石数
+	optional int32 conf = 5; //如果获得了物品 则这里是物品id  -1为没有物品
+	optional int32 num = 6;// 如果获得了物品 则这里是最终获得的数量
+}
+
+// 同步活动签到数据
+message DailysSyncSigninResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	optional Dailys dailys = 2; // 活动数据
+}
+
+// 参加活动  未用
+message ActivityJoinReq {
+	required Activity activity = 1; //活动
+}
+
+message ActivityJoinResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Activity activity = 1; //活动
+	required Code code = 2;
+}

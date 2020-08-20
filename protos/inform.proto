@@ -1,0 +1,15 @@
+// ------------------------
+// 公告
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 同步公告数据
+message InformSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	optional Inform inform = 2; // 公告数据
+}

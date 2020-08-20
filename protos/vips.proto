@@ -1,0 +1,15 @@
+// ------------------------
+// VIPS
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 同步VIP数据
+message VipsSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	optional Vips vips = 2; // VIP数据
+}

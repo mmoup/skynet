@@ -1,0 +1,65 @@
+// ------------------------
+// 装备
+// ------------------------
+package message;
+
+import "common.proto";
+
+
+//分解装备
+message EquipDecomposeReq {
+	enum Type {
+		SELECTED = 1;//分解选中的装备
+		GRADE = 2; //分解一个品质的装备
+	}
+	message SelectedEquip {
+		required int32 equip_id = 1;
+		required int32 equip_num = 2;
+	}
+	required Type type = 1; //分解的方式
+	required int32 grade = 2;// 当 分解方式为grade 的时候为 装备配置表中的grade 表示分解所有该grade的装备,否则为-1 忽略
+	repeated SelectedEquip list = 3;//所有待分解的装备数组(type 为 selected 的时候才需要填充)
+}
+
+message EquipDecomposeResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_COINS_NOT_ENOUGH = -2; // 失败，金币不足
+		FAILED_JEWEL_NOT_ENOUGH = -3; // 失败，钻石不足	
+	}
+	required Code code = 1;//返回码  (获得的道具材料 走同步   被分解掉的装备前端自己减去)
+	required int32 coins = 2;//玩家当前金币数量
+	required int32 jewel =3 ;//玩家当前钻石数量
+}
+
+
+//打造装备
+message EquipCreatReq {
+	required int32 conf = 1 ;//想打造的装备id
+}
+
+message EquipCreatResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_MATERIAL_NOT_ENOUGH = -2; // 失败，材料不足
+		FAILED_COINS_NOT_ENOUGH = -3; // 失败，金币不足
+		FAILED_JEWEL_NOT_ENOUGH = -4; // 失败，钻石不足	
+	}
+	required Code code = 1; //返回码 (新得到的装备 和  打造成功扣除的材料 前端自己处理 不用同步)
+	required int32 coins = 2; //玩家当前的金币数量
+	required int32 jewel = 3;//玩家当前的钻石数量
+}
+
+// 同步装备数据
+message EquipSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1; // 模式
+	required Equip equip = 2; // 装备数据
+}

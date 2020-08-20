@@ -1,0 +1,45 @@
+// ------------------------
+// 商店
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 商店购买(同步道具数据或装备数据)
+message StoreBuyReq {
+	required int32 uuid = 1; // 商品的uuid
+}
+
+message StoreBuyResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_NOT_EXIST = -2; // 商队不存在
+	}
+	required Code code = 1; // 返回码
+	required int32 coins = 2; // 用户金币数
+	required int32 jewel = 3; // 用户钻石数
+}
+
+// 商店刷新
+message StoreRefreshReq {
+}
+
+message StoreRefreshResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional Store store = 2; // 商店数据
+	optional int32 jewel = 3; // 用户钻石数据
+}
+
+// 同步商店数据
+message StoreSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	required Store store = 2; // 商店数据
+}

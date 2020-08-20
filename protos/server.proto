@@ -1,0 +1,324 @@
+// ------------------------
+// 服务器同中心服务器通信
+// ------------------------
+
+syntax = "proto2";
+package message;
+
+import "common.proto";
+
+message UserInfo {
+	optional int32 acct =1;
+	optional string name =2;
+	optional string icon =3;
+	optional string flag = 4;
+	optional int32 level =5;
+	optional int32 medal = 6;
+	optional string gate = 7;
+	optional int32 win = 8;
+	optional int32 lose = 9;
+	optional int32 vip = 10;
+	optional bool online = 11;//是否在线
+	
+	repeated int32 friends =12;
+}
+
+//发起请求登陆
+message RequestLoginReq{
+	required int32 account=1;//请求登陆的账号
+	optional bool faoce = 2;//ture 强制登录,false 正常登录
+	optional string ip =3;//登陆ip
+}
+
+//请求登录回应  (如果game收到 是 false  那么直接将 本消息 下发到 gate)
+message RequestLoginResp{
+	optional bool can_login = 1;//能否登录
+	optional string logic_server = 2;//如果不能登录 则这里是 当前该玩家在线的 logic服
+}
+
+//发起登陆上报
+message ReportUserLoginReq {
+	optional UserInfo user =1;
+}
+
+//发起用户批量登录上报(用于世界服重启后 game服将当前本服的所有玩家重新上报一次)
+message ReportUsersLoginReq {
+	repeated UserInfo users =1;
+}
+
+//发起登出上报
+message ReportUserLogoutReq {
+	optional int32 account =1;//账号
+	repeated int32 list=2;//好友信息 （账号）
+}
+
+//强制登出消息(word->game)
+message WordKickOffUserResp{
+	optional string ip = 2;//登陆的ip
+}
+//强制登出消息(game->gate)
+message GameKickOffUserResp{
+	enum Code {
+		KICK_SYSTEM_MAINTAIN = 0; // 系统维护下线
+		KICK_SYSTEM_CLOSE=1;//服务器关闭下线
+		KICK_REMOTE_LOGIN=2;//异地重复登陆
+	}
+	required Code code=1; //被踢原因
+	optional string ip = 2;//登陆的ip（如果是重复登陆 则有ip）
+}
+
+//发起数据清理(game->center)
+message ReportUserDestroyReq {
+	required int32 account = 1;//账号
+}
+
+//用户信息同步
+message ReportUserInfoSyncReq {
+	optional UserInfo user = 1;// (账号，姓名 icon flag level 徽章 胜利数)
+}
+
+//好友上线推送
+message FriendLoginResp {
+	required int32 faccount =1 ;// 好友账号
+	repeated int32 toaccounts = 2;//推送给的玩家账号列表
+}
+
+//好友下线推送
+message FriendLogoutResp {
+	required int32 faccount =1 ;// 好友账号
+	repeated int32 toaccounts = 2;//推送给的玩家账号列表
+}
+
+//添加好友请求（game->word）
+message FriendAddReq {
+	required int32 account = 1 ; // 操作者账号
+	required int32 to_account =2 ;// 要添加人的账号
+}
+//回应添加好友请求 (word->game)
+message FriendAddResp {
+	required int32 to_account =2 ;//发起添加请求人的账号
+}
+
+//处理添加好友 （game-> word)
+message FriendAddOperatorReq {
+	enum Operator {
+		Accepte = 0; // 接受添加
+		Refuse = 1; // 拒绝添加
+	}
+	required int32 account=1; //操作者账号
+	required Operator opt = 2; //操作
+	required int32 to_account =3 ;// 操作的目标账号
+}
+//回应处理添加好友 （word-> game)
+message FriendAddOperatorResp {
+	enum Operator {
+		Accepte = 0; // 接受添加
+		Refuse = 1; // 拒绝添加
+	}
+	required Operator opt = 1;
+	required int32 to_account =2 ;// 操作的目标账号
+}
+
+//删除好友  (多选模式)
+message FriendDeleteReq {
+	required int32 account =1 ;// 操作者账号
+	repeated int32 delete_account =2 ;// 要删除人的账号（数组）
+}
+//收到删除好友回应（A删除B  B 会收到这个回应 需要 B同步删除A）
+message FriendDeleteResp {
+	required int32 account =1;//需要同步删除的账号
+}
+//赠送礼物（game->word)
+message FriendGiveGiftReq{
+	required int32 account =1 ;//操作者账号
+	required int32 gift =2 ;//赠送的礼包id
+	repeated int32 give_account =3 ;// 要赠送的账号（数组）
+}
+//赠送礼物（word->game)
+message FriendGiveGiftResp{
+	required int32 account =1 ;//赠送者账号
+	required int32 gift = 2;//赠送的礼包id
+}
+
+//word下发通知
+message SendNoticeResp{
+	enum Type{
+		GUILD_INVIT = 0 ;//公会邀请
+		GUILD_APPLY =1;//公会加入申请
+		GUILD_LEADER=2;//成为公会会长
+		GUILD_APPLY_ACCEPT = 3;//公会加入申请通过
+		GUILD_APPLY_REFUSE = 4;//公会加入申请拒绝
+		FORUM_INVIT = 5;//讨论组邀请	
+	}
+	required User user = 1;//发起人
+	required Type type = 2;//通知类别
+}
+
+//game转发 通知接受
+message NoticeOperatorReq{
+	enum Type{
+		GUILD_INVIT = 0 ;//公会邀请
+		FORUM_INVIT = 1;//讨论组邀请	
+	}
+	enum Operator {
+		Accepte = 0; // 接受
+		Refuse = 1; // 拒绝
+	}
+	required User opt_user = 1;//操作者
+	required User spo_user = 2;//发起者 
+	required Type type = 3;//通知类别
+	required Operator opt = 4;//操作
+}
+
+
+//查询玩家详情
+message UserSearchDetailReq{
+	required int32 acct = 1;//需要查询的玩家账号
+	required int32 opt_acct = 2;//发起者的账号
+}
+
+//查询玩家详情返回
+message UserSearchDetailResp{
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1;//是否成功
+	optional User user = 2;//玩家详情
+}
+
+//定时出发的消息
+message ServerRippleReq {
+	optional int32 time = 1;//触发当时的 时间戳
+}
+
+//center 下发unituuid
+message LogicServerUnitUuidResp{
+	required int32 min=1;
+	required int32 max = 2;
+}
+//center 下发远征联赛信息
+message ForayInfoDataResp{
+	message AItem {
+		optional int32 item_id=1;
+		optional int32 item_num=2;
+	}
+	message Award{
+		optional int32 grade_id =1;  //段位id
+		repeated AItem items=2;//奖励列表
+	}
+	optional string uuid =1;
+	optional string name =2;
+	optional int64 star_time = 3; //开始时间
+	optional int64 duration_time = 4;//持续时间
+	optional bool over = 5;//当前是结束还是没结束
+	repeated Award awards = 6;//奖励列表
+}
+
+
+//center 下发公告信息
+message CenterPushBulltinResp{
+	optional string id = 1;
+	optional string text = 2;
+	optional string lang = 3;
+}
+ 
+//center  下发钻石物品信息 (同步push和game服首次启动查询的返回 都用这个)
+message CenterPushReChargeItemResp{
+	message Item {
+		optional int32 id= 1;
+		optional int64 star_time=2;
+		optional int64 duration_time=3;
+		optional int32 add_pencent=4;
+	}
+	repeated Item items=1;
+}
+
+//center 下发用户充值订单
+message CenterPushReChargeLogReq{
+	message Order {
+		optional string order_id = 1;  //订单号
+		optional int32 item_id = 2;   //物品id
+		optional int64 time =3;    //时间
+	}
+	repeated Order orders = 1;
+}
+//game 回馈 用户充值订单结果
+message CenterPushReChargeLogResp{
+	message Order {
+		optional string order_id = 1;
+		optional int32 result = 2;
+	}
+	repeated Order orders = 1;
+}
+
+
+/*------中心服推送用户信息-------*/
+
+//game->center 分配当前服务器id
+message AssignationServerIdReq{
+}
+message AssignationServerIdResp{
+	required int32 server_id =1;
+}
+message CenterChatUserInfoSyncResp{
+	repeated UserInfo users = 1;
+}
+
+/*game找center要当前存在的全局邮件*/
+message CenterGlobalNoticeReq{
+}
+/*center回馈当前存在的全局邮件*/
+message CenterGlobalNoticeResp{
+	message Item {
+		optional int32 id = 1;
+		optional int32 num = 2;
+	}
+	message Notice {
+		optional string uuid = 1;//只有当 acct为 -1的时候才读这个值 其他时间 都忽略
+		optional string title_cn =2;
+		optional string text_cn = 3;
+		optional string title_en =4;
+		optional string text_en = 5;
+		optional int64 time = 6;  //通知开始计时的时间
+		optional int64 duration = 7; //通知有效期  -1 表示不失效
+		repeated Item attr = 8;
+		
+	}
+	
+	repeated Notice notices= 1;
+}
+
+/*-----中心服下发用户通知-------*/
+message CenterPushNoticsResp{
+	message Item {
+		optional int32 id = 1;
+		optional int32 num = 2;
+	}
+	message Notice {
+		optional int32 Acct = 1; // -1 表示这个通知是 全体玩家  game需要缓存
+		optional string uuid = 2;//只有当 acct为 -1的时候才读这个值 其他时间 都忽略
+		optional string title_cn =3;
+		optional string text_cn = 4;
+		optional string title_en =5;
+		optional string text_en = 6;
+		optional int64 time = 7;  //通知开始计时的时间
+		optional int64 duration = 8; //通知有效期  -1 表示不失效
+		repeated Item attr = 9;
+		
+	}
+	
+	repeated Notice notices= 1;
+}
+
+/*----game回馈gate申请发送世界聊天----*/
+message UserCanSendWordChatResp{
+	optional bool can = 1;
+}
+
+/*--------gate询问game当前负载-------*/
+message GameUsersPingResp{
+	optional int32 total = 1;//总数
+	optional int32 online = 2;//在线
+	optional int32 max_num = 3;//设计承载总量
+}

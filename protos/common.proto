@@ -1,0 +1,674 @@
+// ------------------------
+// 公用
+// ------------------------
+// 注：
+// 1).英雄/小兵/城防等属性列表顺序为:攻击->防御->敏捷->生命->移动->冲锋->冷却->侦查->攻距->指挥
+
+package message;
+
+// 帐户
+message Acct {
+	optional User user = 1; // 用户
+	optional Intr intr = 2; // 简介
+	optional Sums sums = 3; // 统计
+	optional Vips vips = 4; // VIP
+	optional Task task = 5; // 成就
+	optional Hall hall = 6; // 政厅
+	optional Rank rank = 7; // 排行榜
+	optional Boat boat = 8; // 远程
+	optional Tavern tavern = 9; // 酒馆
+	optional Trains trains = 10; // 训练场
+	optional Dailys dailys = 11; // 活动
+	optional Charge charge = 12; // 充值
+	optional DailyResourcesBuy res_buy = 13; //本日资源购买次数
+
+	optional Unit unit = 20; // 部队数据
+	optional Arrg arrg = 21; // 阵形数据
+
+	optional Prop prop = 31; // 道具数据
+	optional Equip equip = 32; // 装备数据
+	optional Store store = 33; // 商店数据
+	optional Stall stall = 34; // 系统商店数据
+
+	optional Chat chat = 41; // 聊天数据
+	optional Inform inform = 42; // 公告数据
+	optional Notice notice = 43; // 通知数据
+	optional Friend friend = 44; // 好友数据
+	optional Shield shield = 45; // 屏蔽数据
+	optional Forum forum = 46; // 讨论组数据
+
+	optional Field field = 51; // 关卡数据
+	optional Brief brief = 52; // 战报数据
+	optional Revenge revenge = 53;// 复仇列表
+}
+
+// 玩家
+message User {
+	optional int32 acct = 1; // 帐号
+
+	optional string name = 2; // 名字
+	optional string icon = 3; // 图标
+	optional string flag = 4; // 徽章
+	optional int32 expss = 6; // 经验
+	optional int32 level = 7; // 等级
+
+	optional bool is_online = 9; // 是否在线
+	optional bool is_giveme = 10; // 是否可赠送此用户礼物
+	optional bool is_recvme = 11; // 是否可从此用户领取礼物
+
+	optional int32 coins = 12; // 拥有的金币
+	optional int32 feeds = 13; // 拥有的粮草
+	optional int32 jewel = 14; // 拥有的钻石
+}
+
+// 简介
+message Intr
+{
+	optional int32 acct = 1; // 帐号
+
+	optional string name = 2; // 用户名字
+	optional string icon = 3; // 用户图标
+	optional int32 level = 4; // 用户等级
+	optional bool is_vips = 5; // 用户是否是VIP
+
+	optional int32 medal = 6; // 用户勋章数
+	optional int32 field = 7; // 用户城市数
+	optional int32 unit = 8; // 用户部队数
+}
+
+// 统计
+message Sums {
+	optional int32 sum_login_count = 1; // 统计信息-登录游戏次数
+	optional int32 sum_user_modify = 2; // 统计信息-用户信息修改次数
+	optional int32 sum_signin_count = 3; // 统计信息-签到次数
+
+	optional int32 sum_hall_taxes_count = 11; // 统计信息-政厅征收次数
+	optional int32 sum_hall_taxes_coins = 12; // 统计信息-政厅征收总金币
+	optional int32 sum_hall_taxes_feeds = 13; // 统计信息-政厅征收总粮草
+	optional int32 sum_trains_train_count = 14; // 统计信息-训练场训练英雄次数
+
+	optional int32 sum_field_harvest_count = 21; // 统计信息-关卡收获次数
+	optional int32 sum_field_harvest_coins = 22; // 统计信息-关卡收获总金币
+	optional int32 sum_field_harvest_feeds = 23; // 统计信息-关卡收获总粮草
+
+	optional int32 sum_task_finish = 31; // 统计信息-成就达成数量
+	optional int32 sum_task_commit = 32; // 统计信息-成就提交数量
+
+	optional int32 sum_pve_city_num = 41; // 统计信息-城市攻打次数
+	optional int32 sum_pve_wild_num = 42; // 统计信息-野怪攻打次数
+	optional int32 sum_pve_wild_win = 43; // 统计信息-野怪攻打胜利次数
+	
+	optional int32 sum_pvp_fire_num = 44; // 统计信息-远征攻打次数
+	optional int32 sum_pvp_fire_win = 45; // 统计信息-远征攻打胜利次数
+	optional int32 sum_pvp_back_num = 46; // 统计信息-反攻攻打次数
+	optional int32 sum_pvp_back_win = 47; // 统计信息-反攻攻打胜利次数
+	optional int32 sum_pvp_grade_max = 48; // 统计信息-远征用户达到的远征最高段位
+	optional int32 sum_pvp_medal_max = 49; // 统计信息-远征用户获得的远征最高勋章数
+
+	optional int32 sum_brief_play = 51; // 统计信息-战报回放次数
+
+	optional int32 sum_store_count = 61; // 统计信息-商店购买次数
+	optional int32 sum_chest_count = 62; // 统计信息-宝箱开启次数
+	optional int32 sum_speak_count = 63; // 统计信息-喇叭使用次数
+	optional int32 sum_contr_hero = 64; // 统计信息-契约书作为英雄升级使用次数
+	optional int32 sum_contr_prob = 65; // 统计信息-契约书作为酒馆招募使用次数
+	optional int32 sum_arrive_count = 66; // 统计信息-英雄到访次数
+	optional int32 sum_friend_count = 67; // 统计信息-添加好友次数
+	
+	optional int32 sum_unit_skill_unlock_count = 71; //英雄技能解锁个数
+	optional int32 sum_unit_wine_count = 72; //英雄喝酒次数
+	
+	optional int32 sum_unit_max_power = 81; // 统计信息-部队最高战力
+}
+
+// 每日能购买的资源次数
+message DailyResourcesBuy {
+	optional int32 coins_total =1; //当前玩家能购买金币的总次数
+	optional int32 feeds_total =2; //当前玩家能购买粮草的总次数
+	optional int32 coins_count = 3; //当前金币购买次数
+	optional int32 feeds_count = 4; //当前粮草购买次数
+	optional int32 revenge_count = 5; //当前玩家已经购买次数
+	optional int32 revenge_use = 6; //当前玩家已经使用复仇次数
+}
+
+// VIP
+message Vips {
+	optional int32 vips = 1; // VIP等级
+	optional int32 time = 2; // VIP剩余秒数
+}
+
+// 成就/任务
+message Task {
+	// 成就数据
+	message Item {
+		optional int32 conf = 1; // 配置
+		optional int32 count = 2; // 当前进度
+		optional int32 total = 3; // 总的进度
+	}
+
+	repeated Item items = 1; // 成就数据列表
+}
+
+// 政厅
+message Hall {
+	optional int32 levy = 1; // 已征收次数
+	optional int32 time = 2; // 下次征收剩余时间(单位:s)，若不能征收则为-1
+}
+
+// 排行榜
+message Rank {
+	// 排行数据
+	message Item {
+		optional int32 acct = 1; // 帐号
+		optional int32 sort = 2; // 排名
+		optional int32 vips = 3; // VIP等级
+		optional string name = 4; // 名字
+		optional string icon = 5; // 图标
+		optional int32 level = 6; // 等级
+		optional int32 medal = 7; // 勋章
+
+		optional int32 vict = 8; // 胜数
+		optional int32 lose = 9; // 负数
+	}
+
+	repeated Item items = 1; // 排行数据列表
+}
+
+// 远征
+message Boat {
+	// 奖励
+	message Award {
+		optional int32 grade = 1;	// 段位ID(见配置表)
+		repeated Prize prizes = 2;	// 奖品列表
+	}
+	// 奖品
+	message Prize {
+		optional int32 conf = 1;	// 配置
+		optional int32 num = 2;		// 数量
+	}
+
+	optional int32 rank = 1; // 联赛排名
+	optional int32 time = 2; // 赛季剩余时间
+	optional int32 medal = 3; // 勋章数
+	optional int32 atk_vict = 4; // 进攻胜利次数
+	optional int32 def_vict = 5; // 防守胜利次数
+	repeated Award awards = 6; // 奖励列表
+}
+
+// 酒馆
+message Tavern {
+	// 座位数据
+	message Seat {
+		optional int32 indx = 1; // 座位索引号
+		optional bool is_open = 2; // 座位是否已开启
+		optional int32 hero_conf = 3; // 座位上的英雄配置(-1表示没有)
+		optional int32 hero_time = 4; // 座位上的英雄离开剩余时间(单位:s)，或当hero_conf == -1时表示英雄将要到来的时间(单位:s)
+	}
+	// 到访率数据
+	message Prob {
+		required int32 conf = 1; // 英雄配置
+		required float prob = 2; // 到访率
+	}
+
+	repeated Seat seats = 1; // 座位数据列表
+	repeated Prob probs = 2; // 到访率数据列表
+}
+
+// 训练场
+message Trains {
+	// 座位数据
+	message Seat {
+		optional int32 indx = 1; // 座位索引号
+		optional bool is_open = 2; // 座位是否已开启
+		optional int32 unit_uuid = 3; // 正在训练的部队的uuid(-1表示没有)
+		optional int32 mode = 4; // 训练模式
+		optional int32 time = 5; // 训练完成剩余时间(单位:s)
+	}
+
+	repeated Seat seats = 1; // 座位数据列表
+}
+
+// 日常活动
+message Dailys {
+	message SignItem {
+		optional int32 conf = 1; //物品id
+		optional int32 num = 2;//物品数量
+		optional bool norm_double = 3;//是否是双倍
+		optional bool vip_double = 4;//vip 是否是双倍
+	}
+	// 每日签到
+	message Signin {
+		repeated SignItem items = 1; //所有的签到数据
+		optional int32 sign_num = 2;//已经签到次数
+		optional int32 time = 3; // 距离下次签到时间间隔(单位:s, 若==0, 表示可以签到)
+	}
+
+	optional Signin signin = 1; // 签到
+}
+
+// 付费
+message Charge {
+	// 商品类型
+	enum Type {
+		VIP		= 0;	// VIP
+		JEWEL	= 1;	// 钻石
+		CHEST	= 2;	// 宝箱
+	}
+	// 商品数据
+	message Goods {
+		optional Type type = 1; // 类型
+		optional int32 uuid = 2; // uuid
+		optional string ggid = 3; // ggid
+		optional string asid = 4; // asid
+		optional string name = 5; // 名字
+		optional string desc = 6; // 描述
+		optional string icon = 7; // 商品图标
+		optional string give = 8; // 赠送图标
+		optional int32 time = 9; // 剩余时间(-1表示没有时间限制)
+		optional float price = 10; // 价格(CNY)
+		optional float magnification = 11;//倍率
+		optional bool can_buy = 12; //这个商品是否能购买
+		
+		repeated Gains gains = 13; // 使用商品后获得的物品列表
+	}
+	// 商品附带的物品数据
+	message Gains {
+		optional int32 conf = 1; // 物品配置
+		optional int32 num = 2; // 物品数量
+	}
+
+	repeated Goods goodss = 1; // 商品数据列表
+}
+
+// 部队
+message Unit {
+	// 部队数据
+	message Item {
+		optional int32 uuid = 1; // uuid
+		optional int32 power = 2; // 当前战力
+		optional int32 expss = 3; // 部队经验
+		optional int32 grade = 4; // 小兵进阶等级
+		optional int32 pawn_num = 5; //小兵数量
+		optional int32 drink_time = 6; //喝酒次数
+
+		optional int32 hero_conf = 7; // 英雄配置
+		optional int32 hero_star = 8; // 英雄星级
+		optional int32 hero_expss = 9; // 英雄经验
+		optional int32 hero_level = 10; // 英雄等级
+		optional int32 hero_skill_lv1 = 11; // 英雄技能1的等级(0表示技能未解锁)
+		optional int32 hero_skill_lv2 = 12; // 英雄技能1的等级(0表示技能未解锁)
+		optional int32 hero_skill_lv3 = 13; // 英雄技能1的等级(0表示技能未解锁)
+		optional int32 hero_equip_weapon = 14; // 英雄装备配置-武器
+		optional int32 hero_equip_helmet = 15; // 英雄装备配置-头盔
+		optional int32 hero_equip_armour = 16; // 英雄装备配置-盔甲
+		optional int32 hero_equip_caliga = 17; // 英雄装备配置-鞋子
+		repeated float hero_stass_total = 18; // 英雄总的属性列表
+		repeated float hero_stass_equip = 19; // 英雄当前装备属性列表
+		repeated float hero_stass_wine = 20; // 英雄当前喝酒属性列表(攻击,防御,血量)
+		repeated int32 eat_equips = 21; // 英雄吞噬了的装备列表(有序列表, 0-3 为1星吞噬 4-7 为2星吞噬..... )
+	}
+
+	repeated Item items = 1; // 部队数据列表
+}
+
+// 阵形
+message Arrg {
+	// 站位数据
+	message Stand {
+		optional int32 ipos = 1; // 站位索引
+		optional Unit.Item unit = 2; // 部队数据
+		optional string order = 3; // 部队的指令
+	}
+
+	// 阵形数据
+	message Item {
+		optional int32 index = 1; // 索引
+		repeated Stand stands = 2; // 站位列表
+	}
+
+	optional int32 used = 1; // 当前选用的阵形索引
+	repeated Item items = 2; // 阵形数据列表
+}
+
+// 道具
+message Prop {
+	// 道具数据
+	message Item {
+		optional int32 conf = 1; // 配置
+		optional int32 num = 2; // 数量
+	}
+
+	repeated Item items = 1; // 道具数据列表
+}
+
+// 装备
+message Equip {
+	// 装备数据
+	message Item {
+		optional int32 conf = 1; // 配置
+		optional int32 num = 2; // 数量
+	}
+
+	repeated Item items = 1; // 装备数据列表
+}
+
+// 商店
+message Store {
+	// 商品数据
+	message Goods {
+		optional int32 uuid = 1; // uuid(配置中的guid)
+		optional int32 conf = 2; // 物品配置
+		optional int32 num = 3; // 物品数量
+
+		optional bool sale = 4; // 是否已出售(true:已出售; false:未出售)
+		optional int32 price_coins = 5; // 金币单价，若以钻石计价，则为-1
+		optional int32 price_jewel = 6; // 钻石单价，若以金币计价，则为-1
+	}
+
+	optional int32 cost = 1; // 刷新消耗钻石数(-1表示不能刷新)
+	optional int32 show_time = 2; // 商店存在剩余时间(单位:s)，若商店处于消失状态，则为-1
+	optional int32 hide_time = 3; // 商店消失剩余时间(单位:s)，若商店处于显示状态，则为-1
+
+	repeated Goods goodss = 4; // 商品数据列表
+}
+
+// 系统商店
+message Stall {
+	// 商品数据
+	message Goods {
+		optional int32 uuid = 1; // uuid(配置中的guid)
+		optional int32 conf = 2; // 物品配置
+		optional int32 num = 3; // 物品数量
+
+		optional bool sale = 4; // 是否已出售(true:已出售; false:未出售)
+		optional int32 price_coins = 5; // 金币单价，若以钻石计价，则为-1
+		optional int32 price_jewel = 6; // 钻石单价，若以金币计价，则为-1
+	}
+
+	optional int32 cost = 1; // 刷新消耗钻石数(-1表示不能刷新)
+	optional int32 time = 2; // 商店下次刷新时间(单位:s)
+
+	repeated Goods goodss = 4; // 商品数据列表
+}
+
+// 关卡
+message Field {
+	// 部队数据
+	message Unit {
+		optional int32 ipos = 1; // 站位索引
+		optional int32 grade = 2; // 小兵进阶等级
+		optional string order = 3; // 部人指令
+
+		optional int32 hero_conf = 4; // 英雄配置
+		optional int32 hero_star = 5; // 英雄星级
+		optional int32 hero_level = 6; // 英雄等级
+		optional int32 hero_skill_lv1 = 7; // 英雄技能1的等级(0表示技能未解锁)
+		optional int32 hero_skill_lv2 = 8; // 英雄技能1的等级(0表示技能未解锁)
+		optional int32 hero_skill_lv3 = 9; // 英雄技能1的等级(0表示技能未解锁)
+		repeated float hero_stass_total = 10; // 英雄总的属性列表
+
+		optional int32 pawn_conf = 11; // 小兵配置
+		optional int32 pawn_num = 12; //小兵数量
+	}
+
+	// 关卡数据
+	message Item {
+		optional int32 conf = 1; // 配置
+		optional int32 time = 2; // 多少秒之前被远征占领(单位:s)
+		optional bool is_mine = 3; // 是否已战领
+		optional float yield_coins = 4; // 产出金币
+		optional float yield_feeds = 5; // 产出粮草
+		optional float yield_jewel = 6; // 产出钻石
+
+		optional int32 wild_city = 10; // 野怪所在城市的配置(如果是城池 则为-1)
+		optional int32 wild_time = 11; // 野怪战斗时限(单位:s)
+		optional string wild_name = 12; // 野怪名字
+		optional int32 wild_level = 13; // 野怪等级
+		optional int32 wild_jcost = 15; // 驱散野怪消耗钻石数
+		optional int32 wild_drop_coins = 16; // 野怪金币掉落
+		optional int32 wild_drop_feeds = 17; // 野怪粮草掉落
+		optional int32 wild_drop_jewel = 18; // 野怪钻石掉落
+		repeated int32 wild_drop_ids = 19; // 野怪物品掉落GUID列表
+		repeated int32 wild_drop_num = 20; // 野怪物品掉落数量列表
+		optional int32 wild_unit_expss = 21; // 野怪部队经验
+		optional int32 wild_hero_expss = 22; // 野怪英雄经验
+		repeated Unit wild_units = 23; // 野怪部队列表
+
+		optional int32 user_acct = 30; // 自己/对方玩家的acct(自己的并且未被攻打发-1 其他不发)
+		optional string user_name = 31; // 自己/对方玩家的名字
+		optional string user_icon = 32; // 自己/对方玩家的图标
+        optional string user_flag = 33; // 自己/对方玩家的徽章
+		optional int32 user_level = 34; // 自己/对方玩家等级
+		optional int32 user_power = 35; // 自己/对方玩家战力
+		optional int32 user_medal = 36; // 自己/对方玩家的勋章数
+		repeated Unit user_units = 37; // 自己/对方玩家部队列表
+	}
+
+	optional int32 timer = 1; // 野怪刷新时间间隔(单位:s)
+	repeated Item items = 2; // 关卡数据列表
+}
+
+// 复仇列表
+message Revenge {
+	message Item {
+		optional int32 acct = 1; // 对方帐号
+		optional string name = 2; // 对方名字
+		optional string icon = 3; // 对方图标
+		optional int32 level = 4; // 对方等级
+		optional int32 vip = 5;   //vip等级
+		optional int32 coins = 6;// 对方玩家累计掠夺自己金币数
+		optional int32 feeds = 7; // 对方玩家累计掠夺自己粮草数
+		optional bool can_revenge = 8; //当前是否能复仇
+	}
+	repeated Item items = 1; // 仇恨列表
+}
+
+// 战报
+message Brief {
+	// 战报项
+	message Item {
+		optional string http = 1; // http
+		optional string uuid = 2; // uuid
+
+		optional int32 acct = 3; // 对方帐号
+		optional string name = 4; // 对方名字
+		optional string icon = 5; // 对方图标
+		optional int32 level = 6; // 对方等级
+		optional int32 medal = 7; // 对方勋章
+		optional int32 field = 8; // 关卡配置
+
+		optional int32 gain_coins = 9; // 获得/损失金币
+		optional int32 gain_feeds = 10; // 获得/损失粮草
+		optional int32 gain_jewel = 11; // 获得/损失钻石
+		optional int32 gain_medal = 12; // 获得/损失勋章
+
+		optional int32 time = 13; // 战斗发生在xx以前(单位:s)
+
+		optional bool is_atk = 14; // 是否是进攻战报
+		optional bool is_win = 15; // 是否胜利
+		optional bool is_new = 16; // 是否是新战报(true:没有回放过，不同步，本地处理)
+	}
+
+	repeated Item items = 1; // 战报数据列表
+	optional bool is_new = 2; // 是否有新的战报(小红点，不同步，本地处理)
+}
+
+// 战斗
+message Fight {
+	// 用户
+	message User {
+		optional string name = 1; // 名字
+		optional string icon = 2; // 图标
+		optional string flag = 3; // 徽章
+		optional int32 level = 4; // 等级
+		optional int32 power = 5; // 战力
+	}
+	// 部队
+	message Unit {
+		optional int32 ipos = 1; // 部队的站位
+		optional string order = 2; // 部队指令
+		optional int32 grade = 3; // 进阶等级
+
+		optional int32 hero_conf = 11; // 英雄配置
+		optional int32 hero_star = 12; // 英雄星级
+		optional int32 hero_level = 13; // 英雄等级
+		repeated float hero_stass = 14; // 英雄总的属性列表
+		optional int32 hero_skill_lv1 = 15; // 英雄技能1等级
+		optional int32 hero_skill_lv2 = 16; // 英雄技能2等级
+		optional int32 hero_skill_lv3 = 17; // 英雄技能3等级
+
+		optional int32 pawn_conf = 21; // 小兵配置
+		repeated float pawn_stass = 22; // 小兵总的属性列表
+		optional int32 pawn_count = 23; // 小兵数量
+	}
+}
+
+// 聊天
+message Chat {
+	enum Type {
+		WORLD = 1; // 世界
+		GUILD = 2; // 公会
+		UNION = 3; // 联盟
+		POINT = 4; // 私聊
+		FORUM = 5; // 讨论组
+		ADMIN = 6; // 管理员
+	}
+	// 聊天数据
+	message Item {
+		optional User source_user = 1; // 源用户数据(帐号，名字，头像，等级)
+		optional Vips source_vips = 2; // 源用户数据(等级)
+		optional User target_user = 3; // 目标用户数据(帐号，名字，头像，等级)
+		optional Vips target_vips = 4; // 目标用户数据(等级)
+		optional Type type = 5; // 聊天类型
+		optional string word = 6; // 聊天内容
+		optional int32 time = 7; // 时间(单位:s)
+	}
+	// 联系人数据
+	message Cont {
+		optional User user = 1; // 用户信息(帐号，名字，头像，等级)
+		optional Vips vips = 2; // VIP信息(等级)
+	}
+
+	repeated Item items = 1; // 聊天数据列表
+	repeated Cont conts = 2; // 联系人数据列表
+}
+
+// 公告
+message Inform {
+	enum Type {
+		SYSTEM = 0; // 系统公告
+	}
+	// 公告数据
+	message Item {
+		optional Type type = 1; // 类型
+		optional string text = 2; // 通知内容
+	}
+
+	repeated Item items = 1; // 公告数据列表
+}
+
+// 通知
+message Notice {
+	enum Type {
+		SYSTEM_TEXT = 10; // 系统消息
+		FRIEND_JOIN = 20; // 好友加入邀请
+		FORUM_JOIN = 30; // 讨论组加入邀请
+	}
+
+	// 系统类
+	message System {
+		repeated Atts attss = 1; // 附件
+	}
+
+	// 好友类
+	message Friend {
+		optional int32 acct = 1; // 帐号
+		optional string name = 2; // 名字
+		optional string icon = 3; // 图标
+		optional int32 vips = 4; // VIPS
+		optional int32 level = 5; // 等级
+		optional bool online = 6; // 是否在线
+	}
+
+	// 讨论组类
+	message Forum {
+		optional string name = 1; // 名字
+	}
+
+	// 附件数据
+	message Atts {
+		optional int32 conf = 1; // 物品配置
+		optional int32 num = 2; // 物品数量
+	}
+
+	// 通知数据
+	message Item {
+		required string uuid = 1; // uuid
+		optional Type type = 2; // 类型
+
+		optional int32 time = 3; // 时间, 多少秒之前
+		optional string name = 4; // 通知人名字
+		optional string title = 5; // 标题
+		optional string texts = 6; // 内容
+
+		optional bool is_read = 7; // 是否已读
+		optional bool has_att = 8; //是否有附件
+		optional bool rec_att = 9; //附件是否被领取
+
+		optional System system = 10; // 系统类消息
+		optional Friend friend = 11; // 好友类消息
+		optional Forum forum = 12; // 讨论组类消息
+	}
+
+	repeated Item items = 1; // 通知数据列表
+}
+
+// 好友
+message Friend {
+	// 好友数据
+	message Item {
+		optional User user = 1; // 用户数据(帐号，名字，头像，等级，是否在线，是否可赠送此用户礼物，是否可从此用户领取礼物)
+		optional Vips vips = 2; // VIP数据(等级)
+	}
+
+	repeated Item items = 1; // 好友数据列表
+}
+
+// 屏蔽
+message Shield {
+	// 屏蔽数据
+	message Item {
+		optional User user = 1; // 用户信息(帐号，名字，头像，等级)
+		optional Vips vips = 2; // VIP数据(等级)
+	}
+
+	repeated Item items = 1; // 屏蔽数据列表
+}
+
+// 讨论组
+message Forum {
+	// 成员数据
+	message Item {
+		optional User user = 1; // 用户信息(帐号，名字，头像，等级，是否在线)
+		optional Vips vips = 2; // VIP数据(等级)
+		optional bool is_forbid = 3; // 是否被禁言
+	}
+
+	required int32 uuid = 1; // uuid
+	optional int32 acct = 2; // 管理员的帐号
+	optional string name = 3; // 讨论组名字
+	repeated Item items = 4; // 成员列表
+}
+
+//活动
+message Activity {
+	enum Type {
+		CHECKIN = 0; //签到
+		NEWBIE = 1; //7日签到
+		INPOUR = 2; //充值活动
+	}
+	required string subject = 1; //活动名称
+	required Type type = 2; //活动分类
+	required int32 pos = 3; //显示排序
+	optional string desc = 4; //活动说明
+}

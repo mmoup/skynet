@@ -1,0 +1,44 @@
+// ------------------------
+// 屏蔽
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 屏蔽添加(通过屏蔽同步)
+message ShieldAppendReq {
+	required int32 acct = 1; // 对方玩家acct
+}
+
+message ShieldAppendResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 屏蔽删除
+message ShieldRemoveReq {
+	repeated int32 accts = 1; // 对方玩家acct
+}
+
+message ShieldRemoveResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 同步屏蔽数据
+message ShieldSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1; // 模式
+	optional Shield shield = 2; // 屏蔽数据
+}

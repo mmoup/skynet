@@ -1,0 +1,79 @@
+// ------------------------
+// 道具
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 道具购买(喇叭)
+message PropBuyReq {
+	required int32 conf = 1; // 道具的conf
+	required int32 num = 2; // 购买数量
+}
+
+message PropBuyResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+
+	required Code code = 1; // 返回码
+	optional int32 jewel = 2; // 用户钻石数量
+}
+
+// 道具使用
+message PropUseReq {
+	required int32 conf = 1; // 道具的配置
+	required int32 num = 2; // 使用数量
+}
+
+message PropUseResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	// 获得物品
+	message Gain {
+		required int32 conf = 1; // 物品配置
+		required int32 num = 2; // 物品数量
+	}
+
+	required Code code = 1; // 返回码
+	optional int32 coins = 2; // 获得金币
+	optional int32 feeds = 3; // 获得粮草
+	optional int32 jewel = 4; // 获得钻石
+	repeated Gain gains = 5; // 获得物品列表
+}
+
+
+// 道具合成
+message PropSyntheticReq {
+	required int32 conf = 1;// 将要合成的新道具id
+}
+
+message PropSyntheticResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_CURR_NOT_ENOUGH = -2;// 失败 金币或者钻石不足
+		FAILED_PROP_NOT_ENOUGH = -3;//失败  需求的道具数量不足
+	}
+	
+	required Code code = 1; // 返回码 (消耗的道具 前端自行扣除 不同步  新增加的道具id已经在resp中返回前端自行增加 不同步)
+	required int32 coins = 2; // 玩家当前金币数量
+	required int32 jewel = 3; // 玩家当前钻石数量
+	optional int32 conf = 4; // 新合成的物品id
+}
+
+// 同步道具数据
+message PropSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1; // 模式
+	required Prop prop = 2; // 道具数据
+}
+

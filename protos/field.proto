@@ -1,0 +1,71 @@
+// ------------------------
+// 关卡
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 关卡收获
+message FieldHarvestReq {
+	enum Type {
+		COINS = 0; // 金币
+		FEEDS = 1; // 粮草
+		JEWEL = 2; // 钻石
+	}
+	required int32 conf = 1; // 战场的conf(-1表示一键收获)
+	required Type type = 2; // 收获资源型类
+}
+
+message FieldHarvestResp {
+	enum Type {
+		COINS = 0; // 金币
+		FEEDS = 1; // 粮草
+		JEWEL = 2; // 钻石
+	}
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional Type type = 2; // 资源类型
+	repeated int32 confs = 3; // 全部收获的城市配置列表
+	optional int32 fconf = 4; // 有剩余资源的城市配置(-1表示没有)
+	optional int32 value = 5; // 剩余资源的数量( 0 表示没有)
+	optional int32 coins = 6; // 金币
+	optional int32 feeds = 7; // 粮草
+	optional int32 jewel = 8; // 钻石
+}
+
+// 送走野怪
+message FieldPackoffReq {
+	required int32 conf = 1; // 战场野怪的conf
+}
+
+message FieldPackoffResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	// 物品掉落
+	message Drop {
+		required int32 conf = 1; // 配置
+		required int32 num = 2; // 数量
+	}
+	required Code code = 1; // 返回码
+	repeated Drop drops = 2; // 物品掉落
+	optional int32 coins = 3; // 金币
+	optional int32 feeds = 4; // 粮草
+	optional int32 jewel = 5; // 钻石
+}
+
+// 同步关卡数据
+message FieldSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1; // 模式
+	optional Field field = 2; // 关卡数据
+}

@@ -1,0 +1,15 @@
+// ------------------------
+// 统计
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 同步统计数据
+message SumsSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	required Sums sums = 2; // 统计数据
+}

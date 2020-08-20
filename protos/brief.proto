@@ -1,0 +1,42 @@
+// ------------------------
+// 战报
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 战报已阅
+message BriefReadReq {
+}
+
+message BriefReadResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 同步战报数据
+message BriefSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1; // 模式
+	optional Brief brief = 2; // 战报数据
+}
+
+// 同步复仇数据
+message RevengeSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1; // 模式
+	optional Revenge revenge = 2; // 复仇数据
+}

@@ -1,0 +1,76 @@
+// ------------------------
+// 通知
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 通知读取
+message NoticeReadReq {
+	required string uuid = 1; // uuid
+}
+
+message NoticeReadResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional Notice.Item item = 2; // 具体的通知内容
+}
+
+// 通知删除
+message NoticeDeleteReq {
+	required string uuid = 1; // uuid
+}
+
+message NoticeDeleteResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 通知接受(附件用道具同步，装备同步，资源同步，部队同步)
+message NoticeAcceptReq {
+	required string uuid = 1; // uuid
+}
+
+message NoticeAcceptResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_FRIEND_MINE_FULLED = -20; // 失败，自己好友已满
+		FAILED_FRIEND_USER_FULLED = -21; // 失败，对方好友已满
+		FAILED_GUILD_FULLED = -30; // 失败，公会人数已满
+		FAILED_UNION_FULLED = -40; // 失败，联盟人数已满
+		FAILED_FORUM_FULLED = -50; // 失败，讨论组人数已满
+	}
+	required Code code = 1; // 返回码
+}
+
+// 通知拒绝
+message NoticeRefuseReq {
+	required string uuid = 1; // uuid
+}
+
+message NoticeRefuseResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 同步通知数据
+message NoticeSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1; // 模式
+	optional Notice notice = 2; // 通知数据
+}

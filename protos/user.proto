@@ -1,0 +1,78 @@
+// ------------------------
+// 用户
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 用户创建
+message UserCreateReq {
+	required string name = 1; // 用户名字
+	required string icon = 2; // 用户图标
+	required string flag = 3; // 用户徽章
+	required int32 invite = 4; //邀请人账号
+}
+
+message UserCreateResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_NAME_INVALID = -2; // 失败，用户名非法
+		FAILED_NAME_EXIST = -3; // 失败，用户名已存在
+	}
+	required Code code = 1; // 返回码
+}
+
+// 用户查询
+message UserQuestReq {
+	required int32 acct = 1; // acct
+}
+
+message UserQuestResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_NOT_EXIST = -2; // 失败，用户不存在
+	}
+	required Code code = 1; // 返回码
+	optional Acct acct = 2; // 帐户(具体内容以界面需求定)
+}
+
+// 获取随机用户名
+message UserNameReq {
+	// 语言
+	enum Lang {
+		CHINESE_SIM = 0;	// 简中
+		CHINESE_TRS = 1;	// 繁中
+		ENGLIKSH = 2;		// 英文
+	}
+	required Lang lang = 1; // 语言
+	required bool male = 2; // 是否是男性
+}
+
+message UserNameResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional string name = 2; // 用户名字
+}
+
+// 同步用户经验等级
+message UserSyncLevelResp {
+	enum Mode {
+		MODIFY = 1; // 修改
+	}
+	required Mode mode = 1; // 模式
+	required User user = 2; // 用户数据(经验，等级)
+}
+
+// 同步用户资源
+message UserSyncResResp {
+	enum Mode {
+		MODIFY = 1; // 修改
+	}
+	required Mode mode = 1; // 模式
+	required User user = 2; // 用户数据(金币，粮草，钻石)
+}

@@ -1,0 +1,122 @@
+// ------------------------
+// 功能建筑
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 政厅征收
+message CtorHallTaxesReq {
+}
+
+message CtorHallTaxesResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional Hall hall = 2; // 政厅数据
+	optional int32 coins = 3; // 用户粮草数量
+	optional int32 feeds = 4; // 用户金币数量
+}
+
+// 排行榜查询
+message CtorRankQuestReq {
+}
+
+message CtorRankQuestResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional Rank rank = 2; // 排行榜数据
+}
+
+// 酒馆座位解锁
+message CtorTavernUnlockReq {
+	required int32 indx = 1; // 酒馆座位号索引
+}
+
+message CtorTavernUnlockResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional int32 jewel = 2; // 用户钻石数量
+}
+
+// 酒馆增加到访率
+message CtorTavernArriveReq {
+	required int32 conf = 1; // 英雄的配置
+}
+
+message CtorTavernArriveResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_ALREADY_EXIST = -2; // 失败，英雄已来到酒馆
+	}
+	required Code code = 1; // 返回码
+	optional float prob = 2; // 新的到访率
+}
+
+// 训练场座位解锁
+message CtorTrainsUnlockReq {
+	required int32 indx = 1; // 酒馆座位号索引
+}
+
+message CtorTrainsUnlockResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional int32 jewel = 2; // 用户钻石数量
+}
+
+// 同步政厅数据
+message CtorSyncHallResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	required Hall hall = 2; // 政厅数据
+}
+
+// 同步排行榜数据
+message CtorSyncRankResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	required Rank rank = 2; // 排行榜数据
+}
+
+// 同步远征数据
+message CtorSyncBoatResp {
+	enum Mode {
+		CREATE = 1; // 修改
+	}
+	required Mode mode = 1; // 模式
+	required Boat boat = 2; // 远征数据
+}
+
+// 同步酒馆数据
+message CtorSyncTavernResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	required Tavern tavern = 2; // 酒馆数据
+}
+
+// 同步训练场数据
+message CtorSyncTrainsResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	required Trains trains = 2; // 训练场数据
+}

@@ -1,0 +1,178 @@
+// ------------------------
+// 战斗
+// ------------------------
+package message;
+
+import "common.proto";
+
+// PVE-战斗开始(消耗的粮草：资源同步)
+message FightPveStartReq {
+	// 类型
+	enum Type {
+		CITY = 0; // 攻打的是城市
+		WILD = 1; // 攻打的是怪物
+		BACK = 2; // 反攻
+	}
+	required int32 conf = 1; // 关卡城市配置
+	required int32 time = 2; // 战斗开始时间(单位:s)
+	required Type type = 3; // 类型
+	required Arrg.Item arrg = 4; // 阵形
+	required bool save = 5; // 是否需要保存阵形
+}
+
+message FightPveStartResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// PVE-战斗结束(同步：关卡数据)
+message FightPveGOverReq {
+	// 类型
+	enum Type {
+		CITY = 0; // 攻打的是城市
+		WILD = 1; // 攻打的是怪物
+		BACK = 2; // 反攻
+	}
+	// 战果
+	enum Result {
+		VICT = 0; // 胜
+		LOSE = 1; // 负
+		RETREAT = 2; // 撤退
+		TIMEOUT = 3; // 时间到
+	}
+	// 残余部队(用于服务端日志)
+	message Unit {
+		required int32 uuid = 1; // 部队uuid
+		required int32 hero_life = 2; // 英雄血量
+		required int32 pawn_count = 3; // 小兵数量
+	}
+	required int32 conf = 1; // 关卡城市配置
+	required int32 time = 2; // 战斗结束时间(单位:s)
+	required Type type = 3; // 类型
+	repeated Unit units = 4; // 残余部队列表(用于服务端日志)
+	required Result result = 5; // 战果
+}
+
+message FightPveGOverResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	// 物品掉落
+	message Drop {
+		required int32 conf = 1; // 配置
+		required int32 num = 2; // 数量
+	}
+	required Code code = 1; // 返回码
+	optional User user = 2; // 用户数据(经验，等级，金币, 粮草，钻石)
+	optional Unit unit = 3; // 部队数据(uuid，战力，部队经验， 英雄经验，英雄等级，英雄总的属性列表)
+	repeated Drop drops = 4; // 物品掉落
+}
+
+// PVE-防守阵形
+message FightPveGuardReq {
+	required int32 conf = 1; // 关卡城市配置
+	required Arrg.Item arrg = 2; // 阵形(站位, 指令, 部队uuid)
+}
+
+message FightPveGuardResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// PVP-战斗搜索
+message FightPvpCloudReq {
+}
+
+message FightPvpCloudResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		HOLDON = -2; // 等待
+		SEASON = -3; // 赛季结束，不能远征
+	}
+	required Code code = 1; // 返回码
+	optional Field.Item field = 2; // 对方城市数据(配置，金币收益，粮草收益，钻石收益, 玩家名字，玩家等级，玩家头像，玩家徽章，玩家勋章数，玩家战力，站位索引，部队指令，部队进阶等级，部队英雄配置，部队英雄星级，部队英雄等级，英雄技能等级，英雄总属性列表)
+	optional int32 coins = 3; // 用户金币数
+}
+
+// PVP-战斗搜索放弃
+message FightPvpAbortReq {
+}
+
+message FightPvpAbortResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+
+	required Code code = 1; // 返回码
+}
+
+// PVP-战斗开始(胜利后同步：资源，勋章)
+message FightPvpStartReq {
+	enum Type
+	{
+		REVENGE = 0; // 复仇
+		BOAT = 1; // 远征
+	}
+	required Arrg.Item arrg = 1; // 自己阵形数据(站位索引，站位指令，部队uuid)
+	required int32 rand = 2; // 随机种子
+	required Type type = 3; // 类型
+}
+
+message FightPvpStartResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+
+	required Code code = 1; // 返回码
+	required string uuid = 2; // 战报的uuid
+	optional Fight.User atk_user = 3; // 进攻方玩家
+	optional Fight.User def_user = 4; // 防守方玩家
+	repeated Fight.Unit atk_units = 5; // 进攻方部队
+	repeated Fight.Unit def_units = 6; // 防守方部队
+}
+
+// PVP-战斗查询
+message FightPvpQuestReq {
+	required string http = 1; // 战报的http
+	required string uuid = 2; // 战报的uuid
+}
+
+message FightPvpQuestResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	
+	required Code code = 1; // 返回码
+	optional int32 rand = 2; // 随机种子
+	optional Fight.User atk_user = 3; // 进攻方玩家
+	optional Fight.User def_user = 4; // 防守方玩家
+	repeated Fight.Unit atk_units = 5; // 进攻方部队
+	repeated Fight.Unit def_units = 6; // 防守方部队
+}
+
+// PVP-复仇申请
+message FightPvpRevengeSearchReq {
+	required int32 acct = 1;// 指定要复仇的玩家帐号
+}
+
+message FightPvpRevengeSearchResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_NUM_JEWEL_NOT_ENOUGH = -2; // 复仇次数或者钻石不足
+		FAILED_NULL_ACCT = -3; // 该玩家不能被复仇(账号不存在,在战报中没有该玩家的攻打记录)
+	}
+	required Code code = 1; // 返回码
+	optional Field.Item field = 2; // 对方城市数据(配置，金币收益，粮草收益，钻石收益, 玩家名字，玩家等级，玩家头像，玩家徽章，玩家勋章数，玩家战力，站位索引，部队指令，部队进阶等级，部队英雄配置，部队英雄星级，部队英雄等级，英雄技能等级，英雄总属性列表)
+}

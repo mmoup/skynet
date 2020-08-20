@@ -1,0 +1,33 @@
+// ------------------------
+// 聊天
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 聊天发言(世界聊天同步道具)
+message ChatSpeakReq {
+	required int32 acct_source = 1; // 源的帐号
+	required int32 acct_target = 2; // 目标的帐号(私聊有效)
+	required Chat.Type type = 3; // 聊天类型
+	required string word = 4; // 聊天内容
+}
+
+message ChatSpeakResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 同步聊天数据
+message ChatSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建联系人
+		TOHEAD = 2; // 添加聊天消息到头
+		TOTAIL = 3; // 添加聊天消息到尾
+	}
+	required Mode mode = 1; // 模式
+	optional Chat chat = 2; // 聊天数据
+}

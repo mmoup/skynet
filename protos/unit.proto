@@ -1,0 +1,271 @@
+// ------------------------
+// 部队
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 英雄招募
+message UnitHeroRecruitReq {
+	required int32 indx = 1; // 酒馆座位号索引
+}
+
+message UnitHeroRecruitResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_NOT_EXIST = -2; // 失败，英雄不存在
+	}
+	required Code code = 1; // 返回码
+	optional int32 conf = 2; // 座位上英雄的配置
+	optional int32 uuid = 3; // 新建部队的uuid
+	optional int32 power = 4; // 新建部队的战力
+	optional int32 jewel = 5; // 用户钻石数
+}
+
+// 英雄喝酒
+message UnitHeroWineReq {
+	enum Prof {
+		ATK = 1; //	攻击
+		DEF = 2; // 防御
+		LIFE = 3; // 血量
+	}
+	required int32 indx = 1;//酒馆座位号索引
+	required int32 uuid = 2;//部队id
+}
+
+message UnitHeroWineResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_HERO_NOT_EXIST = -2; // 失败，英雄不存在
+		FAILED_UNIT_NOT_EXIST = -3; //失败, 部队不存在
+	}
+	required Code code = 1; // 返回码
+	repeated float total_stass = 2; // 英雄总的属性列表
+	repeated float equip_stass = 3; // 英雄装备属性列表
+	required int32 drink_times = 4; //已喝酒次数
+}
+
+// 英雄升级
+message UnitHeroUpgradeReq {
+	required int32 uuid = 1; // 英雄所在部队的uuid
+	required int32 level = 2; // 1 升1级   5 升5级
+}
+
+message UnitHeroUpgradeResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码  (消耗的 经验丹 走道具同步)
+	optional int32 expss = 2; // 新的英雄经验
+	optional int32 level = 3; // 新的英雄等级
+	repeated float total_stass = 4; // 英雄总的属性列表
+	repeated float equip_stass = 5; // 英雄装备属性列表
+	repeated float wine_stass = 6;// 英雄美酒增加的属性列表(攻击,防御,血量)
+}
+
+// 英雄训练
+message UnitHeroTrainReq {
+	required int32 uuid = 1; // 英雄所在部队的uuid
+	required int32 indx = 2; // 训练场座位号
+	required int32 mode = 3; // 训练模式
+}
+
+message UnitHeroTrainResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional int32 time = 2; // 座位冷却时间(单位:s)
+	optional int32 expss = 3; // 新的英雄经验
+	optional int32 level = 4; // 新的英雄等级
+	repeated float total_stass = 5; // 英雄总的属性列表
+	repeated float equip_stass = 6; // 英雄装备属性列表
+	repeated float wine_stass = 7;// 英雄美酒增加的属性列表(攻击,防御,血量)
+	optional int32 coins = 8; // 用户金币数
+	optional int32 jewel = 9; // 用户钻石数
+}
+
+// 英雄装备
+message UnitHeroEquipReq {
+	required int32 uuid = 1; // 英雄所在部队的uuid
+	required int32 conf = 2; // 装备配置
+}
+
+message UnitHeroEquipResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	repeated float total_stass = 2; // 英雄总的属性列表
+	repeated float equip_stass = 3; // 英雄装备属性列表
+	repeated float wine_stass = 4;// 英雄美酒增加的属性列表(攻击,防御,血量)
+}
+
+
+// 英雄脱装备
+message UnitHeroEquipTakeOffReq {
+	required int32 uuid = 1; //英雄所在的部队uuid
+	required int32 conf = 2; //装备配置
+}
+
+message UnitHeroEquipTakeOffResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码 (脱下来的装备  自行添加到 背包 不同步)
+	repeated float total_stass = 2; // 英雄总的属性列表
+	repeated float equip_stass = 3; // 英雄装备属性列表
+	repeated float wine_stass = 4;// 英雄美酒增加的属性列表(攻击,防御,血量)
+}
+
+// 英雄升星
+message UnitHeroStarsReq {
+	required int32 uuid = 1; // 英雄所在部队的uuid
+}
+
+message UnitHeroStarsResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_COINS_NOT_ENOUGH = -2;// 金币不足
+		FAILED_PROP_NOT_ENOUGH = -3; // 道具不足
+	}
+	required Code code = 1; // 返回码 (升星消耗的道具 前端自行扣除 不同步)
+	required int32 coins = 2; //玩家当前的金币数量
+	required int32 jewel = 3; //玩家当前的钻石数量
+	repeated float total_stass = 4; // 英雄总的属性列表
+	repeated float equip_stass = 5; // 英雄装备属性列表
+	repeated float wine_stass = 6;// 英雄美酒增加的属性列表(攻击,防御,血量)
+	repeated int32 eat_equips = 7; // 英雄吞噬了的装备列表(有序列表, 0-3 为1星吞噬 4-7 为2星吞噬..... )
+}
+
+// 英雄降星
+message UnitHeroStarDeGradeReq {
+	required int32 uuid = 1; //英雄所在的部队uuid
+}
+message UnitHeroStarDeGradeResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_CURR_NOT_ENOUGH = -2;// 金币或者钻石不足
+	}
+	required Code code = 1; // 返回码  
+	repeated float total_stass = 2; // 英雄总的属性列表
+	repeated float equip_stass = 3; // 英雄装备属性列表
+	repeated float wine_stass = 4;// 英雄美酒增加的属性列表(攻击,防御,血量)
+	repeated int32 equip_list = 5; //英雄吐出来的所有装备
+	required int32 coins = 6; //玩家当前的金币数量
+	required int32 jewel = 7; //玩家当前的钻石数量
+	repeated int32 eat_equips = 8; // 英雄吞噬了的装备列表(有序列表, 0-3 为1星吞噬 4-7 为2星吞噬..... )
+}
+// 英雄技能解锁
+message UnitHeroSkillUnlockReq {
+	required int32 uuid = 1; // 英雄所在部队的uuid列表
+	required int32 indx = 2; // 技能索引(从0开始)
+}
+
+message UnitHeroSkillUnlockResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional int32 jewel = 2; // 用户钻石数
+}
+
+// 英雄技能升级
+message UnitHeroSkillUpgradeReq {
+	required int32 uuid = 1; // 英雄所在部队的uuid列表
+	required int32 indx = 2; // 技能索引
+}
+
+message UnitHeroSkillUpgradeResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	repeated float total_stass = 2; // 英雄总的属性列表
+	repeated float equip_stass = 3; // 英雄装备属性列表
+	repeated float wine_stass = 4;// 英雄美酒增加的属性列表(攻击,防御,血量)
+	optional int32 coins = 5; // 用户金币数
+}
+
+// 部队小兵扩容
+message UnitPawnExtensionReq {
+	required int32 uuid = 1; //部队uuid
+}
+
+message UnitPawnExtensionResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码  (道具扣除 前端自行处理 不同步  士兵数量的增加前端自行处理 不同步)
+	optional int32 coins = 2; //玩家当前的金币数量
+}
+
+// 部队进阶
+message UnitAdvancesReq {
+	required int32 uuid = 1; // 部队的uuid
+}
+
+message UnitAdvancesResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional int32 power = 2; // 部队战力
+	optional int32 coins = 3; // 用户金币数
+}
+
+// 部队转职
+message UnitTransferReq {
+	required int32 uuid = 1; // 部队的uuid
+	optional int32 conf = 2; // 转职之后的英雄配置
+}
+
+message UnitTransferResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	repeated float total_stass = 2; // 英雄总的属性列表
+	repeated float equip_stass = 3; // 英雄装备属性列表
+	repeated float wine_stass = 4;// 英雄美酒增加的属性列表(攻击,防御,血量)
+	optional int32 power = 5; // 部队战力
+	optional int32 coins = 6; // 用户金币数
+}
+
+// 部队布阵
+message UnitArrangeReq {
+	required Arrg arrg = 1; // 阵形数据
+}
+
+message UnitArrangeResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 同步部队数据
+message UnitSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1; // 模式
+	required Unit unit = 2; // 部队数据
+}

@@ -1,0 +1,44 @@
+// ------------------------
+// 系统商店
+// ------------------------
+package message;
+
+import "common.proto";
+
+// 商店购买(同步道具数据或装备数据)
+message StallBuyReq {
+	required int32 uuid = 1; // 商品的uuid
+}
+
+message StallBuyResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	required int32 coins = 2; // 用户金币数
+	required int32 jewel = 3; // 用户钻石数
+}
+
+// 商店刷新
+message StallRefreshReq {
+}
+
+message StallRefreshResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+	optional Stall stall = 2; // 商店数据
+	optional int32 jewel = 3; // 用户钻石数据
+}
+
+// 同步商店数据
+message StallSyncResp {
+	enum Mode {
+		CREATE = 1; // 新建
+	}
+	required Mode mode = 1; // 模式
+	required Stall stall = 2; // 商店数据
+}
