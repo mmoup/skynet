@@ -20,8 +20,8 @@ function coder.decode(msg)
     local msgid, stringbuffer = string.unpack(">Hc"..pack_size, msg)
     local msg_name = msgdef.get_name(msgid)
     skynet.error("receive ", msg_name)
-    local body = protobuf.decode(msg_name, stringbuffer)
-    return msgid, body
+    local msg_obj = protobuf.decode(msg_name, stringbuffer)
+    return msgid, msg_name, msg_obj
 end
 
 return coder

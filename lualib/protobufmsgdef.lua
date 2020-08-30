@@ -12,14 +12,14 @@ M.message = {
     REQ_SERVER_FIXED_UPDATE = 3,
 
     --  登录认证
-    REQ_LOGIN_AUTH = 100,
+    LoginAuthReq = 100,
 
-    RESP_LOGIN_AUTH = 101,
+    LoginAuthResp = 101,
 
     --  发出PING
-    REQ_LOGIN_PING = 102,
+    LoginPingReq = 102,
 
-    RESP_LOGIN_PING = 103,
+    LoginPingResp = 103,
 
     --  发出GCM码
     REQ_LOGIN_GCM = 104,

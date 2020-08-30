@@ -13,6 +13,7 @@ local CMD = {}
 local REQUEST = {}
 local client_fd
 
+--[[
 function REQUEST:get()
 	print("get", self.what)
 	local r = skynet.call("SIMPLEDB", "lua", "get", self.what)
@@ -39,46 +40,49 @@ local function request(name, args, response)
 		return response(r)
 	end
 end
+]]
 
 local function send_package(pack)
-	-- local package = string.pack(">s2", pack)
+	-- local package = string.pack(">s2", pack) 将长度自动补在最前面
 	socket.write(client_fd, pack)
 end
 
-local REQ = {}
-function REQ.LoginAuthReq(message)
-    for key,value in pairs(message) do
-        skynet.error(key,":",value)
-    end
+REQUEST.message = {}
+
+function REQUEST.message.LoginAuthReq(msg_obj)
+	for key,value in pairs(msg_obj) do
+        skynet.error(key, ":", value)
+	end
+	local data = pbcoder.encode(msgdef.message.LoginAuthResp,
+	{
+		code = "SUCCEED",
+		acct = {
+			user = {
+				acct = 10000,
+				expss = 1,
+				level = 1,
+				land_id = 1,
+				kingdom_id = -1,
+				city_id = 0,
+				name = "test",
+				icon = "",
+				flag = "",
+			}
+		}
+	})
+	send_package(data)
 end
 
-local function dispatch_message(msg)
-	skynet.error("msg", #msg)
-	local msgid, msgBody = pbcoder.decode(msg)
-	skynet.error(msgBody)
-	for key,value in pairs(msgBody) do
-        skynet.error(key,":",value)
+function REQUEST.message.LoginPingReq(msg_obj)
+	for key,value in pairs(msg_obj) do
+        skynet.error(key, ":", value)
 	end
-	if msgid == msgdef.message.LoginAuthReq then
-		local data = pbcoder.encode(msgdef.message.LoginAuthResp,
-		{
-			code = "SUCCEED",
-			acct = {
-				user = {
-					acct = 10000,
-					expss = 1,
-					level = 1,
-					land_id = 1,
-					kingdom_id = -1,
-					city_id = 0,
-					name = "test",
-					icon = "",
-					flag = "",
-				}
-			}
-		})
-		send_package(data)
-	end
+
+	local data = pbcoder.encode(msgdef.message.LoginPingResp,
+	{
+		code = "SUCCEED"
+	})
+	send_package(data)
 end
 
 skynet.register_protocol {
@@ -87,6 +91,13 @@ skynet.register_protocol {
 	unpack = function (msg, sz)
 		skynet.error("msg length:", sz)
 		return skynet.tostring(msg, sz)
+	end,
+	dispatch = function (_, _, msg)
+		local _, msg_name, msg_obj = pbcoder.decode(msg)
+		local rt= {}
+		string.gsub(msg_name, '[^.]+', function(w) table.insert(rt, w) end )
+		local f = assert(REQUEST[rt[1]][rt[2]])
+		local r = f(msg_obj)
 	end
 }
 
@@ -147,8 +158,4 @@ skynet.start(function()
 		local f = CMD[command]
 		skynet.ret(skynet.pack(f(...)))
 	end)
-
-	skynet.dispatch("client", function (session, address, msg)
-        dispatch_message(msg)
-    end)
 end)
