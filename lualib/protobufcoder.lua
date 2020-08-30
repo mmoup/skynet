@@ -4,7 +4,6 @@ local msgdef = require "protobufmsgdef"
 
 protobuf.register_file "./ewar.pb" --注册pb文件
 
-
 local coder = {}
 
 function coder.encode(msgid, data)
@@ -15,22 +14,14 @@ function coder.encode(msgid, data)
     return body                                       -- 包体长度 + 协议名 + 协议数据
 end
 
-
---[[
-    @desc: 将二进制数据反序列化为lua string
-    --@msg: C Point
-    @return:协议名字，协议数据
-]]
-function coder.decode( msg  )
+function coder.decode(msg)
     --- 前两个字节在netpack.filter 已经解析
-    skynet.error("msg len", #msg, msg)
     local pack_size = #msg - 2
     local msgid, stringbuffer = string.unpack(">Hc"..pack_size, msg)
-    skynet.error("消息号", msgId, "包体长度", pack_size)
     local msg_name = msgdef.get_name(msgid)
+    skynet.error("receive ", msg_name)
     local body = protobuf.decode(msg_name, stringbuffer)
     return msgid, body
 end
-
 
 return coder
