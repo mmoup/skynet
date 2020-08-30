@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 // ------------------------
 // 部队
 // ------------------------
@@ -8,6 +10,7 @@ import "common.proto";
 // 英雄招募
 message UnitHeroRecruitReq {
 	required int32 indx = 1; // 酒馆座位号索引
+	required int32 city_conf = 2; //据点id
 }
 
 message UnitHeroRecruitResp {
@@ -21,6 +24,25 @@ message UnitHeroRecruitResp {
 	optional int32 uuid = 3; // 新建部队的uuid
 	optional int32 power = 4; // 新建部队的战力
 	optional int32 jewel = 5; // 用户钻石数
+	optional int32 coins = 6; // 用户金币数
+}
+
+//酒馆宴请
+message UnitBanquetReq {
+	required int32 city_conf = 1; //要宴请的酒馆所属的据点conf
+}
+
+message UnitBanquetResp {
+	enum Code {
+		SUCCEED = 1; // 成功
+		SUCCEED_NO_UNIT = 2; //成功,但是没有任何英雄前来  这里前端记得弹出提示用户
+		FAILED = 3; //失败
+		FAILED_NOT_OCC = 4; // 失败 没有占领该据点
+		FAILED_COINS_NOT_ENOUGH = 5; // 失败 金币不足
+		
+	}
+	required Code code = 1; // 返回码    新的酒馆信息 会走同步
+	optional int32 coins =2; //玩家当前的金币数量
 }
 
 // 英雄喝酒
@@ -32,6 +54,7 @@ message UnitHeroWineReq {
 	}
 	required int32 indx = 1;//酒馆座位号索引
 	required int32 uuid = 2;//部队id
+	required int32 city_conf = 3; //酒馆所属据点的conf
 }
 
 message UnitHeroWineResp {
@@ -41,10 +64,11 @@ message UnitHeroWineResp {
 		FAILED_HERO_NOT_EXIST = -2; // 失败，英雄不存在
 		FAILED_UNIT_NOT_EXIST = -3; //失败, 部队不存在
 	}
-	required Code code = 1; // 返回码
+	required Code code = 1; // 返回码  
 	repeated float total_stass = 2; // 英雄总的属性列表
 	repeated float equip_stass = 3; // 英雄装备属性列表
 	required int32 drink_times = 4; //已喝酒次数
+	optional int32 jewel = 5; //当前玩家总的钻石数
 }
 
 // 英雄升级

@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 // ------------------------
 // 公用
 // ------------------------
@@ -16,7 +18,7 @@ message Acct {
 	optional Hall hall = 6; // 政厅
 	optional Rank rank = 7; // 排行榜
 	optional Boat boat = 8; // 远程
-	optional Tavern tavern = 9; // 酒馆
+	repeated Tavern tavern = 9; // 酒馆
 	optional Trains trains = 10; // 训练场
 	optional Dailys dailys = 11; // 活动
 	optional Charge charge = 12; // 充值
@@ -24,13 +26,13 @@ message Acct {
 
 	optional Unit unit = 20; // 部队数据
 	optional Arrg arrg = 21; // 阵形数据
+	optional Arrg pvp_arrg = 57; // 阵形数据
 
 	optional Prop prop = 31; // 道具数据
 	optional Equip equip = 32; // 装备数据
 	optional Store store = 33; // 商店数据
 	optional Stall stall = 34; // 系统商店数据
 
-	optional Chat chat = 41; // 聊天数据
 	optional Inform inform = 42; // 公告数据
 	optional Notice notice = 43; // 通知数据
 	optional Friend friend = 44; // 好友数据
@@ -40,6 +42,9 @@ message Acct {
 	optional Field field = 51; // 关卡数据
 	optional Brief brief = 52; // 战报数据
 	optional Revenge revenge = 53;// 复仇列表
+	optional City city = 54; //pvp城市数据
+	optional Kingdom kingdom = 55; //pvp势力数据
+	optional Troop troop = 56; //pvp军团数据
 }
 
 // 玩家
@@ -51,14 +56,27 @@ message User {
 	optional string flag = 4; // 徽章
 	optional int32 expss = 6; // 经验
 	optional int32 level = 7; // 等级
+	optional int32 land_id = 8; //玩家出生大陆 恒定，永远不变
+	optional int32 kingdom_id = 9; //玩家所在势力 -1表示未加入势力
+	optional int32 city_id = 10; //驻地城市 0 表示无 小于0为虚拟城市
+	optional int32 current_field_conf= 11; //当前所在据点 pve据点conf
+	optional int32 from_field_conf = 12; //上一个据点 pve据点conf
+	optional int32 remaining_time = 13; //到达当前所在城市还需要的时间（单位s），已到达该值为0
 
-	optional bool is_online = 9; // 是否在线
-	optional bool is_giveme = 10; // 是否可赠送此用户礼物
-	optional bool is_recvme = 11; // 是否可从此用户领取礼物
+	optional bool is_online = 14; // 是否在线
+	optional bool is_giveme = 15; // 是否可赠送此用户礼物
+	optional bool is_recvme = 16; // 是否可从此用户领取礼物
 
-	optional int32 coins = 12; // 拥有的金币
-	optional int32 feeds = 13; // 拥有的粮草
-	optional int32 jewel = 14; // 拥有的钻石
+	optional int32 coins = 17; // 拥有的金币
+	optional int32 feeds = 18; // 拥有的粮草
+	optional int32 jewel = 19; // 拥有的钻石
+
+	//以下5个时间只是在101消息进行处理 以后自行维护  不再处理
+	optional int32 cd_join_city = 20; //多少s之后可以再次申请加入城市
+	optional int32 cd_join_kingdom = 21; //多少s之后可以再次申请加入势力
+	optional int32 cd_city_build = 22; //多少s之后可以进行城市建设
+	optional int32 cd_city_farm = 23; //多少s之后可以进行城市屯田
+	optional int32 cd_city_trade = 24; //多少s之后可以进行城市经商
 }
 
 // 简介
@@ -97,7 +115,7 @@ message Sums {
 	optional int32 sum_pve_city_num = 41; // 统计信息-城市攻打次数
 	optional int32 sum_pve_wild_num = 42; // 统计信息-野怪攻打次数
 	optional int32 sum_pve_wild_win = 43; // 统计信息-野怪攻打胜利次数
-	
+
 	optional int32 sum_pvp_fire_num = 44; // 统计信息-远征攻打次数
 	optional int32 sum_pvp_fire_win = 45; // 统计信息-远征攻打胜利次数
 	optional int32 sum_pvp_back_num = 46; // 统计信息-反攻攻打次数
@@ -114,10 +132,10 @@ message Sums {
 	optional int32 sum_contr_prob = 65; // 统计信息-契约书作为酒馆招募使用次数
 	optional int32 sum_arrive_count = 66; // 统计信息-英雄到访次数
 	optional int32 sum_friend_count = 67; // 统计信息-添加好友次数
-	
+
 	optional int32 sum_unit_skill_unlock_count = 71; //英雄技能解锁个数
 	optional int32 sum_unit_wine_count = 72; //英雄喝酒次数
-	
+
 	optional int32 sum_unit_max_power = 81; // 统计信息-部队最高战力
 }
 
@@ -129,6 +147,8 @@ message DailyResourcesBuy {
 	optional int32 feeds_count = 4; //当前粮草购买次数
 	optional int32 revenge_count = 5; //当前玩家已经购买次数
 	optional int32 revenge_use = 6; //当前玩家已经使用复仇次数
+
+	optional int32 speaker_use = 7; //当前免费喇叭使用个数
 }
 
 // VIP
@@ -195,23 +215,19 @@ message Boat {
 	repeated Award awards = 6; // 奖励列表
 }
 
-// 酒馆
+// 酒馆 未招募的英雄1个关卡至多同时出现1个，不受座位数影响，只受契约书影响
+// 已招募的英雄出现地点为驻地，座位开放数量在玩家定居时以及定居城市的酒馆升级时由pvp服务器同步到GameServer (暂为实现)
+
 message Tavern {
 	// 座位数据
 	message Seat {
 		optional int32 indx = 1; // 座位索引号
-		optional bool is_open = 2; // 座位是否已开启
 		optional int32 hero_conf = 3; // 座位上的英雄配置(-1表示没有)
-		optional int32 hero_time = 4; // 座位上的英雄离开剩余时间(单位:s)，或当hero_conf == -1时表示英雄将要到来的时间(单位:s)
+		optional int32 hero_time = 4; // 座位上的英雄离开剩余时间(单位:s)
 	}
-	// 到访率数据
-	message Prob {
-		required int32 conf = 1; // 英雄配置
-		required float prob = 2; // 到访率
-	}
-
-	repeated Seat seats = 1; // 座位数据列表
-	repeated Prob probs = 2; // 到访率数据列表
+	
+	optional int32 field_id = 1; //酒馆所属的关卡id
+	repeated Seat seats = 2; // 座位数据列表
 }
 
 // 训练场
@@ -268,7 +284,7 @@ message Charge {
 		optional float price = 10; // 价格(CNY)
 		optional float magnification = 11;//倍率
 		optional bool can_buy = 12; //这个商品是否能购买
-		
+
 		repeated Gains gains = 13; // 使用商品后获得的物品列表
 	}
 	// 商品附带的物品数据
@@ -282,30 +298,47 @@ message Charge {
 
 // 部队
 message Unit {
+	enum Action {
+		IDLE = 0; //待机 处于家里
+		RALLY = 1; //集结中 已pick
+		BATTLE = 2; //战斗中
+		GUARD = 3; //驻防 处于校场中
+		TRANSPORT = 4; //运输中 处于路上
+		MARCH = 5; //跟随军团行军中
+	}
+
 	// 部队数据
 	message Item {
 		optional int32 uuid = 1; // uuid
 		optional int32 power = 2; // 当前战力
 		optional int32 expss = 3; // 部队经验
 		optional int32 grade = 4; // 小兵进阶等级
-		optional int32 pawn_num = 5; //小兵数量
-		optional int32 drink_time = 6; //喝酒次数
-
+		optional int32 drink_time = 5; //喝酒次数
+		optional int32 energy = 6; //英雄体力
 		optional int32 hero_conf = 7; // 英雄配置
 		optional int32 hero_star = 8; // 英雄星级
-		optional int32 hero_expss = 9; // 英雄经验
-		optional int32 hero_level = 10; // 英雄等级
-		optional int32 hero_skill_lv1 = 11; // 英雄技能1的等级(0表示技能未解锁)
-		optional int32 hero_skill_lv2 = 12; // 英雄技能1的等级(0表示技能未解锁)
-		optional int32 hero_skill_lv3 = 13; // 英雄技能1的等级(0表示技能未解锁)
-		optional int32 hero_equip_weapon = 14; // 英雄装备配置-武器
-		optional int32 hero_equip_helmet = 15; // 英雄装备配置-头盔
-		optional int32 hero_equip_armour = 16; // 英雄装备配置-盔甲
-		optional int32 hero_equip_caliga = 17; // 英雄装备配置-鞋子
-		repeated float hero_stass_total = 18; // 英雄总的属性列表
-		repeated float hero_stass_equip = 19; // 英雄当前装备属性列表
-		repeated float hero_stass_wine = 20; // 英雄当前喝酒属性列表(攻击,防御,血量)
-		repeated int32 eat_equips = 21; // 英雄吞噬了的装备列表(有序列表, 0-3 为1星吞噬 4-7 为2星吞噬..... )
+		repeated int32 hero_star_list = 9;// 英雄星级列表(0 杂星  1 白色  2 绿色 3紫色)
+		optional int32 hero_expss = 10; // 英雄经验
+		optional int32 hero_level = 11; // 英雄等级
+		optional int32 hero_skill_lv1 = 12; // 英雄技能1的等级(0表示技能未解锁)
+		optional int32 hero_skill_lv2 = 13; // 英雄技能1的等级(0表示技能未解锁)
+		optional int32 hero_skill_lv3 = 14; // 英雄技能1的等级(0表示技能未解锁)
+		optional int32 hero_equip_weapon = 15; // 英雄装备配置-武器
+		optional int32 hero_equip_helmet = 16; // 英雄装备配置-头盔
+		optional int32 hero_equip_armour = 17; // 英雄装备配置-盔甲
+		optional int32 hero_equip_caliga = 18; // 英雄装备配置-鞋子
+		repeated float hero_stass_total = 19; // 英雄总的属性列表
+		repeated float hero_stass_equip = 20; // 英雄当前装备属性列表
+		repeated float hero_stass_wine = 21; // 英雄当前喝酒属性列表(攻击,防御,血量)
+		repeated int32 eat_equips = 22; // 英雄吞噬了的装备列表(有序列表, 0-3 为1星吞噬 4-7 为2星吞噬..... )
+
+		optional int32 pawn_conf = 23; //小兵conf
+		repeated float pawn_stass = 24; //小兵属性列表
+		optional int32 pawn_num = 25; //小兵数量
+		optional string prof = 26; //职业
+
+		optional Action action = 27; //当前正在执行的行为
+		optional string player_name = 28; //玩家名字
 	}
 
 	repeated Item items = 1; // 部队数据列表
@@ -313,11 +346,23 @@ message Unit {
 
 // 阵形
 message Arrg {
+	//职业
+	enum Prof {
+		SWORD = 0; // 剑士
+		SPEAR = 1; // 枪兵
+		LIGHT_RIDER = 2; //骑兵
+		SHOOT = 3; //射手
+		CROSS = 4; //弩手
+		SHOOT_RIDER = 5; //骑射
+	}
+
 	// 站位数据
 	message Stand {
 		optional int32 ipos = 1; // 站位索引
-		optional Unit.Item unit = 2; // 部队数据
-		optional string order = 3; // 部队的指令
+		optional Prof prof = 2; //职业
+		optional int32 conf = 3; //英雄
+		optional Unit.Item unit = 4; // 部队数据
+		optional string order = 5; // 部队的指令
 	}
 
 	// 阵形数据
@@ -411,8 +456,15 @@ message Field {
 		optional int32 pawn_num = 12; //小兵数量
 	}
 
+	enum WildType {
+		THIEVES = 0; //贼窟
+		REBELS = 1; //叛军
+		MOUNTAIN = 2; //山匪
+	}
+
 	// 关卡数据
 	message Item {
+		optional int32 land_id = 37; //归属大陆
 		optional int32 conf = 1; // 配置
 		optional int32 time = 2; // 多少秒之前被远征占领(单位:s)
 		optional bool is_mine = 3; // 是否已战领
@@ -433,15 +485,18 @@ message Field {
 		optional int32 wild_unit_expss = 21; // 野怪部队经验
 		optional int32 wild_hero_expss = 22; // 野怪英雄经验
 		repeated Unit wild_units = 23; // 野怪部队列表
+		optional WildType wild_type = 24; //野怪的类型
 
 		optional int32 user_acct = 30; // 自己/对方玩家的acct(自己的并且未被攻打发-1 其他不发)
 		optional string user_name = 31; // 自己/对方玩家的名字
 		optional string user_icon = 32; // 自己/对方玩家的图标
-        optional string user_flag = 33; // 自己/对方玩家的徽章
+		optional string user_flag = 33; // 自己/对方玩家的徽章
 		optional int32 user_level = 34; // 自己/对方玩家等级
 		optional int32 user_power = 35; // 自己/对方玩家战力
 		optional int32 user_medal = 36; // 自己/对方玩家的勋章数
-		repeated Unit user_units = 37; // 自己/对方玩家部队列表
+		repeated Unit user_units = 38; // 自己/对方玩家部队列表
+		
+		optional int32 free_explor_time = 39; //下次可免费探索时间 (单位s) 0 表示 当前可以探索
 	}
 
 	optional int32 timer = 1; // 野怪刷新时间间隔(单位:s)
@@ -521,36 +576,12 @@ message Fight {
 		repeated float pawn_stass = 22; // 小兵总的属性列表
 		optional int32 pawn_count = 23; // 小兵数量
 	}
-}
-
-// 聊天
-message Chat {
-	enum Type {
-		WORLD = 1; // 世界
-		GUILD = 2; // 公会
-		UNION = 3; // 联盟
-		POINT = 4; // 私聊
-		FORUM = 5; // 讨论组
-		ADMIN = 6; // 管理员
+	// 城防
+	message Wall {
+		optional int32 ipos = 1; // 箭塔站位，从上到下0~3，如果是城门或基地则不填
+		optional int32 conf = 2; // 配置
+		optional int32 level = 3; // 等级
 	}
-	// 聊天数据
-	message Item {
-		optional User source_user = 1; // 源用户数据(帐号，名字，头像，等级)
-		optional Vips source_vips = 2; // 源用户数据(等级)
-		optional User target_user = 3; // 目标用户数据(帐号，名字，头像，等级)
-		optional Vips target_vips = 4; // 目标用户数据(等级)
-		optional Type type = 5; // 聊天类型
-		optional string word = 6; // 聊天内容
-		optional int32 time = 7; // 时间(单位:s)
-	}
-	// 联系人数据
-	message Cont {
-		optional User user = 1; // 用户信息(帐号，名字，头像，等级)
-		optional Vips vips = 2; // VIP信息(等级)
-	}
-
-	repeated Item items = 1; // 聊天数据列表
-	repeated Cont conts = 2; // 联系人数据列表
 }
 
 // 公告
@@ -573,6 +604,8 @@ message Notice {
 		SYSTEM_TEXT = 10; // 系统消息
 		FRIEND_JOIN = 20; // 好友加入邀请
 		FORUM_JOIN = 30; // 讨论组加入邀请
+		PVPFIGHT_JOIN = 40;// PVP集结攻打邀请
+		SURRENDER = 50; //劝降通知
 	}
 
 	// 系统类
@@ -588,6 +621,23 @@ message Notice {
 		optional int32 vips = 4; // VIPS
 		optional int32 level = 5; // 等级
 		optional bool online = 6; // 是否在线
+	}
+
+	//集结攻打邀请
+	message PvpFight {
+		optional int32 acct = 1; //发起进攻者的账号
+		optional string name = 2;//名字
+		optional string icon = 3; // 图标
+		optional int32 vips = 4; // VIPS
+		optional int32 level = 5; // 等级
+		optional int32 city_id = 6;// 虚拟的城池id
+		optional int32 to_city_id = 7;// 目标城池id
+	}
+
+	//劝降通知
+	message Surrender {
+		optional int32 id = 1; //势力id
+		optional string name = 2;//势力名字
 	}
 
 	// 讨论组类
@@ -618,6 +668,8 @@ message Notice {
 		optional System system = 10; // 系统类消息
 		optional Friend friend = 11; // 好友类消息
 		optional Forum forum = 12; // 讨论组类消息
+		optional PvpFight pvp_fight = 13;// 远征攻打集结类消息
+		optional Surrender surrender = 14;//劝降类消息
 	}
 
 	repeated Item items = 1; // 通知数据列表
@@ -671,4 +723,258 @@ message Activity {
 	required Type type = 2; //活动分类
 	required int32 pos = 3; //显示排序
 	optional string desc = 4; //活动说明
+}
+
+//PVP追加内容
+//大陆
+message Land {
+	enum Status {
+		CLOSED = 0; //关服
+		MAINTAINED = 1; //维护中
+		OPEN = 2; //开放中
+	}
+
+	message Item {
+		required int32 id = 1; //id
+		optional int32 conf = 2; //conf 同id
+		optional string name = 3; //大陆名称
+		optional int32 created_time = 4; //大陆开放时间(已开放多少秒)
+		optional int32 city_number = 5; //城市数量
+		optional Status status = 6; //开放状态
+		optional bool allow_immigrate = 7; //允许移居入境
+		optional int32 kingdom_id = 8; //势力ID
+		optional string kingdom_name = 9; //势力名字
+		optional string kingdom_flag = 10; //势力徽标
+		repeated City cities = 11;
+	}
+
+	repeated Item items = 1; //大陆信息
+}
+
+//城市
+message City {
+	//政厅
+	message Building {
+		required int32 conf = 1; //设施配置
+		required int32 level = 2; //设施等级
+		optional int32 exp = 3; //当前等级经验
+
+		//以下数据 仅在拉取仓库的时候会填充
+		optional int32 coins = 4; //城市当前金币
+		optional int32  feeds =5; //城市当前粮草
+
+		//以下数据 仅在拉取校场数据的时候会填充
+		optional string ground_content = 6;//校场公告
+	}
+
+	message Member {
+		enum Job {
+			NORMAL = 0;
+			LEADER = 1;
+		}
+
+		optional int32 acct = 1; //用户id
+		optional string name = 2; //用户名
+		optional string icon = 3; //头像
+		optional string flag = 4; //徽章
+		optional int32 level = 5; //等级
+		optional bool is_online = 6; //是否在线
+		optional int32 vip_level = 7; //vip等级
+		optional int32 vip_expire_time = 8; //还有多少s到期
+		optional int32 contribution = 9; //贡献度
+		optional float contributionRate = 10; //贡献度比例
+		optional int32 contributionRank = 11; //贡献度排名
+		optional Job job = 12; //职位
+	}
+
+	message TransportTask {
+		optional int32 from_city_id = 1; //出发城市
+		optional int32 dest_city_id = 2; //目的城市
+		repeated int32 waypoints = 3; //途经城市，正向有序
+		optional int32 coins = 4;  //运输的金币
+		optional int32 foods = 5;  //运输的粮草
+	}
+
+	message Item {
+		required int32 id = 1; //城市id 全局唯一
+		optional int32 conf = 2; //城市配置
+		optional int32 land_conf = 3; //所在大陆
+		optional int32 kingdom_id = 4; //所属势力
+		optional Member castellan = 5; //城主 (acct name level icon flag vip)
+		optional int32 conqueror_id = 6; //征服者（攻陷本城的军团leader_id）
+		optional int32 coins = 7;
+		optional int32 foods = 8;
+		optional int32 tax_rate = 9; //税率 政厅
+		optional string bulletin = 10; //城市公告
+		repeated Unit.Item units = 11; //城市驻防部队 无上限 可进攻 可防御 传递数据有 英雄conf level 转职次数 小兵数量 星星 (game不缓存)
+		optional Building market = 12; //市场
+		optional Building farm = 13; //农场
+		optional Building tavern = 14; //酒馆
+		optional Building gate = 15; //城门
+		optional Building warehouse = 16; //仓库
+		optional Building ground = 17; //校场
+		optional Building hall = 18; //政厅
+		optional Building house = 19; //民居
+		repeated Building towers = 20; //4个塔楼
+		repeated Member members = 21; //城市成员列表  (game不缓存)
+		repeated Member Applicant = 26; //申请列表  (game不缓存)
+		required TransportTask transport_tasks = 22; //运输任务 目前是单个  (game不缓存)
+		optional Arrg.Item arrg = 23; //防守阵型 (game不缓存)
+		optional int32 ground_hero_level = 24; //英雄等级 校场
+		optional int32 ground_unit_level = 25; //转职 校场
+		optional float farm_rate = 27; //农场 基数
+		optional float market_rate = 28; //市场 基数
+		optional int32 cd_appoint = 29; //多少s之后可以任命城主，如果收到-1，表示可以任命了，如果收到0，表示没有填充本数据，不处理本字段
+		optional int32 member_min_level = 30; //加入要求最小等级
+	}
+
+	repeated Item items = 1; // 城市数据列表
+}
+
+//势力
+message Kingdom {
+	message Member {
+		enum Job {
+			NORMAL = 0; // 成员
+			LEADER = 1; // 城主
+		}
+
+		optional int32 acct = 1; //用户id
+		optional int32 city_id = 2; //驻地
+		optional string name = 3; //用户名
+		optional string icon = 4; //头像
+		optional string flag = 5; //徽章
+		optional int32 level = 6; //等级
+		optional bool is_online = 7; //是否在线
+		optional int32 vip_level = 8; //vip等级
+		optional int32 vip_expire_time = 9; //还有多少s到期
+		optional int32 contribution = 10; //贡献度
+		optional float contributionRate = 11; //贡献度比例
+		optional int32 contributionRank = 12; //贡献度排名
+		optional Job job = 13; //职位
+	}
+
+	message Item {
+		required int32 id = 1; //势力id
+		optional string name = 2; //势力名字
+		optional string flag = 3; //势力图标
+		optional User founder = 4; //势力创始人
+		optional User king = 5; //势力国王
+		optional string color = 6; //分配的势力颜色  如果为 空  就表示 未分配  理论上 有城池的时候 势力颜色肯定会存在 
+									//特别对颜色进行说明  如果是自己看自己的势力 那么 是不用这个颜色的 用配置表中的 永远是自己势力颜色的字段填充
+									//这里颜色是 自己看其他所有势力的颜色
+		optional string bulletin = 7; //势力公告
+		optional int32 created_time = 8; //创建时间 多少s之前创建的
+		optional int32 succeeded_time = 9; //继位时间 多少s之前继位的
+		optional int32 member_count = 10; //成员总数
+		repeated Member outstanding_members = 11; //猛将
+		repeated Member members = 12; //成员列表
+		optional int32 member_min_level = 13; //加入要求最小等级
+		optional string recruit_text = 14;// 招募口号
+	}
+
+	repeated Item items = 1; // 势力数据列表
+}
+
+//军团
+message Troop {
+	message Commander {
+		required int32 acct = 1;
+		optional string name = 2; //玩家名称
+		optional string icon = 3;
+		optional string flag = 4;
+		optional int32 level = 5;
+		optional int32 vip_level = 6; //vip等级
+	}
+
+	message Item {
+		enum Status {
+			DISMISS = 0; //解散
+			RALLY = 1; //集结中
+			DEPART = 2; //行军中
+			BATTLE = 3; //战斗中
+			WIN = 4; //战斗胜利
+			LOSE = 5; //战斗失败
+			GUARD = 6; //驻防中
+			BESIEGE = 7; //围攻中
+			ENCOUNT = 8; //遭遇
+			ENCOUNT_WIN = 9; //遭遇战胜利
+		}
+
+		required int32 id = 1; //服务器生成的id
+		optional Commander commander = 2; //指挥官
+		optional int32 from_city_id = 3; //出发城市
+		optional int32 to_city_id = 4; //目标城市
+		repeated int32 waypoints = 5; //途径城市，有顺序的，从起点到终点
+		optional Arrg.Item arrg = 6; //进攻阵型   (game不缓存)
+		optional int32 kingdom_id = 7; //势力id
+		optional Unit units = 8; //部队列表  (game不缓存)
+		optional int32 rally_time = 9; //多少s之前组建的 不可能为负数
+		optional int32 depart_time = 10; //多少s之前出发   负数表示没出发   正数表示已经出发
+		optional int32 arrive_time = 11; //多少s之后到达    负数表示多少时间之后到达   正数表示已经达到多少时间
+		optional Status status = 12; //军团状态
+		optional int32 power = 13; //战力
+		optional int32 enemy_id = 14; //敌人id
+		optional int32 pos_road = 15;  //位于那条路
+		optional float pos_dis = 16;  //已经行走了多远
+	}
+
+	repeated Item items = 1; // 军团列表
+}
+
+//国战战报
+message WarLog {
+	message BattleLog {
+		optional string uuid = 1; //本场战报的uuid
+		optional string url = 2; //战报地址
+		optional int32 time = 3; //持续时常
+		optional bool win = 4; // 进攻方是否胜利
+		optional int32 attacker_power = 5; //进攻方战力
+		optional int32 defender_power = 6; //防守方战力
+		optional int32 defense_building = 7; //城防建设
+	}
+
+	//指挥官
+	message Commander {
+		optional int32 acct = 1;
+		optional string name = 2;
+		optional string icon = 3;
+		optional int32 level = 4;
+	}
+
+	message Item {
+		required int32 id = 1; //id
+		optional int32 total_time = 2; //战斗总时长
+		optional Kingdom.Item attacker = 4; //进攻势力  (名称 图标 公告 id)
+		optional Kingdom.Item defender = 5; //防守势力	(名称 图标 公告 id)
+		optional Commander atc_commander = 6;
+		optional Commander def_commander = 7;
+		optional int32 atc_city_id = 8; //进攻方来自城市
+		optional int32 def_city_id = 9; //防守方来自城市
+		optional int32 attacker_power = 10; //进攻方初始战力
+		optional int32 defender_power = 11; //防守方初始战力
+		optional int32 defense_building = 12; //初始城防建设
+		optional bool is_siege = 13; //是攻城战为true，是野战为false
+		optional int32 city_id = 14;// 如果是攻城战 则为具体的城池id  否则 -1
+		optional bool is_win = 15; // 进攻方是否胜利
+		optional int32 battle_time = 16; //战斗发生在多少s之前
+		repeated BattleLog battle_logs = 17; //本次战役里面的战斗
+	}
+
+	repeated Item items = 1; //战报数据
+}
+
+//运输队
+message Transport {
+	enum ResType {
+		COIN = 1; //金币
+		FOOD = 2; //粮草
+	}
+
+	required int32 id = 1;
+	repeated int32 waypoints = 2; //途径城市，有顺序的，从起点到终点
+	repeated Unit.Item units = 3; //部队列表
+	optional int32 depart_time = 4; //多少s之前出发   负数表示没出发   正数表示已经出发
+	optional int32 arrive_time = 5; //多少s之后到达    负数表示多少时间之后到达   正数表示已经达到多少时间
+	optional ResType res_type = 6; //运输资源类型
 }

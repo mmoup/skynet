@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 // ------------------------
 // 用户
 // ------------------------
@@ -75,4 +77,15 @@ message UserSyncResResp {
 	}
 	required Mode mode = 1; // 模式
 	required User user = 2; // 用户数据(金币，粮草，钻石)
+}
+
+// 同步用户PVP数据
+message UserSyncPvPResp {
+	enum Mode {
+		MODIFY = 1; // 修改
+	}
+	required Mode mode = 1; // 模式
+	required User user = 2; // 用户数据(city id)
+	optional bool send_to_user = 3;//是否发送给玩家
+	repeated Transport transports = 4; //运输队列表
 }

@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 // ------------------------
 // 聊天
 // ------------------------
@@ -5,15 +7,100 @@ package message;
 
 import "common.proto";
 
-// 聊天发言(世界聊天同步道具)
-message ChatSpeakReq {
-	required int32 acct_source = 1; // 源的帐号
-	required int32 acct_target = 2; // 目标的帐号(私聊有效)
-	required Chat.Type type = 3; // 聊天类型
-	required string word = 4; // 聊天内容
+// 聊天
+message Chat {
+	enum Type {
+		WORLD = 1; // 世界  (保留)
+		LAND  = 2; // 大陆 (以前的世界聊天)
+		KINGDOM = 3; // 公会
+		CITY  = 4 ;// 城市聊天
+		UNION = 5; // 联盟
+		PRIVATE = 6; // 私聊
+		FORUM = 7; // 讨论组
+		ADMIN = 8; // 管理员
+		SYSTEM = 9; //系统消息
+	}
+	
+	// 聊天数据
+	message Item {
+		optional User source_user = 1; // 源用户数据(帐号，名字，头像，等级)
+		optional Vips source_vips = 2; // 源用户数据(等级)
+		optional User target_user = 3; // 目标用户数据(帐号，名字，头像，等级)
+		optional Vips target_vips = 4; // 目标用户数据(等级)
+		optional Type type = 5; // 聊天类型
+		optional string word = 6; // 聊天内容
+		optional int32 time = 7; // 多少s之前发出的(单位:s)
+		optional int64 id = 8; //唯一id
+	}
+
+	repeated Item items = 1; // 聊天数据列表
 }
 
-message ChatSpeakResp {
+//所有道具扣除 都走同步
+// 世界聊天发言
+message ChatSpeakWorldReq {
+	required int32 acct_source = 1; // 源的帐号
+	optional string word = 4; // 聊天内容
+}
+
+message ChatSpeakWorldResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 大陆聊天发言
+message ChatSpeakLandReq {
+	required int32 acct_source = 1; // 源的帐号
+	optional string word = 2; // 聊天内容
+}
+
+message ChatSpeakLandResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 势力聊天发言
+message ChatSpeakKingdomReq {
+	required int32 acct_source = 1; // 源的帐号
+	optional string word = 2; // 聊天内容
+}
+
+message ChatSpeakKingdomResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 城池聊天发言
+message ChatSpeakCityReq {
+	required int32 acct_source = 1; // 源的帐号
+	optional string word = 2; // 聊天内容
+}
+
+message ChatSpeakCityResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
+}
+
+// 私聊
+message ChatSpeakPrivateReq {
+	required int32 acct_source = 1; // 源的帐号
+	required int32 to_acct_source = 2; //目标账号
+	optional string word = 3; // 聊天内容
+}
+
+message ChatSpeakPrivateResp {
 	enum Code {
 		SUCCEED = 0; // 成功
 		FAILED = -1; // 失败
@@ -22,12 +109,33 @@ message ChatSpeakResp {
 }
 
 // 同步聊天数据
-message ChatSyncResp {
+message ChatSpeakSyncResp {
 	enum Mode {
-		CREATE = 1; // 新建联系人
-		TOHEAD = 2; // 添加聊天消息到头
-		TOTAIL = 3; // 添加聊天消息到尾
+		TOHEAD = 1; // 追加到头
+		TOTAIL = 2; // 添加到尾
 	}
 	required Mode mode = 1; // 模式
 	optional Chat chat = 2; // 聊天数据
+}
+
+//同步最近联系人
+message ChatContactSyncResp {
+	message Item {
+		optional User user = 1; // 用户数据(帐号，名字，头像，等级)
+		optional Vips vips = 2; 
+	}	
+	repeated Item items = 1;
+}
+
+//拉取最后聊天记录
+message ChatFetchHistoryReq {
+	optional int32 player_id = 1; //记录人
+	optional int64 offset = 2; //客户端最早的一条记录id
+}
+message ChatFetchHistoryResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
 }

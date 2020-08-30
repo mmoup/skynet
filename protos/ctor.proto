@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 // ------------------------
 // 功能建筑
 // ------------------------
@@ -109,7 +111,7 @@ message CtorSyncTavernResp {
 		CREATE = 1; // 新建
 	}
 	required Mode mode = 1; // 模式
-	required Tavern tavern = 2; // 酒馆数据
+	repeated Tavern tavern = 2; // 酒馆数据
 }
 
 // 同步训练场数据

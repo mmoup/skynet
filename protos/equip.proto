@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 // ------------------------
 // 装备
 // ------------------------
@@ -8,17 +10,7 @@ import "common.proto";
 
 //分解装备
 message EquipDecomposeReq {
-	enum Type {
-		SELECTED = 1;//分解选中的装备
-		GRADE = 2; //分解一个品质的装备
-	}
-	message SelectedEquip {
-		required int32 equip_id = 1;
-		required int32 equip_num = 2;
-	}
-	required Type type = 1; //分解的方式
-	required int32 grade = 2;// 当 分解方式为grade 的时候为 装备配置表中的grade 表示分解所有该grade的装备,否则为-1 忽略
-	repeated SelectedEquip list = 3;//所有待分解的装备数组(type 为 selected 的时候才需要填充)
+	required int32 conf = 1; //想要分解的装备id
 }
 
 message EquipDecomposeResp {
@@ -26,11 +18,14 @@ message EquipDecomposeResp {
 		SUCCEED = 0; // 成功
 		FAILED = -1; // 失败
 		FAILED_COINS_NOT_ENOUGH = -2; // 失败，金币不足
-		FAILED_JEWEL_NOT_ENOUGH = -3; // 失败，钻石不足	
 	}
-	required Code code = 1;//返回码  (获得的道具材料 走同步   被分解掉的装备前端自己减去)
+	message Item {
+		optional int32 conf = 1; // 配置
+		optional int32 num = 2; // 数量
+	}
+	required Code code = 1;//返回码  (获得的道具材料前端自己添加  被分解掉的装备前端自己减去)
 	required int32 coins = 2;//玩家当前金币数量
-	required int32 jewel =3 ;//玩家当前钻石数量
+	repeated Item items = 3; // 获得的材料列表
 }
 
 

@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 // ------------------------
 // 战斗
 // ------------------------
@@ -159,6 +161,9 @@ message FightPvpQuestResp {
 	optional Fight.User def_user = 4; // 防守方玩家
 	repeated Fight.Unit atk_units = 5; // 进攻方部队
 	repeated Fight.Unit def_units = 6; // 防守方部队
+	optional Fight.Wall def_door = 7; // 防守方城门
+	optional Fight.Wall def_base = 8; // 防守方基地
+	repeated Fight.Wall def_bing = 9; // 防守方箭塔(0-4个)
 }
 
 // PVP-复仇申请

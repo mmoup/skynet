@@ -1,0 +1,344 @@
+syntax = "proto2";
+
+// ------------------------
+// 势力
+// ------------------------
+package message;
+
+import "common.proto";
+
+//任命城主
+message KingdomAppointReq {
+	required int32 dest_city_id = 1; //城市
+	required int32 player_id = 2;
+}
+message KingdomAppointResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_COOL_TIME = 2;//失败 还没冷却完毕
+		FAILED_PLAYER_NOT_EXISTS = 3;//失败 任命的玩家不存在或者不属于本势力
+		FAILED_NOT_KING = 4; //失败 不是国王
+	}
+	required Code code = 1;
+	optional int32 coolt_left = 2;  //如果code是 FAILED_COOL_TIME 则此字段有意义 用于提示用户还有多久之后才能认命城主
+}
+
+//撤职城主
+message KingdomFireReq {
+	required int32 dest_city_id = 1; //操作城市
+}
+message KingdomFireResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+}
+
+//查找成员 用于任命城主时
+message KingdomMemberSearchReq {
+	required int32 acct = 1;
+}
+message KingdomMemberSearchResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+		FAILED_NOT_KING = -2; //不是国王
+		FAILED_USER_NOT_EXIST = -3; // 失败, 用户不存在
+		FAILED_IS_NOT_MEMBER = -4; //失败，不是势力成员
+	}
+	required Code code = 1; // 返回码
+	optional User user = 2; // 用户数据(帐号，名字，图标，等级，是否在线)
+	optional Vips vips = 3; // VIP数据(等级)
+}
+
+//国王传位
+message KingdomAbdicateReq {
+	required int32 player_id = 1;
+}
+message KingdomAbdicateResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_PLAYER_NOT_EXISTS = 2;//失败 任命的玩家不存在或者不属于本势力
+		FAILED_NOT_KING = 3; //不是国王
+	}
+	required Code code = 1;
+}
+
+//城主独立
+message KingdomIndependenceReq {
+	required string kingdom_name = 1;
+}
+message KingdomIndependenceResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_NAME =2;//失败 名字不合法或者重复
+	}
+	required Code code = 1; //如果有消耗物品 则前端自行扣除 不同步
+	optional int32 new_kingdom_id = 2; //如果独立成功,则这里为新势力的id
+	optional int32 coins = 3; //玩家当前总的金币数
+	optional int32 jewel = 4; //玩家当前总的钻石数
+}
+
+//国王劝降
+message KingdomSurrenderReq {
+	required int32 dest_city_id = 1; //城市
+	optional string text = 2; //附言
+}
+message KingdomSurrenderResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_TARGET_KING =2;//失败 目标城池无势力或者是由国王统治的城池
+	}
+	required Code code = 1; //如果有消耗物品 则前端自行扣除 不同步
+	optional int32 dest_acct = 2; //招降城主id
+	optional int32 kingdom_id = 3; //势力id
+	optional string kingdom_name = 4; //势力名称
+	optional int32 coins = 5; //玩家当前总的金币数
+	optional int32 jewel = 6; //玩家当前总的钻石数
+}
+
+//城主投降
+message KingdomCapitulateReq {
+	optional string uuid = 1; //guild 原样返回
+	required int32 kingdom_id = 2; //投降势力
+}
+message KingdomCapitulateResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_DIE= 2;//失败 投降势力不存在或者已经死亡
+	}
+	required Code code = 1;
+	optional string uuid = 2;
+}
+
+//势力更名
+message KingdomRenameReq {
+	optional int32 id = 1; //势力id
+	optional string name = 2; //新名字
+}
+message KingdomRenameResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_INVALID = 2; //名字不符合规范
+		FAILED_REPEATED = 3; //名字已被占用
+	}
+	required Code code = 1;
+	optional int32 id = 2;
+
+	optional int32 coins = 3;
+	optional int32 jewel = 4;
+}
+
+//国王设定势力参数
+message KingdomSetRateReq {
+	optional int32 id = 1; //势力id
+	optional int32 member_min_level = 2; //最小等级
+}
+message KingdomSetRateResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_INVALID = 2; //等级超出1-50的范围
+	}
+	required Code code = 1;
+	optional int32 id = 2;
+}
+
+//同步势力 在势力信息发生改变时同步到全部game
+message KingdomSyncToGame {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1;
+	optional int32 land_id = 2;
+	optional Kingdom kingdoms = 3;
+}
+
+//同步势力排行榜 在势力信息发生改变时同步到全部game
+message KingdomBillboardSyncToGame {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1;
+	optional int32 land_id = 2;
+	repeated int32 kingdom_ids = 3;
+}
+
+//势力信息同步到客户端
+message KingdomSync {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1;
+	optional Kingdom kingdoms = 2;
+}
+
+//修改王国宣言
+message KingdomSetBulletinReq {
+	optional string content = 2; //公告内容
+}
+message KingdomSetBulletinResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+}
+
+//拉取势力详情
+message KingdomDetailReq {
+	repeated int32 kingdom_ids = 1;
+}
+
+message KingdomDetailResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	repeated Kingdom.Item kingdoms = 2; //详情
+}
+
+//创建势力
+message KingdomCreateReq {
+	optional string name = 1; //名字
+	optional int32 player_level = 2; //玩家等级要求
+}
+message KingdomCreateResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_INVALID = 2; //名字不符合规范
+		FAILED_REPEATED = 3; //名字已被占用
+	}
+	required Code code = 1;  //消耗的道具不走同步  前端自行扣除
+	optional int32 id = 2;
+	optional int32 coins = 3;  //玩家当前总的金币数
+	optional int32 jewel = 4;  //玩家当前总的钻石数
+}
+
+//加入势力
+message KingdomJoinReq {
+	optional int32 kingdom_id = 1; //势力id
+}
+message KingdomJoinResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_BAN = 2; //在黑名单中
+	}
+	required Code code = 1;
+	optional int32 id = 2;
+}
+
+//离开势力
+message KingdomLeaveReq {
+	optional int32 kingdom_id = 1; //势力id
+}
+message KingdomLeaveResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_KING = 2; //国王不能离开势力
+		FAILED_IN_CITY = 3;// 当前是某个城池的城主或者居民 无法退出
+	}
+	required Code code = 1;
+	optional int32 id = 2;
+}
+
+//踢出势力
+message KingdomBanReq {
+	optional int32 kingdom_id = 1; //势力id
+	optional int32 player_id = 2; //玩家id
+}
+message KingdomBanResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_NOT_EXISTS = 2; //要踢出的成员不存在
+		FAILED_CASTELLAN = 3; //不能直接踢走城主
+		FAILED_NOT_KING = 4; //你不是国王不能踢出势力成员
+	}
+	required Code code = 1;
+	optional int32 id = 2;
+}
+
+//拉取成员列表
+message KingdomQueryMembersReq {
+	required int32 kingdom_id = 1; //目标势力
+	optional int32 page = 2; //页码
+}
+message KingdomQueryMembersResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	repeated Kingdom.Member members = 2; //成员（含城主）
+	optional int32 total_members = 3; //成员总数
+	optional int32 total_pages = 4; //总页码
+	optional int32 page = 5; //当前页码
+}
+
+//使用招募令
+message KingdomRecruitReq {
+	optional int32 kingdom_id = 1;
+	optional string text = 2; //附言
+}
+message KingdomRecruitResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+
+	required Code code = 1;  //如果有消耗物品 前端自行扣除 不同步
+	optional int32 kingdom_id = 2;
+	optional string kingdom_name = 3;
+	optional string kingdom_flag = 4;
+	optional string kingdom_color = 5;
+	optional int32 handler_id = 6; //招募人
+	optional string text = 7; //附言
+	optional int32 coins = 8;  //玩家当前总的金币数
+	optional int32 jewel = 9;  //玩家当前总的钻石数
+}
+
+//拉取招募势力
+message KingdomRecruitListReq {
+}
+message KingdomRecruitListResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	repeated Kingdom.Item kingdoms = 2; //详情
+}
+
+//势力排行榜
+message KingdomBillboardReq {
+
+}
+message KingdomBillboardResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	repeated Kingdom.Item kingdoms = 2; //详情
+}

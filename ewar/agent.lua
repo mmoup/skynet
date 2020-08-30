@@ -2,6 +2,8 @@ local skynet = require "skynet"
 local socket = require "skynet.socket"
 local sproto = require "sproto"
 local sprotoloader = require "sprotoloader"
+local pbcoder = require "protobufcoder"
+local msgdef = require "protobufmsgdef"
 
 local WATCHDOG
 local host
@@ -39,10 +41,56 @@ local function request(name, args, response)
 end
 
 local function send_package(pack)
-	local package = string.pack(">s2", pack)
-	socket.write(client_fd, package)
+	-- local package = string.pack(">s2", pack)
+	socket.write(client_fd, pack)
 end
 
+local REQ = {}
+function REQ.LoginAuthReq(message)
+    for key,value in pairs(message) do
+        skynet.error(key,":",value)
+    end
+end
+
+local function dispatch_message(msg)
+	skynet.error("msg", #msg)
+	local msgid, msgBody = pbcoder.decode(msg)
+	skynet.error(msgBody)
+	for key,value in pairs(msgBody) do
+        skynet.error(key,":",value)
+	end
+	if msgid == msgdef.message.LoginAuthReq then
+		local data = pbcoder.encode(msgdef.message.LoginAuthResp,
+		{
+			code = "SUCCEED",
+			acct = {
+				user = {
+					acct = 10000,
+					expss = 1,
+					level = 1,
+					land_id = 1,
+					kingdom_id = -1,
+					city_id = 0,
+					name = "test",
+					icon = "",
+					flag = "",
+				}
+			}
+		})
+		send_package(data)
+	end
+end
+
+skynet.register_protocol {
+	name = "client",
+	id = skynet.PTYPE_CLIENT,
+	unpack = function (msg, sz)
+		skynet.error("msg length:", sz)
+		return skynet.tostring(msg, sz)
+	end
+}
+
+--[[
 skynet.register_protocol {
 	name = "client",
 	id = skynet.PTYPE_CLIENT,
@@ -68,6 +116,7 @@ skynet.register_protocol {
 		end
 	end
 }
+]]
 
 function CMD.start(conf)
 	local fd = conf.client
@@ -93,9 +142,13 @@ function CMD.disconnect()
 end
 
 skynet.start(function()
-	skynet.dispatch("lua", function(_,_, command, ...)
+	skynet.dispatch("lua", function(_, _, command, ...)
 		skynet.trace()
 		local f = CMD[command]
 		skynet.ret(skynet.pack(f(...)))
 	end)
+
+	skynet.dispatch("client", function (session, address, msg)
+        dispatch_message(msg)
+    end)
 end)

@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+// ------------------------
+// pvp模块的服务期间通讯，客户端不用理会
+// ------------------------
+package message;
+
+//玩家登入上报 服务器之间
+message FixedUpdateReq {
+	optional int64 sec = 1;
+	optional int64 nsec = 2;
+}

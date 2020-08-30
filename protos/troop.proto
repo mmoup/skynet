@@ -1,0 +1,139 @@
+syntax = "proto2";
+
+// ------------------------
+// 军团
+// ------------------------
+package message;
+
+import "common.proto";
+
+//进攻集结 创建军团 返回军团id
+message TroopRallyReq {
+	required int32 to_city_id = 1;//目标城市
+	repeated int32 waypoints = 2; //途经城市，正向有序
+	repeated Unit.Item units = 3;//发起人投放的部队   (前端只需要填写部队uuid   game进行其他部队数据填充)
+}
+message TroopRallyResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_ONLY_ONE = 2; //失败 当前已经有集结的部队
+	}
+	required Code code = 1;  //如果有道具扣除 则前端自行处理 不同步
+
+	optional int32 troop_id = 2; //新军团的id
+	optional int32 from_city_id = 3; //出发城市id，小于0是虚拟城市，客户端构建一个虚拟城市
+	optional int32 to_city_id = 4; //目标城市id
+	optional int32 cost_energy = 5; //扣除体力Guard
+	optional int32 rally_time_limit = 6; //集结时限 单位s
+	
+	optional int32 coins = 7; //玩家当前的金币总量
+	optional int32 jewel = 8; //玩家当前的钻石总量
+}
+
+//选择军团成员     game直接转发
+message TroopPickReq {
+	required int32 troop_id = 1;//军团id
+	repeated Unit.Item units  = 2;//选择的部队
+}
+message TroopPickResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional int32 troop_id = 2;//军团id
+}
+
+//出征   game直接转发
+message TroopDepartReq {
+	required int32 troop_id = 1;//军团id
+	optional Arrg arrg = 2 ; //阵型数据  如果出发的时候 阵型没有进行改变不用传递
+}
+message TroopDepartResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional int32 troop_id = 2;//军团id
+}
+
+//拉取部队数据
+message TroopQueryUnitsReq {
+	required int32 troop_id = 1;//军团id
+}
+message TroopQueryUnitsResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional Unit units = 2; //部队数据
+}
+
+//军团阵型调整  game直接转发
+message TroopEmbattleReq {
+	required int32 troop_id = 1;//军团id
+	required Arrg arrg = 2; //阵型数据
+}
+message TroopEmbattleResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional int32 troop_id = 2;//军团id
+}
+
+//军团同步到GameServer
+message TroopSyncToGame {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1;
+	optional int32 land_id = 2;
+	optional Troop troops = 3;
+	optional bool boardcast = 4;
+}
+
+//军团数据同步到客户端
+message TroopSync {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1;
+	optional Troop troops = 2;
+}
+
+// 同步部队数据
+message TroopUnitSync {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1; // 模式
+	required int32 troop_id = 2; //军团id
+	required Unit unit = 3; // 部队数据
+}
+
+//撤销集结
+message TroopDisbandReq {
+	optional int32 troop_id = 1; //军团id
+}
+message TroopDisbandResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional int32 troop_id = 2;//军团id
+}

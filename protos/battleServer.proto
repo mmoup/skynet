@@ -1,0 +1,80 @@
+syntax = "proto2";
+package message;
+
+
+message BattleTroop {
+	optional int32 ipos=1;//站位
+	optional int32 uuid=2;//部队uuid
+	optional int32 pawn_num=3;//部队小兵数量
+	optional int32 hero_id=4;//英雄id
+	optional int32 hero_levl=5;//英雄等级
+	repeated float hero_stass = 6;//英雄属性列表
+	repeated int32 hero_skill_lv=7;//英雄技能等级列表
+	optional int32 pawn_id=8;//小兵id
+	repeated float pawn_stass = 9;//小兵属性列表
+	optional string order = 10;//部队指令
+	optional int32 power = 11;//这只部队的战斗力
+	optional int32 hero_star= 12;//英雄星级
+	optional int32 pawn_grade = 13;//小兵星级
+}
+message BattleFighter{
+	optional int32 acct =1;//玩家账号
+	optional string name=2;//玩家姓名
+	optional string icon=3;//玩家头像
+	optional string flag =4;//玩家徽章
+	optional int32 level=5;//玩家等级
+	optional int32 Power = 6;//玩家当前阵型战斗力
+	repeated BattleTroop troops=7;//部队列表		
+}
+
+message BattleBuild {
+	optional int32 conf = 1;
+	optional bool death =2;
+	optional int32 ipos = 3; //(箭塔 从上到下  0 - 3 )
+	optional int32 level = 4;
+	repeated float states = 5;//属性列表
+}
+
+message StarPvpFightReq{
+	enum FightType {
+		FIELD = 0; //远征 无城墙
+		STORM = 1; //攻城战
+	}
+	optional string battle_uuid =1;//战报的uuid
+	optional int32 city_id=2; //城池id
+	optional BattleFighter attacker =3; //进攻方
+	optional BattleFighter defender=4; //防守方
+	optional BattleBuild door = 5; //城门
+	optional BattleBuild base_build = 6; //政厅
+	repeated BattleBuild bing_list = 7 ; //箭塔
+	optional FightType type = 8;
+	optional int32 rand = 11; // 随机种子
+}
+
+message StarPvpFightResp{
+	enum Code{
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	optional Code code =1;
+	optional int32 acct =2;
+}
+
+message PvpFighterResultResp{
+	enum FightType {
+		FIELD = 0; //远征 无城墙
+		STORM = 1; //攻城战
+	}
+	optional string uuid =1;
+	optional bool win = 2;
+	optional string url = 3;
+	optional FightType type = 4;
+	optional int32 duration = 5;//战斗持续时间
+	optional BattleFighter attacker = 6;  //用户只填充账号  部队只填充uuid  存在的就表示存活
+	optional BattleFighter defender =7;	//用户只填充账号 部队只填充uuid  存在的就表示存活
+	optional BattleBuild door = 8; //城门
+	optional BattleBuild base_build = 9; //政厅
+	repeated BattleBuild bing_list = 10; //箭塔
+	repeated int32 attack_lose = 11; //进攻方阵亡部队列表
+	repeated int32 defender_lose = 12;//防守方阵亡部队列表
+}

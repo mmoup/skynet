@@ -1,0 +1,50 @@
+syntax = "proto2";
+
+// ------------------------
+// 城市
+// ------------------------
+package message;
+
+import "common.proto";
+
+//大陆数据同步到GameServer
+message LandSyncToGame {
+	optional Land.Item item = 1; //大陆数据
+}
+
+//大陆数据同步到GameServer
+message LandSync {
+}
+
+//请求大陆列表
+message LandListReq {
+}
+
+message LandListResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	enum Status {
+		CLOSED = 0; //关服
+		MAINTAINED = 1; //维护中
+		OPEN = 2; //开放中
+	}
+	
+	required Code code = 1; // 返回码
+	repeated Land.Item items = 2;
+}
+
+//移居入境
+message LandImmigrateReq {
+	required int32 target_land_id = 1; //目标大陆id
+}
+message LandImmigrateResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码  如果有道具消耗 则直接扣除 不同步
+	optional int32 coins =2; //玩家当前的总金币
+	optional int32 jewel = 3;//玩家当前的总钻石
+}

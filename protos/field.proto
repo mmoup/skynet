@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 // ------------------------
 // 关卡
 // ------------------------
@@ -68,4 +70,19 @@ message FieldSyncResp {
 	}
 	required Mode mode = 1; // 模式
 	optional Field field = 2; // 关卡数据
+}
+
+//前往某个据点
+message FieldMoveReq {
+	required int32 to_field_conf = 1; //目标据点conf
+	optional int32 total_time = 2; //移动时长 单位s
+
+}
+
+message FieldMoveResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = -1; // 失败
+	}
+	required Code code = 1; // 返回码
 }

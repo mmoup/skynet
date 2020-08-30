@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+// ------------------------
+// 探索
+// ------------------------
+package message;
+
+
+//探索某个城池
+message FieldExploreReq {
+	optional int32 field_id = 1; //探索那个城池
+}
+//探索回馈  获得到 道具 这些前端自行添加  服务器不同步   英雄会走酒馆同步下发
+message FieldExploreResp {
+	enum Code {
+		SUCCEED = 1; // 成功
+		FAILED = 2; // 失败
+		FAILED_NOT_ENOUGH = 3;//失败 道具或者钻石不足
+	}
+	message Item {
+		optional int32 item_id = 1; //物品id
+		optional int32 item_num = 2; //物品数量
+	}
+	required Code code = 1;
+	repeated Item items = 2;  //探索到的道具 金币 粮草 
+	optional int32 hero_conf = 3; //探索到的 英雄conf  0或者-1 都表示没有探索到
+	optional int32 coins = 4; //玩家总金币
+	optional int32 feeds = 5; //玩家总粮草
+	optional int32 jewel = 6; //玩家总钻石
+	optional int32 last_free_time = 7; //当前field 还有多久可以免费探索   0 或者 -1 表示已经可以探索
+}

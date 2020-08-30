@@ -1,8 +1,8 @@
+syntax = "proto2";
+
 // ------------------------
 // 服务器同中心服务器通信
 // ------------------------
-
-syntax = "proto2";
 package message;
 
 import "common.proto";
@@ -22,6 +22,9 @@ message UserInfo {
 	
 	repeated int32 friends =12;
 }
+
+//服务器准备完毕
+message ServerReadyReq {}
 
 //发起请求登陆
 message RequestLoginReq{
@@ -138,6 +141,25 @@ message FriendGiveGiftReq{
 message FriendGiveGiftResp{
 	required int32 account =1 ;//赠送者账号
 	required int32 gift = 2;//赠送的礼包id
+}
+
+//好友广播集结通知
+message GamePvpFightRallyResp {
+	optional int32 account = 1; //发起集结的人的账号
+	optional string name = 2; //名字
+	optional string icon = 3;
+	optional string flag = 4;
+	optional int32 level = 5;
+	optional int32 vip_lv = 6;
+	optional int64 start_time = 7; //开始时间
+	optional int32 from_city_id = 8;//出发城池id
+	optional int32 to_city_id = 9;//目标城池id
+}
+
+//好友广播集结center转发
+message GamePvpFightRallyCenterResp {
+	optional GamePvpFightRallyResp data = 1;//转发的消息体
+	repeated int32 accts = 2;// 账号列表
 }
 
 //word下发通知
@@ -322,3 +344,57 @@ message GameUsersPingResp{
 	optional int32 online = 2;//在线
 	optional int32 max_num = 3;//设计承载总量
 }
+
+//当用户点击通知里面的接受的时候 如果通知是 集结通知 则game像guildServer发送此消息
+message GameGuildPvpNoticReq {
+	optional string uuid = 1; //guild 原样返回
+	optional int32 city_id = 2;//加入的城池id
+}
+message GameGuildPvpNoticResp {
+	enum Code {
+		FAILED = 0; // 失败
+		SUCCEED = 1; // 成功
+	}
+	optional Code code = 1;
+	optional string uuid = 2;
+}
+
+//劝降通知投递
+message PvpSurrenderNoticeResp {
+	optional int32 to_acct = 1;
+	optional int32 id = 2; //势力id
+	optional string name = 3;//势力名字
+}
+
+
+
+//大陆玩家退出本大陆
+message GameGuildUserExitReq {
+	required int32 acct = 1;
+}
+message GameGuildUserExitResp {
+	enum Code {
+		FAILED = 0; // 失败
+		SUCCEED = 1; // 成功
+	}
+	optional Code code = 1;
+}
+//大陆玩家入驻本大陆
+message GameGuildUserSettledReq {
+	required int32 acct = 1;
+	optional string name = 2; //玩家名称
+	optional string icon = 3;
+	optional string flag = 4;
+	optional int32 level = 5;
+	optional int32 expss = 6;
+	optional int32 vip_level = 7; //vip等级
+	optional int32 vip_time_limit = 8; //vip还有多少s过期
+}
+message GameGuildUserSettledResp {
+	enum Code {
+		FAILED = 0; // 失败
+		SUCCEED = 1; // 成功
+	}
+	optional Code code = 1;
+}
+

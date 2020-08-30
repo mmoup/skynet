@@ -1,0 +1,504 @@
+syntax = "proto2";
+
+// ------------------------
+// 城市
+// ------------------------
+package message;
+
+import "common.proto";
+
+
+//城墙防御阵型调整
+message CityWallEmbattleReq {
+	required Arrg arrg = 1; //阵型数据
+}
+message CityWallEmbattleResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+}
+
+//城墙防御阵型激活
+message CityWallSetArrgReq {
+	required Arrg arrg = 1; //阵型数据
+}
+message CityWallSetArrgResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+}
+
+//拉取城市校场部队数据
+message CityGroundQueryUnitsReq {
+	optional int32 city_id = 1; //城市id 选填
+}
+message CityGroundQueryUnitsResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional Unit units = 2; //部队数据
+}
+
+//校场进攻阵型调整
+message CityGroundEmbattleReq {
+	required Arrg arrg = 1; //阵型数据
+}
+message CityGroundEmbattleResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+}
+
+//设置校场默认进攻阵型
+message CityGroundSetArrgReq {
+	required Arrg arrg = 1; //阵型数据
+}
+message CityGroundSetArrgResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+}
+
+//升级建筑
+message CityUpgradeReq {
+	enum BuildingCode {
+		hall = 1;
+		ground = 2;
+		gate = 3;
+		market = 4;
+		tavern = 5;
+		farm = 6;
+		warehouse = 7;
+		house = 8;
+		tower = 11;
+	}
+
+	required int32 city_id = 1; //城市id
+	required BuildingCode building_code = 2; //设施代号
+	required int32 building_number = 3; //设施序号，比如箭塔有0-3
+	required int32 next_level = 4; //目标等级
+}
+message CityUpgradeResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional int32 coins = 2; //城市当前金币数量
+	optional int32 foods = 3; //城市
+}
+
+//开垦
+message CityFarmReq {
+	repeated Unit.Item units = 1;
+}
+message CityFarmResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;   //资源都不同步
+	optional int32 player_foods = 2; //guid传递 玩家增加量  game服 拦截之后修改为 玩家当前数传递给前端
+	optional int32 city_foods = 3; //城市当前粮草数量
+	repeated Unit.Item units = 4;  //部队数据 里面只有  uuid  和 当前部队的 体力值  前端用此体力值覆盖本地
+	optional int32 cd = 5; //多少s之后可以再次屯田
+}
+
+//贸易
+message CityTradeReq {
+	repeated Unit.Item units = 1;
+}
+message CityTradeResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;  //资源都不同步
+	optional int32 player_coins = 2; //guid传递 玩家增加量  game服 拦截之后修改为 玩家当前数传递给前端
+	optional int32 city_coins = 3; //城市当前金币数量
+	repeated Unit.Item units = 4;  //部队数据 里面只有  uuid  和 当前部队的 体力值  前端用此体力值覆盖本地
+}
+
+//居民运输
+message CityTransportReq {
+	enum ResType {
+		COINS = 0;
+		FOODS = 1;
+	}
+	repeated Unit.Item units = 1;
+	required ResType res_type = 2;
+}
+message CityTransportResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;  //资源都不同步
+	optional int32 transport_id = 2; //运输队id
+	optional int32 city_coins = 3; //剩余待运输金币
+	optional int32 city_foods = 4; //剩余待运输粮草
+	repeated Unit.Item units = 5;  //部队数据 里面只有  uuid  和 当前部队的 体力值  前端用此体力值覆盖本地
+	optional int32 pawn_exp = 6; //部队增加的小兵经验 前端忽略
+}
+
+//驻防到校场
+message CityGuardReq {
+	repeated Unit.Item units = 1;  //派遣到校场的部队列表   前端填充 uuid   其他数据game补充
+}
+message CityGuardResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	repeated Unit.Item units = 2;  //部队数据 里面只有  uuid  和 当前部队的 体力值  前端用此体力值覆盖本地
+}
+
+//设定校场驻防条件
+message CityGroundSetConditionReq {
+	required int32 hero_level = 1; //英雄登记
+	required int32 unit_level = 2; //小兵进阶等级
+}
+
+message CityGroundSetConditionResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+}
+
+//撤防
+message CityDisarmReq {
+	repeated Unit.Item units = 1;  //派遣到校场的部队列表
+}
+message CityDisarmResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	repeated Unit.Item units = 2;  //部队数据 里面只有  uuid  和 当前部队的 体力值  前端用此体力值覆盖本地
+}
+
+//建造
+message CityBuildReq {
+	enum BuildingCode {
+		hall = 1;
+		ground = 2;
+		gate = 3;
+		market = 4;
+		tavern = 5;
+		farm = 6;
+		warehouse = 7;
+		house = 8;
+		tower = 11;
+	}
+
+	required int32 city_id = 1; //城市id
+	required BuildingCode building_code = 2; //设施代号
+	required int32 building_number = 3; //设施序号，比如箭塔有0-3
+	repeated Unit.Item units = 4;
+}
+message CityBuildResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_COMPLETED = 2; //已修建完成
+	}
+	required Code code = 1;
+	optional int32 player_coins = 2; //guid传递 玩家增加量  game服 拦截之后修改为 玩家当前数传递给前端
+	repeated Unit.Item units = 3;  //部队数据 里面只有  uuid  和 当前部队的 体力值  前端用此体力值覆盖本地
+	optional int32 level = 4; //最新等级
+	optional int32 exp = 5; //最新经验值
+}
+
+//驱逐居民
+message CityExpelReq {
+	required int32 acct = 1;
+}
+message CityExpelResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+
+	required Code code = 1;
+	required int32 acct = 2; //被驱逐的居民id
+}
+
+//脱离城市
+message CityLeaveReq {}
+message CityLeaveResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+}
+
+//城主设定城市参数
+message CitySetRateReq {
+	required int32 rate = 1; //城市税率 对屯田和经商生效
+	optional int32 member_min_level = 2; //玩家申请加入最小等级
+}
+message CitySetRateResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional int32 rate = 2; //当前税率
+	optional int32 member_min_level = 3;
+}
+
+//城主发布运输任务
+message CityTransportTaskReq {
+	required int32 to_city_id = 1; //目标城市
+	repeated int32 waypoints = 2; //途经城市，正向有序
+	optional int32 coins = 3; //运输金币
+	optional int32 foods = 4; //运输粮草
+}
+message CityTransportTaskResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional int32 city_coins = 2; //城市当前金币数量
+	optional int32 city_foods = 3; //城市当前粮草数量
+}
+
+//城主撤销当前运输任务
+message CityTransportTaskCancelReq {
+	
+}
+message CityTransportTaskCancelResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional int32 city_coins = 2; //城市当前金币数量
+	optional int32 city_foods = 3; //城市当前粮草数量
+}
+
+//城市数据同步到客户端
+message CitySyncToGame {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+		MODIFY_MEMBER = 5; //修改成员列表
+	}
+
+	enum BoardcastRange {
+		LAND = 1; //大陆
+		KINGDOM = 2; //势力
+		CITY = 3; //城市
+		CUUSTOM = 4; //自定义
+	}
+
+	required Mode mode = 1;
+	optional int32 land_id = 2;
+	optional City cities = 3;
+	optional BoardcastRange bc_range = 4;
+	repeated int32 bc_accts = 5;
+}
+
+//城市数据同步到客户端
+message CitySync {
+	enum Mode {
+		CREATE = 1; // 新建
+		APPEND = 2; // 添加
+		REMOVE = 3; // 删除
+		MODIFY = 4; // 修改
+	}
+	required Mode mode = 1;
+	optional City cities = 2;
+}
+
+//邀请定居
+message CityInviteReq {
+	repeated int32 accs = 1; //邀请人列表
+}
+message CityInviteResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+}
+
+//同意定居邀请
+message CityInvitationAcceptReq {
+	enum Source {
+		USER = 0 ; 
+		GAME_SERVER = 1;
+	}
+	required int32 from_city_id = 1; //发出邀请城市
+	optional Source source = 2; // 消息来源
+	optional string notice_uuid = 3; //如果来源是 GAME_SERVER 则此值才是有意义的
+}
+message CityInvitationAcceptResp{
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional int32 from_city_id = 2;
+	optional CityInvitationAcceptReq.Source source = 3; // 消息来源 (guild服 原样还回来)
+	optional string notice_uuid = 4; //如果来源是 GAME_SERVER 则此值才是有意义的(guild服 原样还回来)
+}
+
+//拒绝定居邀请
+message CityInvitationRejectReq {
+	required int32 from_city_id = 1; //发出邀请城市
+}
+message CityInvitationRejectResp{
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional int32 from_city_id = 2;
+}
+
+//请求定居
+message CityApplyReq {	
+	required int32 city_id = 1; //申请城市
+}
+message CityApplyResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+}
+
+//同意请求
+message CityApplicationAcceptReq {
+	required int32 acct = 1; //申请人
+}
+message CityApplicationAcceptResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_CANCEL = 2; //申请人已撤销申请（可能原因是已定居到其它城市）
+	}
+	required Code code = 1;
+}
+
+//拒绝请求
+message CityApplicationRejectReq {
+	required int32 acct = 1; //申请人
+}
+message CityApplicationRejectResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+		FAILED_FULL = 2; //申请列表已满
+		FAILED_DENY = 3; //设定禁止任何人加入
+	}
+	required Code code = 1;
+}
+
+//拉取居民
+message CityQueryMembersReq {
+	required int32 city_id=1; //目标城市
+}
+message CityQueryMembersResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	repeated City.Member members = 2; //成员（含城主）
+}
+
+//拉取定居申请者
+message CityQueryApplicantReq {
+	required int32 city_id=1; //目标城市
+}
+message CityQueryApplicantResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	repeated City.Member applicant = 2; //申请者
+}
+
+//设定公告
+message CitySetBulletinReq {
+	enum Type {
+		CITY = 1;  //城市公告
+		GROUND = 2;  //校场公告
+	}
+	required int32 city_id = 1; //目标城市
+	optional string content = 2; //公告内容
+	optional Type type  = 3; //本次公告设定的类型
+}
+message CitySetBulletinResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+}
+
+//拉取城市任务
+message CityQueryTasksReq {
+	required int32 city_id = 1; //城市
+}
+message CityQueryTasksResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	optional City.TransportTask task = 2; //任务
+}
+
+//拉取设施信息
+message CityQueryBuildingInfoReq {
+	enum BuildingCode {
+		hall = 1;
+		ground = 2;
+		gate = 3;
+		market = 4;
+		tavern = 5;
+		farm = 6;
+		warehouse = 7;
+		house = 8;
+		tower = 11;
+	}
+
+	required int32 city_id = 1; //城市id
+	required BuildingCode building_code = 2; //设施代号
+	required int32 building_number = 3; //设施序号，比如箭塔有0-3
+}
+//如果是拉取城门信息，会在城门信息后将4个箭塔的数据一起返回
+message CityQueryBuildingInfoResp {
+	enum Code {
+		SUCCEED = 0; // 成功
+		FAILED = 1; // 失败
+	}
+	required Code code = 1;
+	repeated City.Building buildings = 2;
+	optional int32 coins = 3; //当前校场消耗金币  每秒
+	optional int32 feeds =4 ; //当前校场消耗粮草  每秒
+	optional int32 unit_num = 5;//当前校场驻防部队数
+	repeated City.TransportTask tasks = 6;// 当前运往自己的 运输任务  里面会填充  from_city_id   coins  feeds  三个字段
+}
