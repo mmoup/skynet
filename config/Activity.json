@@ -1,0 +1,2713 @@
+{
+	"dailySignList" : [
+		{
+			"guid" : 10001001,
+			"month" : 1,
+			"itemId" : -2,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001002,
+			"month" : 1,
+			"itemId" : 30000008,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10001003,
+			"month" : 1,
+			"itemId" : -1,
+			"itemNum" : 6000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10001004,
+			"month" : 1,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001005,
+			"month" : 1,
+			"itemId" : -2,
+			"itemNum" : 50,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001006,
+			"month" : 1,
+			"itemId" : 31000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10001007,
+			"month" : 1,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001008,
+			"month" : 1,
+			"itemId" : -2,
+			"itemNum" : 60,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001009,
+			"month" : 1,
+			"itemId" : 37000006,
+			"itemNum" : 3,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10001010,
+			"month" : 1,
+			"itemId" : -1,
+			"itemNum" : 10000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10001011,
+			"month" : 1,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001012,
+			"month" : 1,
+			"itemId" : -2,
+			"itemNum" : 70,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001013,
+			"month" : 1,
+			"itemId" : 31100001,
+			"itemNum" : 5,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10001014,
+			"month" : 1,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001015,
+			"month" : 1,
+			"itemId" : -2,
+			"itemNum" : 80,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001016,
+			"month" : 1,
+			"itemId" : 35000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10001017,
+			"month" : 1,
+			"itemId" : -1,
+			"itemNum" : 15000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10001018,
+			"month" : 1,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001019,
+			"month" : 1,
+			"itemId" : -2,
+			"itemNum" : 90,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001020,
+			"month" : 1,
+			"itemId" : 31200002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10001021,
+			"month" : 1,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001022,
+			"month" : 1,
+			"itemId" : -2,
+			"itemNum" : 100,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001023,
+			"month" : 1,
+			"itemId" : 31202002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10001024,
+			"month" : 1,
+			"itemId" : -1,
+			"itemNum" : 20000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10001025,
+			"month" : 1,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001026,
+			"month" : 1,
+			"itemId" : -2,
+			"itemNum" : 120,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10001027,
+			"month" : 1,
+			"itemId" : 31203002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10001028,
+			"month" : 1,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002001,
+			"month" : 2,
+			"itemId" : -2,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002002,
+			"month" : 2,
+			"itemId" : 30000008,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10002003,
+			"month" : 2,
+			"itemId" : -1,
+			"itemNum" : 6000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10002004,
+			"month" : 2,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002005,
+			"month" : 2,
+			"itemId" : -2,
+			"itemNum" : 50,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002006,
+			"month" : 2,
+			"itemId" : 31000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10002007,
+			"month" : 2,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002008,
+			"month" : 2,
+			"itemId" : -2,
+			"itemNum" : 60,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002009,
+			"month" : 2,
+			"itemId" : 37000006,
+			"itemNum" : 3,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10002010,
+			"month" : 2,
+			"itemId" : -1,
+			"itemNum" : 10000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10002011,
+			"month" : 2,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002012,
+			"month" : 2,
+			"itemId" : -2,
+			"itemNum" : 70,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002013,
+			"month" : 2,
+			"itemId" : 31100001,
+			"itemNum" : 5,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10002014,
+			"month" : 2,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002015,
+			"month" : 2,
+			"itemId" : -2,
+			"itemNum" : 80,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002016,
+			"month" : 2,
+			"itemId" : 35000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10002017,
+			"month" : 2,
+			"itemId" : -1,
+			"itemNum" : 15000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10002018,
+			"month" : 2,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002019,
+			"month" : 2,
+			"itemId" : -2,
+			"itemNum" : 90,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002020,
+			"month" : 2,
+			"itemId" : 31200002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10002021,
+			"month" : 2,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002022,
+			"month" : 2,
+			"itemId" : -2,
+			"itemNum" : 100,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002023,
+			"month" : 2,
+			"itemId" : 31202002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10002024,
+			"month" : 2,
+			"itemId" : -1,
+			"itemNum" : 20000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10002025,
+			"month" : 2,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002026,
+			"month" : 2,
+			"itemId" : -2,
+			"itemNum" : 120,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10002027,
+			"month" : 2,
+			"itemId" : 31203002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10002028,
+			"month" : 2,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003001,
+			"month" : 3,
+			"itemId" : -2,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003002,
+			"month" : 3,
+			"itemId" : 30000008,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10003003,
+			"month" : 3,
+			"itemId" : -1,
+			"itemNum" : 6000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10003004,
+			"month" : 3,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003005,
+			"month" : 3,
+			"itemId" : -2,
+			"itemNum" : 50,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003006,
+			"month" : 3,
+			"itemId" : 31000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10003007,
+			"month" : 3,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003008,
+			"month" : 3,
+			"itemId" : -2,
+			"itemNum" : 60,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003009,
+			"month" : 3,
+			"itemId" : 37000006,
+			"itemNum" : 3,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10003010,
+			"month" : 3,
+			"itemId" : -1,
+			"itemNum" : 10000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10003011,
+			"month" : 3,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003012,
+			"month" : 3,
+			"itemId" : -2,
+			"itemNum" : 70,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003013,
+			"month" : 3,
+			"itemId" : 31100001,
+			"itemNum" : 5,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10003014,
+			"month" : 3,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003015,
+			"month" : 3,
+			"itemId" : -2,
+			"itemNum" : 80,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003016,
+			"month" : 3,
+			"itemId" : 35000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10003017,
+			"month" : 3,
+			"itemId" : -1,
+			"itemNum" : 15000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10003018,
+			"month" : 3,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003019,
+			"month" : 3,
+			"itemId" : -2,
+			"itemNum" : 90,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003020,
+			"month" : 3,
+			"itemId" : 31200002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10003021,
+			"month" : 3,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003022,
+			"month" : 3,
+			"itemId" : -2,
+			"itemNum" : 100,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003023,
+			"month" : 3,
+			"itemId" : 31202002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10003024,
+			"month" : 3,
+			"itemId" : -1,
+			"itemNum" : 20000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10003025,
+			"month" : 3,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003026,
+			"month" : 3,
+			"itemId" : -2,
+			"itemNum" : 120,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10003027,
+			"month" : 3,
+			"itemId" : 31203002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10003028,
+			"month" : 3,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004001,
+			"month" : 4,
+			"itemId" : -2,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004002,
+			"month" : 4,
+			"itemId" : 30000008,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10004003,
+			"month" : 4,
+			"itemId" : -1,
+			"itemNum" : 6000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10004004,
+			"month" : 4,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004005,
+			"month" : 4,
+			"itemId" : -2,
+			"itemNum" : 50,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004006,
+			"month" : 4,
+			"itemId" : 31000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10004007,
+			"month" : 4,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004008,
+			"month" : 4,
+			"itemId" : -2,
+			"itemNum" : 60,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004009,
+			"month" : 4,
+			"itemId" : 37000006,
+			"itemNum" : 3,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10004010,
+			"month" : 4,
+			"itemId" : -1,
+			"itemNum" : 10000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10004011,
+			"month" : 4,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004012,
+			"month" : 4,
+			"itemId" : -2,
+			"itemNum" : 70,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004013,
+			"month" : 4,
+			"itemId" : 31100001,
+			"itemNum" : 5,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10004014,
+			"month" : 4,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004015,
+			"month" : 4,
+			"itemId" : -2,
+			"itemNum" : 80,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004016,
+			"month" : 4,
+			"itemId" : 35000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10004017,
+			"month" : 4,
+			"itemId" : -1,
+			"itemNum" : 15000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10004018,
+			"month" : 4,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004019,
+			"month" : 4,
+			"itemId" : -2,
+			"itemNum" : 90,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004020,
+			"month" : 4,
+			"itemId" : 31200002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10004021,
+			"month" : 4,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004022,
+			"month" : 4,
+			"itemId" : -2,
+			"itemNum" : 100,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004023,
+			"month" : 4,
+			"itemId" : 31202002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10004024,
+			"month" : 4,
+			"itemId" : -1,
+			"itemNum" : 20000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10004025,
+			"month" : 4,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004026,
+			"month" : 4,
+			"itemId" : -2,
+			"itemNum" : 120,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10004027,
+			"month" : 4,
+			"itemId" : 31203002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10004028,
+			"month" : 4,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005001,
+			"month" : 5,
+			"itemId" : -2,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005002,
+			"month" : 5,
+			"itemId" : 30000008,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10005003,
+			"month" : 5,
+			"itemId" : -1,
+			"itemNum" : 6000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10005004,
+			"month" : 5,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005005,
+			"month" : 5,
+			"itemId" : -2,
+			"itemNum" : 50,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005006,
+			"month" : 5,
+			"itemId" : 31000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10005007,
+			"month" : 5,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005008,
+			"month" : 5,
+			"itemId" : -2,
+			"itemNum" : 60,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005009,
+			"month" : 5,
+			"itemId" : 37000006,
+			"itemNum" : 3,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10005010,
+			"month" : 5,
+			"itemId" : -1,
+			"itemNum" : 10000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10005011,
+			"month" : 5,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005012,
+			"month" : 5,
+			"itemId" : -2,
+			"itemNum" : 70,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005013,
+			"month" : 5,
+			"itemId" : 31100001,
+			"itemNum" : 5,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10005014,
+			"month" : 5,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005015,
+			"month" : 5,
+			"itemId" : -2,
+			"itemNum" : 80,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005016,
+			"month" : 5,
+			"itemId" : 35000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10005017,
+			"month" : 5,
+			"itemId" : -1,
+			"itemNum" : 15000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10005018,
+			"month" : 5,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005019,
+			"month" : 5,
+			"itemId" : -2,
+			"itemNum" : 90,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005020,
+			"month" : 5,
+			"itemId" : 31200002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10005021,
+			"month" : 5,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005022,
+			"month" : 5,
+			"itemId" : -2,
+			"itemNum" : 100,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005023,
+			"month" : 5,
+			"itemId" : 31202002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10005024,
+			"month" : 5,
+			"itemId" : -1,
+			"itemNum" : 20000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10005025,
+			"month" : 5,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005026,
+			"month" : 5,
+			"itemId" : -2,
+			"itemNum" : 120,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10005027,
+			"month" : 5,
+			"itemId" : 31203002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10005028,
+			"month" : 5,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006001,
+			"month" : 6,
+			"itemId" : -2,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006002,
+			"month" : 6,
+			"itemId" : 30000008,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10006003,
+			"month" : 6,
+			"itemId" : -1,
+			"itemNum" : 6000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10006004,
+			"month" : 6,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006005,
+			"month" : 6,
+			"itemId" : -2,
+			"itemNum" : 50,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006006,
+			"month" : 6,
+			"itemId" : 31000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10006007,
+			"month" : 6,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006008,
+			"month" : 6,
+			"itemId" : -2,
+			"itemNum" : 60,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006009,
+			"month" : 6,
+			"itemId" : 37000006,
+			"itemNum" : 3,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10006010,
+			"month" : 6,
+			"itemId" : -1,
+			"itemNum" : 10000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10006011,
+			"month" : 6,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006012,
+			"month" : 6,
+			"itemId" : -2,
+			"itemNum" : 70,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006013,
+			"month" : 6,
+			"itemId" : 31100001,
+			"itemNum" : 5,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10006014,
+			"month" : 6,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006015,
+			"month" : 6,
+			"itemId" : -2,
+			"itemNum" : 80,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006016,
+			"month" : 6,
+			"itemId" : 35000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10006017,
+			"month" : 6,
+			"itemId" : -1,
+			"itemNum" : 15000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10006018,
+			"month" : 6,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006019,
+			"month" : 6,
+			"itemId" : -2,
+			"itemNum" : 90,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006020,
+			"month" : 6,
+			"itemId" : 31200002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10006021,
+			"month" : 6,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006022,
+			"month" : 6,
+			"itemId" : -2,
+			"itemNum" : 100,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006023,
+			"month" : 6,
+			"itemId" : 31202002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10006024,
+			"month" : 6,
+			"itemId" : -1,
+			"itemNum" : 20000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10006025,
+			"month" : 6,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006026,
+			"month" : 6,
+			"itemId" : -2,
+			"itemNum" : 120,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10006027,
+			"month" : 6,
+			"itemId" : 31203002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10006028,
+			"month" : 6,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007001,
+			"month" : 7,
+			"itemId" : -2,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007002,
+			"month" : 7,
+			"itemId" : 30000008,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10007003,
+			"month" : 7,
+			"itemId" : -1,
+			"itemNum" : 6000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10007004,
+			"month" : 7,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007005,
+			"month" : 7,
+			"itemId" : -2,
+			"itemNum" : 50,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007006,
+			"month" : 7,
+			"itemId" : 31000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10007007,
+			"month" : 7,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007008,
+			"month" : 7,
+			"itemId" : -2,
+			"itemNum" : 60,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007009,
+			"month" : 7,
+			"itemId" : 37000006,
+			"itemNum" : 3,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10007010,
+			"month" : 7,
+			"itemId" : -1,
+			"itemNum" : 10000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10007011,
+			"month" : 7,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007012,
+			"month" : 7,
+			"itemId" : -2,
+			"itemNum" : 70,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007013,
+			"month" : 7,
+			"itemId" : 31100001,
+			"itemNum" : 5,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10007014,
+			"month" : 7,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007015,
+			"month" : 7,
+			"itemId" : -2,
+			"itemNum" : 80,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007016,
+			"month" : 7,
+			"itemId" : 35000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10007017,
+			"month" : 7,
+			"itemId" : -1,
+			"itemNum" : 15000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10007018,
+			"month" : 7,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007019,
+			"month" : 7,
+			"itemId" : -2,
+			"itemNum" : 90,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007020,
+			"month" : 7,
+			"itemId" : 31200002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10007021,
+			"month" : 7,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007022,
+			"month" : 7,
+			"itemId" : -2,
+			"itemNum" : 100,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007023,
+			"month" : 7,
+			"itemId" : 31202002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10007024,
+			"month" : 7,
+			"itemId" : -1,
+			"itemNum" : 20000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10007025,
+			"month" : 7,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007026,
+			"month" : 7,
+			"itemId" : -2,
+			"itemNum" : 120,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10007027,
+			"month" : 7,
+			"itemId" : 31203002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10007028,
+			"month" : 7,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008001,
+			"month" : 8,
+			"itemId" : -2,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008002,
+			"month" : 8,
+			"itemId" : 30000008,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10008003,
+			"month" : 8,
+			"itemId" : -1,
+			"itemNum" : 6000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10008004,
+			"month" : 8,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008005,
+			"month" : 8,
+			"itemId" : -2,
+			"itemNum" : 50,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008006,
+			"month" : 8,
+			"itemId" : 31000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10008007,
+			"month" : 8,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008008,
+			"month" : 8,
+			"itemId" : -2,
+			"itemNum" : 60,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008009,
+			"month" : 8,
+			"itemId" : 37000006,
+			"itemNum" : 3,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10008010,
+			"month" : 8,
+			"itemId" : -1,
+			"itemNum" : 10000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10008011,
+			"month" : 8,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008012,
+			"month" : 8,
+			"itemId" : -2,
+			"itemNum" : 70,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008013,
+			"month" : 8,
+			"itemId" : 31100001,
+			"itemNum" : 5,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10008014,
+			"month" : 8,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008015,
+			"month" : 8,
+			"itemId" : -2,
+			"itemNum" : 80,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008016,
+			"month" : 8,
+			"itemId" : 35000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10008017,
+			"month" : 8,
+			"itemId" : -1,
+			"itemNum" : 15000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10008018,
+			"month" : 8,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008019,
+			"month" : 8,
+			"itemId" : -2,
+			"itemNum" : 90,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008020,
+			"month" : 8,
+			"itemId" : 31200002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10008021,
+			"month" : 8,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008022,
+			"month" : 8,
+			"itemId" : -2,
+			"itemNum" : 100,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008023,
+			"month" : 8,
+			"itemId" : 31202002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10008024,
+			"month" : 8,
+			"itemId" : -1,
+			"itemNum" : 20000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10008025,
+			"month" : 8,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008026,
+			"month" : 8,
+			"itemId" : -2,
+			"itemNum" : 120,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10008027,
+			"month" : 8,
+			"itemId" : 31203002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10008028,
+			"month" : 8,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009001,
+			"month" : 9,
+			"itemId" : -2,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009002,
+			"month" : 9,
+			"itemId" : 30000008,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10009003,
+			"month" : 9,
+			"itemId" : -1,
+			"itemNum" : 6000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10009004,
+			"month" : 9,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009005,
+			"month" : 9,
+			"itemId" : -2,
+			"itemNum" : 50,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009006,
+			"month" : 9,
+			"itemId" : 31000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10009007,
+			"month" : 9,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009008,
+			"month" : 9,
+			"itemId" : -2,
+			"itemNum" : 60,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009009,
+			"month" : 9,
+			"itemId" : 37000006,
+			"itemNum" : 3,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10009010,
+			"month" : 9,
+			"itemId" : -1,
+			"itemNum" : 10000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10009011,
+			"month" : 9,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009012,
+			"month" : 9,
+			"itemId" : -2,
+			"itemNum" : 70,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009013,
+			"month" : 9,
+			"itemId" : 31100001,
+			"itemNum" : 5,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10009014,
+			"month" : 9,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009015,
+			"month" : 9,
+			"itemId" : -2,
+			"itemNum" : 80,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009016,
+			"month" : 9,
+			"itemId" : 35000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10009017,
+			"month" : 9,
+			"itemId" : -1,
+			"itemNum" : 15000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10009018,
+			"month" : 9,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009019,
+			"month" : 9,
+			"itemId" : -2,
+			"itemNum" : 90,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009020,
+			"month" : 9,
+			"itemId" : 31200002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10009021,
+			"month" : 9,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009022,
+			"month" : 9,
+			"itemId" : -2,
+			"itemNum" : 100,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009023,
+			"month" : 9,
+			"itemId" : 31202002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10009024,
+			"month" : 9,
+			"itemId" : -1,
+			"itemNum" : 20000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10009025,
+			"month" : 9,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009026,
+			"month" : 9,
+			"itemId" : -2,
+			"itemNum" : 120,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10009027,
+			"month" : 9,
+			"itemId" : 31203002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10009028,
+			"month" : 9,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010001,
+			"month" : 10,
+			"itemId" : -2,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010002,
+			"month" : 10,
+			"itemId" : 30000008,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10010003,
+			"month" : 10,
+			"itemId" : -1,
+			"itemNum" : 6000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10010004,
+			"month" : 10,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010005,
+			"month" : 10,
+			"itemId" : -2,
+			"itemNum" : 50,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010006,
+			"month" : 10,
+			"itemId" : 31000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10010007,
+			"month" : 10,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010008,
+			"month" : 10,
+			"itemId" : -2,
+			"itemNum" : 60,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010009,
+			"month" : 10,
+			"itemId" : 37000006,
+			"itemNum" : 3,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10010010,
+			"month" : 10,
+			"itemId" : -1,
+			"itemNum" : 10000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10010011,
+			"month" : 10,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010012,
+			"month" : 10,
+			"itemId" : -2,
+			"itemNum" : 70,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010013,
+			"month" : 10,
+			"itemId" : 31100001,
+			"itemNum" : 5,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10010014,
+			"month" : 10,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010015,
+			"month" : 10,
+			"itemId" : -2,
+			"itemNum" : 80,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010016,
+			"month" : 10,
+			"itemId" : 35000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10010017,
+			"month" : 10,
+			"itemId" : -1,
+			"itemNum" : 15000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10010018,
+			"month" : 10,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010019,
+			"month" : 10,
+			"itemId" : -2,
+			"itemNum" : 90,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010020,
+			"month" : 10,
+			"itemId" : 31200002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10010021,
+			"month" : 10,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010022,
+			"month" : 10,
+			"itemId" : -2,
+			"itemNum" : 100,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010023,
+			"month" : 10,
+			"itemId" : 31202002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10010024,
+			"month" : 10,
+			"itemId" : -1,
+			"itemNum" : 20000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10010025,
+			"month" : 10,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010026,
+			"month" : 10,
+			"itemId" : -2,
+			"itemNum" : 120,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10010027,
+			"month" : 10,
+			"itemId" : 31203002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10010028,
+			"month" : 10,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011001,
+			"month" : 11,
+			"itemId" : -2,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011002,
+			"month" : 11,
+			"itemId" : 30000008,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10011003,
+			"month" : 11,
+			"itemId" : -1,
+			"itemNum" : 6000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10011004,
+			"month" : 11,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011005,
+			"month" : 11,
+			"itemId" : -2,
+			"itemNum" : 50,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011006,
+			"month" : 11,
+			"itemId" : 31000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10011007,
+			"month" : 11,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011008,
+			"month" : 11,
+			"itemId" : -2,
+			"itemNum" : 60,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011009,
+			"month" : 11,
+			"itemId" : 37000006,
+			"itemNum" : 3,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10011010,
+			"month" : 11,
+			"itemId" : -1,
+			"itemNum" : 10000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10011011,
+			"month" : 11,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011012,
+			"month" : 11,
+			"itemId" : -2,
+			"itemNum" : 70,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011013,
+			"month" : 11,
+			"itemId" : 31100001,
+			"itemNum" : 5,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10011014,
+			"month" : 11,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011015,
+			"month" : 11,
+			"itemId" : -2,
+			"itemNum" : 80,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011016,
+			"month" : 11,
+			"itemId" : 35000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10011017,
+			"month" : 11,
+			"itemId" : -1,
+			"itemNum" : 15000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10011018,
+			"month" : 11,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011019,
+			"month" : 11,
+			"itemId" : -2,
+			"itemNum" : 90,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011020,
+			"month" : 11,
+			"itemId" : 31200002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10011021,
+			"month" : 11,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011022,
+			"month" : 11,
+			"itemId" : -2,
+			"itemNum" : 100,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011023,
+			"month" : 11,
+			"itemId" : 31202002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10011024,
+			"month" : 11,
+			"itemId" : -1,
+			"itemNum" : 20000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10011025,
+			"month" : 11,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011026,
+			"month" : 11,
+			"itemId" : -2,
+			"itemNum" : 120,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10011027,
+			"month" : 11,
+			"itemId" : 31203002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10011028,
+			"month" : 11,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012001,
+			"month" : 12,
+			"itemId" : -2,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012002,
+			"month" : 12,
+			"itemId" : 30000008,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10012003,
+			"month" : 12,
+			"itemId" : -1,
+			"itemNum" : 6000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10012004,
+			"month" : 12,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012005,
+			"month" : 12,
+			"itemId" : -2,
+			"itemNum" : 50,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012006,
+			"month" : 12,
+			"itemId" : 31000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10012007,
+			"month" : 12,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012008,
+			"month" : 12,
+			"itemId" : -2,
+			"itemNum" : 60,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012009,
+			"month" : 12,
+			"itemId" : 37000006,
+			"itemNum" : 3,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10012010,
+			"month" : 12,
+			"itemId" : -1,
+			"itemNum" : 10000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10012011,
+			"month" : 12,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012012,
+			"month" : 12,
+			"itemId" : -2,
+			"itemNum" : 70,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012013,
+			"month" : 12,
+			"itemId" : 31100001,
+			"itemNum" : 5,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10012014,
+			"month" : 12,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012015,
+			"month" : 12,
+			"itemId" : -2,
+			"itemNum" : 80,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012016,
+			"month" : 12,
+			"itemId" : 35000001,
+			"itemNum" : 4,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10012017,
+			"month" : 12,
+			"itemId" : -1,
+			"itemNum" : 15000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10012018,
+			"month" : 12,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012019,
+			"month" : 12,
+			"itemId" : -2,
+			"itemNum" : 90,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012020,
+			"month" : 12,
+			"itemId" : 31200002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10012021,
+			"month" : 12,
+			"itemId" : 39000030,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012022,
+			"month" : 12,
+			"itemId" : -2,
+			"itemNum" : 100,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012023,
+			"month" : 12,
+			"itemId" : 31202002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10012024,
+			"month" : 12,
+			"itemId" : -1,
+			"itemNum" : 20000,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10012025,
+			"month" : 12,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012026,
+			"month" : 12,
+			"itemId" : -2,
+			"itemNum" : 120,
+			"double" : false,
+			"vip_double" : true
+		},
+		{
+			"guid" : 10012027,
+			"month" : 12,
+			"itemId" : 31203002,
+			"itemNum" : 30,
+			"double" : false,
+			"vip_double" : false
+		},
+		{
+			"guid" : 10012028,
+			"month" : 12,
+			"itemId" : 39000041,
+			"itemNum" : 2,
+			"double" : false,
+			"vip_double" : true
+		}
+	],
+	"inviteList" : [
+		{
+			"needLevel" : 1,
+			"inviteItemId1" : -2,
+			"inviteItemNum1" : 20,
+			"beInviteItemId1" : -2,
+			"beInviteItemNum1" : 20,
+			"inviteItemId2" : -1,
+			"inviteItemNum2" : 1000,
+			"beInviteItemId2" : -1,
+			"beInviteItemNum4" : 1000,
+			"inviteItemId3" : -3,
+			"inviteItemNum3" : 500,
+			"beInviteItemId3" : -3,
+			"beInviteItemNum3" : 500,
+			"inviteItemId4" : -1,
+			"inviteItemNum4" : -1,
+			"beInviteItemId4" : -1,
+			"beInviteItemNum4" : -1
+		}
+	]
+}

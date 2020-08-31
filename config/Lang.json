@@ -1,0 +1,69 @@
+{
+	"itemList" : [
+		{
+			"name" : "English",
+			"deaf" : true,
+			"guid" : "English",
+			"zone" : "en-US",
+			"font" : "Data/Lang/Font/Chinese.ttf",
+			"dict" : "Data/Lang/Dict/Chinese.json",
+			"icon" : "23000001"
+		},
+		{
+			"name" : "Chinese",
+			"deaf" : false,
+			"guid" : "Chinese",
+			"zone" : "zh-CN",
+			"font" : "Data/Lang/Font/Chinese.ttf",
+			"dict" : "Data/Lang/Dict/Chinese.json",
+			"icon" : "23000002"
+		},
+		{
+			"name" : "ChineseSimplified",
+			"deaf" : false,
+			"guid" : "Chinese",
+			"zone" : "zh-CN",
+			"font" : "Data/Lang/Font/Chinese.ttf",
+			"dict" : "Data/Lang/Dict/Chinese.json",
+			"icon" : "23000002"
+		}
+	],
+	"currencyList" : [
+		{
+			"code" : "CNY",
+			"decimal_point" : ".",
+			"thousands_point" : ",",
+			"decimal_places" : 2,
+			"format" : "￥ :m",
+			"effective_bit" : 0,
+			"tax_percent" : 0
+		},
+		{
+			"code" : "USD",
+			"decimal_point" : ".",
+			"thousands_point" : ",",
+			"decimal_places" : 2,
+			"format" : "$ :m",
+			"effective_bit" : -2,
+			"tax_percent" : 0
+		},
+		{
+			"code" : "SGD",
+			"decimal_point" : ".",
+			"thousands_point" : ",",
+			"decimal_places" : 2,
+			"format" : "S$ :m",
+			"effective_bit" : -2,
+			"tax_percent" : 0
+		},
+		{
+			"code" : "MYR",
+			"decimal_point" : ".",
+			"thousands_point" : ",",
+			"decimal_places" : 2,
+			"format" : "RM :m",
+			"effective_bit" : 0,
+			"tax_percent" : 0
+		}
+	]
+}

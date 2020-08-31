@@ -4,6 +4,8 @@ local mysql = require "skynet.db.mysql"
 local httpd = require "http.httpd"
 local sockethelper = require "http.sockethelper"
 local urllib = require "http.url"
+local util = require "util"
+local json = require "cjson"
 local table = table
 local string = string
 
@@ -77,30 +79,6 @@ end
 
 
 skynet.start(function()
-	local function on_connect(db)
-		skynet.error("db connected")
-	end
-
-	local db = mysql.connect({
-		host = "127.0.0.1",
-		port = 3306,
-		database = "ewar_web",
-		user = "dev",
-		password = "vDVmqAF@FWkR%uw9",
-		max_packet_size = 1024 * 1024,
-		on_connect = on_connect
-	})
-
-	if not db then
-		skynet.error("failed to connect mysql")
-		skynet.exit()
-	else
-		skynet.error('success to connect to mysql')
-	end
-
-	local res = db:query('set charset utf8mb4')
-	dump(res)
-
 	skynet.dispatch("lua", function (_,_,id)
 		socket.start(id)
 		local interface = gen_interface(protocol, id)
@@ -113,39 +91,56 @@ skynet.start(function()
 			if code ~= 200 then
 				response(id, interface.write, code)
 			else
-                local loginRespJson = [[
-                    {
-                        "code": 200,
-                        "message": "OK",
-                        "device_id": "e7001d97064ee1aeb95cee2a8aec80a3_2020-08-05-18_10_56",
-                        "token": "5f3e21105877e",
-                        "servers": ["127.0.0.1:8888"],
-                        "bind_game_center": false,
-                        "bind_google": false,
-                        "bind_facebook": false
-                    }
-                ]]
-                local patchRespJson = [[
-                    {
-                        "code": 200,
-                        "message": "OK"
-                    }
-				]]
-				local infoRespJson = [[
-                    {
-                        "code": 200,
-						"message": "OK",
-						"user_id": 100002
-                    }
-				]]
-
-                local path, query = urllib.parse(url)
-                if path == '/device/login' then
-                    response(id, interface.write, code, loginRespJson)
-                elseif path == '/check' then
-					response(id, interface.write, code, patchRespJson)
+				local path, querystring = urllib.parse(url)
+				local query = {}
+				if querystring then
+					query = urllib.parse_query(querystring)
+					print(util.serialise_value(query))
+				end
+				if path == '/device/login' then
+					if query.device_id ~= nil then
+						local db_user, token = skynet.call(skynet.queryservice("db_web"), "lua", "FindUser", query.device_id)
+						if db_user ~= nil then
+							local resp = {
+								code = 200,
+								message = "success",
+								user_id = db_user.id,
+								device_id = query.device_id,
+								token = token,
+								servers = {"127.0.0.1:8888"},
+								bind_game_center = false,
+								bind_google = false,
+								bind_facebook = false
+							}
+							response(id, interface.write, 200, json.encode(resp))
+						else
+							response(id, interface.write, 400, 'the device is not registered')
+						end
+					else
+						response(id, interface.write, 400, 'device_id is required')
+					end
+				elseif path == '/check' then
+					local resp = {
+						code = 200,
+						message = "OK",
+					}
+					response(id, interface.write, code, json.encode(resp))
 				elseif path == '/info' then
-					response(id, interface.write, code, infoRespJson)
+					if query.token ~= nil then
+						local user_id = skynet.call(skynet.queryservice("db_web"), "lua", "Info", query.token)
+						if user_id ~= nil then
+							local resp = {
+								code = 200,
+								message = "success",
+								user_id = user_id,
+							}
+							response(id, interface.write, code, json.encode(resp))
+						else
+							response(id, interface.write, 400, 'invalid token')
+						end
+					else
+						response(id, interface.write, 400, 'token is required')
+					end
                 else
                     skynet.error(path)
                     response(id, interface.write, 404, 'Not found')

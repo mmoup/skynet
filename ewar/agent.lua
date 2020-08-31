@@ -4,6 +4,11 @@ local sproto = require "sproto"
 local sprotoloader = require "sprotoloader"
 local pbcoder = require "protobufcoder"
 local msgdef = require "protobufmsgdef"
+local sharetable = require "skynet.sharetable"
+local util = require "util"
+local httpc = require "http.httpc"
+local dns = require "skynet.dns"
+local json = require "cjson"
 
 local WATCHDOG
 local host
@@ -50,9 +55,19 @@ end
 REQUEST.message = {}
 
 function REQUEST.message.LoginAuthReq(msg_obj)
-	for key,value in pairs(msg_obj) do
-        skynet.error(key, ":", value)
-	end
+	print(util.serialise_value(msg_obj))
+	local respheader = {}
+	local status, resp_body = httpc.request("GET", "127.0.0.1:5000", "/info?token=" .. msg_obj.token, respheader, {})
+	print("[header] =====>")
+    for k,v in pairs(respheader) do
+        print(k,v)
+    end
+	local result = json.decode(resp_body)
+	local player_id = result.user_id
+	print(util.serialise_value(result))
+
+	skynet.call(skynet.queryservice("db"), "lua", "LoadPlayer", player_id)
+
 	local data = pbcoder.encode(msgdef.message.LoginAuthResp,
 	{
 		code = "SUCCEED",
@@ -68,7 +83,11 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 				icon = "",
 				flag = "",
 			}
-		}
+		},
+		gg_major = "1.36.0",
+		gg_minor = "0055",
+		gc_major = "1.36.0",
+		gc_minor = "0055"
 	})
 	send_package(data)
 end

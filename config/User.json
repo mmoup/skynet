@@ -1,0 +1,1705 @@
+{
+	"taxesList" : [
+		{
+			"count" : 1,
+			"coins" : 400,
+			"feeds" : 100,
+			"time" : 600,
+			"pay" : 10
+		},
+		{
+			"count" : 2,
+			"coins" : 550,
+			"feeds" : 180,
+			"time" : 1500,
+			"pay" : 50
+		},
+		{
+			"count" : 3,
+			"coins" : 780,
+			"feeds" : 280,
+			"time" : 300,
+			"pay" : 10
+		},
+		{
+			"count" : 4,
+			"coins" : 800,
+			"feeds" : 300,
+			"time" : 300,
+			"pay" : 10
+		},
+		{
+			"count" : 5,
+			"coins" : 800,
+			"feeds" : 300,
+			"time" : -1,
+			"pay" : -1
+		}
+	],
+	"trainsSeatList" : [
+		{
+			"index" : 0,
+			"needLevel" : 2,
+			"needJewel" : 5,
+			"needVip" : 0
+		},
+		{
+			"index" : 1,
+			"needLevel" : 8,
+			"needJewel" : 100,
+			"needVip" : 0
+		},
+		{
+			"index" : 2,
+			"needLevel" : 15,
+			"needJewel" : 280,
+			"needVip" : 0
+		},
+		{
+			"index" : 3,
+			"needLevel" : 24,
+			"needJewel" : 650,
+			"needVip" : 0
+		},
+		{
+			"index" : 4,
+			"needLevel" : 1,
+			"needJewel" : 0,
+			"needVip" : 1
+		}
+	],
+	"trainsModeList" : [
+		{
+			"mode" : 0,
+			"cool" : 24,
+			"needCoins" : 1,
+			"needJewel" : 0,
+			"gainExpss" : 1200
+		},
+		{
+			"mode" : 1,
+			"cool" : 48,
+			"needCoins" : 1,
+			"needJewel" : 0,
+			"gainExpss" : 6000
+		},
+		{
+			"mode" : 2,
+			"cool" : 4,
+			"needCoins" : 0,
+			"needJewel" : 0.015,
+			"gainExpss" : 6000
+		}
+	],
+	"tavernSeatList" : [
+		{
+			"index" : 0,
+			"needLevel" : 0,
+			"needJewel" : 0
+		},
+		{
+			"index" : 1,
+			"needLevel" : 0,
+			"needJewel" : 0
+		},
+		{
+			"index" : 2,
+			"needLevel" : 0,
+			"needJewel" : 0
+		},
+		{
+			"index" : 3,
+			"needLevel" : 0,
+			"needJewel" : 0
+		},
+		{
+			"index" : 4,
+			"needLevel" : 0,
+			"needJewel" : 0
+		}
+	],
+	"tavernProbList" : [
+		{
+			"guid" : 10000001,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000003,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000004,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000005,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000007,
+			"prob" : 0.1
+		},
+		{
+			"guid" : 10000008,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000011,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000012,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000013,
+			"prob" : 0.1
+		},
+		{
+			"guid" : 10000014,
+			"prob" : 0.1
+		},
+		{
+			"guid" : 10000015,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000016,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000017,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000018,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000019,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000020,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000021,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000022,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000023,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000024,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000025,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000026,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000029,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000030,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000032,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000033,
+			"prob" : 0
+		},
+		{
+			"guid" : 10000035,
+			"prob" : 0
+		}
+	],
+	"friendGift" : [
+		{
+			"guid" : 10001,
+			"level" : 0,
+			"giftCoins" : 0,
+			"giftFeeds" : 120,
+			"giftJewel" : 0
+		},
+		{
+			"guid" : 10002,
+			"level" : 1,
+			"giftCoins" : 0,
+			"giftFeeds" : 220,
+			"giftJewel" : 0
+		},
+		{
+			"guid" : 10003,
+			"level" : 2,
+			"giftCoins" : 0,
+			"giftFeeds" : 420,
+			"giftJewel" : 0
+		},
+		{
+			"guid" : 10004,
+			"level" : 3,
+			"giftCoins" : 0,
+			"giftFeeds" : 720,
+			"giftJewel" : 0
+		},
+		{
+			"guid" : 10005,
+			"level" : 4,
+			"giftCoins" : 0,
+			"giftFeeds" : 1120,
+			"giftJewel" : 0
+		}
+	],
+	"gradeList" : [
+		{
+			"level" : 1,
+			"needExpss" : 60,
+			"unitCount" : 1,
+			"wildCount" : 1,
+			"coinsCoefTaxes" : 1,
+			"feedsCoefTaxes" : 1,
+			"coinsStore" : 8000,
+			"feedsStore" : 1200,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 62,
+			"revengeCoinsMax" : 800,
+			"revengeFeedsMax" : 120,
+			"intr" : "-1"
+		},
+		{
+			"level" : 2,
+			"needExpss" : 80,
+			"unitCount" : 1,
+			"wildCount" : 3,
+			"coinsCoefTaxes" : 1.05,
+			"feedsCoefTaxes" : 1.05,
+			"coinsStore" : 9000,
+			"feedsStore" : 1480,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 66,
+			"revengeCoinsMax" : 900,
+			"revengeFeedsMax" : 148,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>2</color>"
+		},
+		{
+			"level" : 3,
+			"needExpss" : 120,
+			"unitCount" : 2,
+			"wildCount" : 3,
+			"coinsCoefTaxes" : 1.1,
+			"feedsCoefTaxes" : 1.1,
+			"coinsStore" : 10000,
+			"feedsStore" : 1760,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 71,
+			"revengeCoinsMax" : 1000,
+			"revengeFeedsMax" : 176,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>3</color>"
+		},
+		{
+			"level" : 4,
+			"needExpss" : 180,
+			"unitCount" : 2,
+			"wildCount" : 3,
+			"coinsCoefTaxes" : 1.15,
+			"feedsCoefTaxes" : 1.15,
+			"coinsStore" : 11000,
+			"feedsStore" : 2040,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 75,
+			"revengeCoinsMax" : 1100,
+			"revengeFeedsMax" : 204,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>4</color>"
+		},
+		{
+			"level" : 5,
+			"needExpss" : 200,
+			"unitCount" : 2,
+			"wildCount" : 3,
+			"coinsCoefTaxes" : 1.2,
+			"feedsCoefTaxes" : 1.2,
+			"coinsStore" : 12000,
+			"feedsStore" : 2320,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 79,
+			"revengeCoinsMax" : 1200,
+			"revengeFeedsMax" : 232,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>5</color>"
+		},
+		{
+			"level" : 6,
+			"needExpss" : 280,
+			"unitCount" : 3,
+			"wildCount" : 3,
+			"coinsCoefTaxes" : 1.25,
+			"feedsCoefTaxes" : 1.25,
+			"coinsStore" : 13000,
+			"feedsStore" : 2600,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 84,
+			"revengeCoinsMax" : 1300,
+			"revengeFeedsMax" : 260,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>6</color>"
+		},
+		{
+			"level" : 7,
+			"needExpss" : 320,
+			"unitCount" : 3,
+			"wildCount" : 4,
+			"coinsCoefTaxes" : 1.3,
+			"feedsCoefTaxes" : 1.3,
+			"coinsStore" : 14000,
+			"feedsStore" : 2880,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 89,
+			"revengeCoinsMax" : 1400,
+			"revengeFeedsMax" : 288,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>7</color>"
+		},
+		{
+			"level" : 8,
+			"needExpss" : 460,
+			"unitCount" : 3,
+			"wildCount" : 4,
+			"coinsCoefTaxes" : 1.35,
+			"feedsCoefTaxes" : 1.35,
+			"coinsStore" : 15000,
+			"feedsStore" : 3160,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 93,
+			"revengeCoinsMax" : 1500,
+			"revengeFeedsMax" : 316,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>8</color>"
+		},
+		{
+			"level" : 9,
+			"needExpss" : 520,
+			"unitCount" : 4,
+			"wildCount" : 4,
+			"coinsCoefTaxes" : 1.4,
+			"feedsCoefTaxes" : 1.4,
+			"coinsStore" : 16000,
+			"feedsStore" : 3440,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 98,
+			"revengeCoinsMax" : 1600,
+			"revengeFeedsMax" : 344,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>9</color>"
+		},
+		{
+			"level" : 10,
+			"needExpss" : 580,
+			"unitCount" : 4,
+			"wildCount" : 5,
+			"coinsCoefTaxes" : 1.45,
+			"feedsCoefTaxes" : 1.45,
+			"coinsStore" : 17000,
+			"feedsStore" : 3720,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 103,
+			"revengeCoinsMax" : 1700,
+			"revengeFeedsMax" : 372,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>10</color>"
+		},
+		{
+			"level" : 11,
+			"needExpss" : 680,
+			"unitCount" : 4,
+			"wildCount" : 5,
+			"coinsCoefTaxes" : 1.5,
+			"feedsCoefTaxes" : 1.6,
+			"coinsStore" : 18000,
+			"feedsStore" : 4000,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 108,
+			"revengeCoinsMax" : 1800,
+			"revengeFeedsMax" : 400,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>11</color>"
+		},
+		{
+			"level" : 12,
+			"needExpss" : 855,
+			"unitCount" : 5,
+			"wildCount" : 5,
+			"coinsCoefTaxes" : 1.55,
+			"feedsCoefTaxes" : 1.75,
+			"coinsStore" : 19000,
+			"feedsStore" : 4280,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 112,
+			"revengeCoinsMax" : 1900,
+			"revengeFeedsMax" : 428,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>12</color>"
+		},
+		{
+			"level" : 13,
+			"needExpss" : 956,
+			"unitCount" : 5,
+			"wildCount" : 6,
+			"coinsCoefTaxes" : 1.6,
+			"feedsCoefTaxes" : 2,
+			"coinsStore" : 20000,
+			"feedsStore" : 4560,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 117,
+			"revengeCoinsMax" : 2000,
+			"revengeFeedsMax" : 456,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>13</color>"
+		},
+		{
+			"level" : 14,
+			"needExpss" : 1031,
+			"unitCount" : 5,
+			"wildCount" : 6,
+			"coinsCoefTaxes" : 1.65,
+			"feedsCoefTaxes" : 2.5,
+			"coinsStore" : 21000,
+			"feedsStore" : 5260,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 122,
+			"revengeCoinsMax" : 2100,
+			"revengeFeedsMax" : 526,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>14</color>"
+		},
+		{
+			"level" : 15,
+			"needExpss" : 1183,
+			"unitCount" : 6,
+			"wildCount" : 6,
+			"coinsCoefTaxes" : 1.7,
+			"feedsCoefTaxes" : 3,
+			"coinsStore" : 22000,
+			"feedsStore" : 5960,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 127,
+			"revengeCoinsMax" : 2200,
+			"revengeFeedsMax" : 596,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>15</color>"
+		},
+		{
+			"level" : 16,
+			"needExpss" : 1285,
+			"unitCount" : 6,
+			"wildCount" : 7,
+			"coinsCoefTaxes" : 1.75,
+			"feedsCoefTaxes" : 3.5,
+			"coinsStore" : 23000,
+			"feedsStore" : 6660,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 133,
+			"revengeCoinsMax" : 2300,
+			"revengeFeedsMax" : 666,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>16</color>"
+		},
+		{
+			"level" : 17,
+			"needExpss" : 1388,
+			"unitCount" : 6,
+			"wildCount" : 7,
+			"coinsCoefTaxes" : 1.8,
+			"feedsCoefTaxes" : 4,
+			"coinsStore" : 24000,
+			"feedsStore" : 7360,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 138,
+			"revengeCoinsMax" : 2400,
+			"revengeFeedsMax" : 736,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>17</color>"
+		},
+		{
+			"level" : 18,
+			"needExpss" : 1495,
+			"unitCount" : 7,
+			"wildCount" : 7,
+			"coinsCoefTaxes" : 1.85,
+			"feedsCoefTaxes" : 4.5,
+			"coinsStore" : 25000,
+			"feedsStore" : 8060,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 143,
+			"revengeCoinsMax" : 2500,
+			"revengeFeedsMax" : 806,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>18</color>"
+		},
+		{
+			"level" : 19,
+			"needExpss" : 1603,
+			"unitCount" : 7,
+			"wildCount" : 8,
+			"coinsCoefTaxes" : 1.9,
+			"feedsCoefTaxes" : 5,
+			"coinsStore" : 26000,
+			"feedsStore" : 9380,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 148,
+			"revengeCoinsMax" : 2600,
+			"revengeFeedsMax" : 938,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>19</color>"
+		},
+		{
+			"level" : 20,
+			"needExpss" : 1715,
+			"unitCount" : 7,
+			"wildCount" : 8,
+			"coinsCoefTaxes" : 2,
+			"feedsCoefTaxes" : 5.5,
+			"coinsStore" : 27000,
+			"feedsStore" : 10700,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 154,
+			"revengeCoinsMax" : 2700,
+			"revengeFeedsMax" : 1070,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>20</color>"
+		},
+		{
+			"level" : 21,
+			"needExpss" : 2011,
+			"unitCount" : 8,
+			"wildCount" : 8,
+			"coinsCoefTaxes" : 2.1,
+			"feedsCoefTaxes" : 6,
+			"coinsStore" : 28000,
+			"feedsStore" : 12020,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 159,
+			"revengeCoinsMax" : 2800,
+			"revengeFeedsMax" : 1202,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>21</color>"
+		},
+		{
+			"level" : 22,
+			"needExpss" : 2197,
+			"unitCount" : 8,
+			"wildCount" : 9,
+			"coinsCoefTaxes" : 2.2,
+			"feedsCoefTaxes" : 6.5,
+			"coinsStore" : 29000,
+			"feedsStore" : 13340,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 164,
+			"revengeCoinsMax" : 2900,
+			"revengeFeedsMax" : 1334,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>22</color>"
+		},
+		{
+			"level" : 23,
+			"needExpss" : 2393,
+			"unitCount" : 8,
+			"wildCount" : 9,
+			"coinsCoefTaxes" : 2.3,
+			"feedsCoefTaxes" : 7,
+			"coinsStore" : 30000,
+			"feedsStore" : 14660,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 170,
+			"revengeCoinsMax" : 3000,
+			"revengeFeedsMax" : 1466,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>23</color>"
+		},
+		{
+			"level" : 24,
+			"needExpss" : 2600,
+			"unitCount" : 9,
+			"wildCount" : 9,
+			"coinsCoefTaxes" : 2.4,
+			"feedsCoefTaxes" : 8,
+			"coinsStore" : 31000,
+			"feedsStore" : 15980,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 176,
+			"revengeCoinsMax" : 3100,
+			"revengeFeedsMax" : 1598,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>24</color>"
+		},
+		{
+			"level" : 25,
+			"needExpss" : 2816,
+			"unitCount" : 9,
+			"wildCount" : 9,
+			"coinsCoefTaxes" : 2.5,
+			"feedsCoefTaxes" : 9,
+			"coinsStore" : 32000,
+			"feedsStore" : 17300,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 181,
+			"revengeCoinsMax" : 3200,
+			"revengeFeedsMax" : 1730,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>25</color>"
+		},
+		{
+			"level" : 26,
+			"needExpss" : 3043,
+			"unitCount" : 9,
+			"wildCount" : 10,
+			"coinsCoefTaxes" : 2.6,
+			"feedsCoefTaxes" : 10,
+			"coinsStore" : 39000,
+			"feedsStore" : 18620,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 187,
+			"revengeCoinsMax" : 3900,
+			"revengeFeedsMax" : 1862,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>26</color>"
+		},
+		{
+			"level" : 27,
+			"needExpss" : 3332,
+			"unitCount" : 10,
+			"wildCount" : 10,
+			"coinsCoefTaxes" : 2.7,
+			"feedsCoefTaxes" : 11,
+			"coinsStore" : 46000,
+			"feedsStore" : 20200,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 193,
+			"revengeCoinsMax" : 4600,
+			"revengeFeedsMax" : 2020,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>27</color>"
+		},
+		{
+			"level" : 28,
+			"needExpss" : 3638,
+			"unitCount" : 10,
+			"wildCount" : 10,
+			"coinsCoefTaxes" : 2.8,
+			"feedsCoefTaxes" : 12,
+			"coinsStore" : 53000,
+			"feedsStore" : 21780,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 199,
+			"revengeCoinsMax" : 5300,
+			"revengeFeedsMax" : 2178,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>28</color>"
+		},
+		{
+			"level" : 29,
+			"needExpss" : 3960,
+			"unitCount" : 10,
+			"wildCount" : 10,
+			"coinsCoefTaxes" : 2.9,
+			"feedsCoefTaxes" : 13,
+			"coinsStore" : 60000,
+			"feedsStore" : 23360,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 205,
+			"revengeCoinsMax" : 6000,
+			"revengeFeedsMax" : 2336,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>29</color>"
+		},
+		{
+			"level" : 30,
+			"needExpss" : 4282,
+			"unitCount" : 11,
+			"wildCount" : 10,
+			"coinsCoefTaxes" : 3,
+			"feedsCoefTaxes" : 14,
+			"coinsStore" : 67000,
+			"feedsStore" : 24940,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 210,
+			"revengeCoinsMax" : 6700,
+			"revengeFeedsMax" : 2494,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>30</color>"
+		},
+		{
+			"level" : 31,
+			"needExpss" : 4655,
+			"unitCount" : 11,
+			"wildCount" : 11,
+			"coinsCoefTaxes" : 3.1,
+			"feedsCoefTaxes" : 15,
+			"coinsStore" : 74000,
+			"feedsStore" : 26520,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 217,
+			"revengeCoinsMax" : 7400,
+			"revengeFeedsMax" : 2652,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>31</color>"
+		},
+		{
+			"level" : 32,
+			"needExpss" : 5680,
+			"unitCount" : 11,
+			"wildCount" : 11,
+			"coinsCoefTaxes" : 3.2,
+			"feedsCoefTaxes" : 16,
+			"coinsStore" : 81000,
+			"feedsStore" : 28100,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 223,
+			"revengeCoinsMax" : 8100,
+			"revengeFeedsMax" : 2810,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>32</color>"
+		},
+		{
+			"level" : 33,
+			"needExpss" : 6880,
+			"unitCount" : 12,
+			"wildCount" : 11,
+			"coinsCoefTaxes" : 3.3,
+			"feedsCoefTaxes" : 17,
+			"coinsStore" : 88000,
+			"feedsStore" : 29680,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 229,
+			"revengeCoinsMax" : 8800,
+			"revengeFeedsMax" : 2968,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>33</color>"
+		},
+		{
+			"level" : 34,
+			"needExpss" : 8080,
+			"unitCount" : 12,
+			"wildCount" : 11,
+			"coinsCoefTaxes" : 3.4,
+			"feedsCoefTaxes" : 18,
+			"coinsStore" : 89800,
+			"feedsStore" : 31260,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 235,
+			"revengeCoinsMax" : 8980,
+			"revengeFeedsMax" : 3126,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>34</color>"
+		},
+		{
+			"level" : 35,
+			"needExpss" : 9280,
+			"unitCount" : 12,
+			"wildCount" : 11,
+			"coinsCoefTaxes" : 3.5,
+			"feedsCoefTaxes" : 19,
+			"coinsStore" : 90800,
+			"feedsStore" : 32840,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 241,
+			"revengeCoinsMax" : 9080,
+			"revengeFeedsMax" : 3284,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>35</color>"
+		},
+		{
+			"level" : 36,
+			"needExpss" : 10480,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 3.6,
+			"feedsCoefTaxes" : 20,
+			"coinsStore" : 91800,
+			"feedsStore" : 34420,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 248,
+			"revengeCoinsMax" : 9180,
+			"revengeFeedsMax" : 3442,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>36</color>"
+		},
+		{
+			"level" : 37,
+			"needExpss" : 11680,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 3.7,
+			"feedsCoefTaxes" : 21,
+			"coinsStore" : 92800,
+			"feedsStore" : 36000,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 254,
+			"revengeCoinsMax" : 9280,
+			"revengeFeedsMax" : 3600,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>37</color>"
+		},
+		{
+			"level" : 38,
+			"needExpss" : 12880,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 3.8,
+			"feedsCoefTaxes" : 22,
+			"coinsStore" : 93800,
+			"feedsStore" : 37580,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 260,
+			"revengeCoinsMax" : 9380,
+			"revengeFeedsMax" : 3758,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>38</color>"
+		},
+		{
+			"level" : 39,
+			"needExpss" : 14080,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 3.9,
+			"feedsCoefTaxes" : 23,
+			"coinsStore" : 94800,
+			"feedsStore" : 39160,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 267,
+			"revengeCoinsMax" : 9480,
+			"revengeFeedsMax" : 3916,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>39</color>"
+		},
+		{
+			"level" : 40,
+			"needExpss" : 15280,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 4,
+			"feedsCoefTaxes" : 24,
+			"coinsStore" : 95800,
+			"feedsStore" : 40740,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 273,
+			"revengeCoinsMax" : 9580,
+			"revengeFeedsMax" : 4074,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>40</color>"
+		},
+		{
+			"level" : 41,
+			"needExpss" : 16480,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 4.1,
+			"feedsCoefTaxes" : 25,
+			"coinsStore" : 96800,
+			"feedsStore" : 43320,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 280,
+			"revengeCoinsMax" : 9680,
+			"revengeFeedsMax" : 4332,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>41</color>"
+		},
+		{
+			"level" : 42,
+			"needExpss" : 17680,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 4.2,
+			"feedsCoefTaxes" : 26,
+			"coinsStore" : 97800,
+			"feedsStore" : 45900,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 287,
+			"revengeCoinsMax" : 9780,
+			"revengeFeedsMax" : 4590,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>42</color>"
+		},
+		{
+			"level" : 43,
+			"needExpss" : 18880,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 4.3,
+			"feedsCoefTaxes" : 27,
+			"coinsStore" : 98800,
+			"feedsStore" : 48480,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 293,
+			"revengeCoinsMax" : 9880,
+			"revengeFeedsMax" : 4848,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>43</color>"
+		},
+		{
+			"level" : 44,
+			"needExpss" : 20080,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 4.4,
+			"feedsCoefTaxes" : 28,
+			"coinsStore" : 99800,
+			"feedsStore" : 51060,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 300,
+			"revengeCoinsMax" : 9980,
+			"revengeFeedsMax" : 5106,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>44</color>"
+		},
+		{
+			"level" : 45,
+			"needExpss" : 21280,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 4.5,
+			"feedsCoefTaxes" : 29,
+			"coinsStore" : 100800,
+			"feedsStore" : 53640,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 307,
+			"revengeCoinsMax" : 10080,
+			"revengeFeedsMax" : 5364,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>45</color>"
+		},
+		{
+			"level" : 46,
+			"needExpss" : 22480,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 4.6,
+			"feedsCoefTaxes" : 30,
+			"coinsStore" : 101800,
+			"feedsStore" : 56220,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 314,
+			"revengeCoinsMax" : 10180,
+			"revengeFeedsMax" : 5622,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>46</color>"
+		},
+		{
+			"level" : 47,
+			"needExpss" : 23680,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 4.7,
+			"feedsCoefTaxes" : 31,
+			"coinsStore" : 102800,
+			"feedsStore" : 58800,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 321,
+			"revengeCoinsMax" : 10280,
+			"revengeFeedsMax" : 5880,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>47</color>"
+		},
+		{
+			"level" : 48,
+			"needExpss" : 24880,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 4.8,
+			"feedsCoefTaxes" : 32,
+			"coinsStore" : 103800,
+			"feedsStore" : 61380,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 328,
+			"revengeCoinsMax" : 10380,
+			"revengeFeedsMax" : 6138,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>48</color>"
+		},
+		{
+			"level" : 49,
+			"needExpss" : 26080,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 4.9,
+			"feedsCoefTaxes" : 33,
+			"coinsStore" : 104800,
+			"feedsStore" : 63960,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 335,
+			"revengeCoinsMax" : 10480,
+			"revengeFeedsMax" : 6396,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>49</color>"
+		},
+		{
+			"level" : 50,
+			"needExpss" : -1,
+			"unitCount" : 12,
+			"wildCount" : 12,
+			"coinsCoefTaxes" : 5,
+			"feedsCoefTaxes" : 34,
+			"coinsStore" : 105800,
+			"feedsStore" : 66540,
+			"jewelToCoins" : 450,
+			"jewelToFeeds" : 342,
+			"revengeCoinsMax" : 10580,
+			"revengeFeedsMax" : 6654,
+			"intr" : "英雄等级上限提升为<color='#3696e7'>50</color>"
+		}
+	],
+	"medalList" : [
+		{
+			"grade" : 1,
+			"medalMin" : 0,
+			"medalMax" : 1000,
+			"cost" : 80,
+			"coef" : 3,
+			"feeds" : 2,
+			"icon" : "80000001",
+			"intr" : "开拓者"
+		},
+		{
+			"grade" : 2,
+			"medalMin" : 1001,
+			"medalMax" : 1100,
+			"cost" : 120,
+			"coef" : 3.5,
+			"feeds" : 2.25,
+			"icon" : "80000002",
+			"intr" : "先锋战士"
+		},
+		{
+			"grade" : 3,
+			"medalMin" : 1101,
+			"medalMax" : 1250,
+			"cost" : 180,
+			"coef" : 4,
+			"feeds" : 2.5,
+			"icon" : "80000003",
+			"intr" : "无畏勇士"
+		},
+		{
+			"grade" : 4,
+			"medalMin" : 1251,
+			"medalMax" : 1530,
+			"cost" : 280,
+			"coef" : 4.5,
+			"feeds" : 2.75,
+			"icon" : "80000004",
+			"intr" : "白银骑士"
+		},
+		{
+			"grade" : 5,
+			"medalMin" : 1531,
+			"medalMax" : 1850,
+			"cost" : 400,
+			"coef" : 5,
+			"feeds" : 3,
+			"icon" : "80000005",
+			"intr" : "荣誉领主"
+		},
+		{
+			"grade" : 6,
+			"medalMin" : 1851,
+			"medalMax" : 2250,
+			"cost" : 500,
+			"coef" : 5.5,
+			"feeds" : 3.25,
+			"icon" : "80000006",
+			"intr" : "血刃统帅"
+		},
+		{
+			"grade" : 7,
+			"medalMin" : 2251,
+			"medalMax" : 2750,
+			"cost" : 600,
+			"coef" : 6,
+			"feeds" : 3.5,
+			"icon" : "80000007",
+			"intr" : "百战君王"
+		},
+		{
+			"grade" : 8,
+			"medalMin" : 2751,
+			"medalMax" : 3250,
+			"cost" : 800,
+			"coef" : 6.5,
+			"feeds" : 3.75,
+			"icon" : "80000008",
+			"intr" : "不败之主"
+		},
+		{
+			"grade" : 9,
+			"medalMin" : 3251,
+			"medalMax" : -1,
+			"cost" : 1200,
+			"coef" : 7,
+			"feeds" : 4,
+			"icon" : "80000009",
+			"intr" : "永恒王者"
+		}
+	],
+	"vipsList" : [
+		{
+			"level" : 0,
+			"dailyJewel" : 0,
+			"taxesCount" : 3,
+			"trainExpss" : 1,
+			"resCoinsBuyCount" : 0,
+			"resFeedsBuyCount" : 0,
+			"revengeCount" : 1
+		},
+		{
+			"level" : 1,
+			"dailyJewel" : 15,
+			"taxesCount" : 5,
+			"trainExpss" : 1.2,
+			"resCoinsBuyCount" : 1,
+			"resFeedsBuyCount" : 1,
+			"revengeCount" : 3
+		}
+	],
+	"vitalityList" : [
+		{
+			"guid" : 10000001,
+			"type" : -1,
+			"name" : "PVE成功占领城市",
+			"userGetCount" : 15,
+			"other" : "已经拥有的城市数量*基础"
+		},
+		{
+			"guid" : 10000002,
+			"type" : -1,
+			"name" : "战胜野怪",
+			"userGetCount" : 3,
+			"other" : "用户等级*基础+2"
+		},
+		{
+			"guid" : 10000003,
+			"type" : -1,
+			"name" : "获得英雄",
+			"userGetCount" : 25,
+			"other" : "已经拥有的英雄数量*基础"
+		},
+		{
+			"guid" : 10000004,
+			"type" : -1,
+			"name" : "英雄升星",
+			"userGetCount" : 80,
+			"other" : "(当前星数+1)*固定基数"
+		},
+		{
+			"guid" : 10000005,
+			"type" : -1,
+			"name" : "队伍熟练突破",
+			"userGetCount" : 100,
+			"other" : "(当前熟练等级+当前兵种等级)*固定基数"
+		},
+		{
+			"guid" : 10000006,
+			"type" : -1,
+			"name" : "队伍转职",
+			"userGetCount" : 100,
+			"other" : "固定基数"
+		},
+		{
+			"guid" : 10000007,
+			"type" : -1,
+			"name" : "队伍进阶",
+			"userGetCount" : 300,
+			"other" : "固定基数"
+		},
+		{
+			"guid" : 10000008,
+			"type" : -1,
+			"name" : "解锁技能",
+			"userGetCount" : 200,
+			"other" : "(技能位数-1)*固定基数"
+		},
+		{
+			"guid" : 10000009,
+			"type" : -1,
+			"name" : "解锁酒馆座位",
+			"userGetCount" : 200,
+			"other" : "已经拥有座位数Z平方*基数"
+		},
+		{
+			"guid" : 10000010,
+			"type" : -1,
+			"name" : "解锁训练场座位",
+			"userGetCount" : 200,
+			"other" : "已经拥有座位数Z平方*基数"
+		},
+		{
+			"guid" : 10000011,
+			"type" : -1,
+			"name" : "远战胜利",
+			"userGetCount" : 6,
+			"other" : "用户等级*基础+5"
+		},
+		{
+			"guid" : 10000012,
+			"type" : -1,
+			"name" : "反攻城市",
+			"userGetCount" : 20,
+			"other" : "用户等级*基数"
+		}
+	],
+	"giftList" : [
+		{
+			"level" : 2,
+			"item1" : -2,
+			"item1Num" : 20,
+			"item2" : 37000001,
+			"item2Num" : 10,
+			"item3" : -1,
+			"item3Num" : 888,
+			"item4" : -3,
+			"item4Num" : 180,
+			"title" : "新手礼包_等级2礼包",
+			"intr" : "说明_新手礼包_等级2礼包"
+		},
+		{
+			"level" : 5,
+			"item1" : -2,
+			"item1Num" : 25,
+			"item2" : 37000001,
+			"item2Num" : 10,
+			"item3" : 40030002,
+			"item3Num" : 1,
+			"item4" : 33000001,
+			"item4Num" : 2,
+			"title" : "新手礼包_等级5礼包",
+			"intr" : "说明_新手礼包_等级5礼包"
+		},
+		{
+			"level" : 10,
+			"item1" : -2,
+			"item1Num" : 50,
+			"item2" : 37000001,
+			"item2Num" : 10,
+			"item3" : 40010005,
+			"item3Num" : 1,
+			"item4" : 33000003,
+			"item4Num" : 1,
+			"title" : "新手礼包_等级10礼包",
+			"intr" : "说明_新手礼包_等级10礼包"
+		},
+		{
+			"level" : 15,
+			"item1" : -2,
+			"item1Num" : 60,
+			"item2" : 37000001,
+			"item2Num" : 10,
+			"item3" : 33000005,
+			"item3Num" : 1,
+			"item4" : 33000009,
+			"item4Num" : 1,
+			"title" : "新手礼包_等级15礼包",
+			"intr" : "说明_新手礼包_等级15礼包"
+		},
+		{
+			"level" : 20,
+			"item1" : -2,
+			"item1Num" : 80,
+			"item2" : 40010003,
+			"item2Num" : 1,
+			"item3" : 33000011,
+			"item3Num" : 1,
+			"item4" : 33000013,
+			"item4Num" : 1,
+			"title" : "新手礼包_等级20礼包",
+			"intr" : "说明_新手礼包_等级20礼包"
+		},
+		{
+			"level" : 25,
+			"item1" : -2,
+			"item1Num" : 100,
+			"item2" : 37000001,
+			"item2Num" : 10,
+			"item3" : 40030004,
+			"item3Num" : 1,
+			"item4" : 33000006,
+			"item4Num" : 2,
+			"title" : "新手礼包_等级25礼包",
+			"intr" : "说明_新手礼包_等级25礼包"
+		},
+		{
+			"level" : 30,
+			"item1" : -2,
+			"item1Num" : 120,
+			"item2" : 37000001,
+			"item2Num" : 10,
+			"item3" : 40030005,
+			"item3Num" : 1,
+			"item4" : 33000010,
+			"item4Num" : 2,
+			"title" : "新手礼包_等级30礼包",
+			"intr" : "说明_新手礼包_等级30礼包"
+		},
+		{
+			"level" : 35,
+			"item1" : -2,
+			"item1Num" : 140,
+			"item2" : 33000002,
+			"item2Num" : 10,
+			"item3" : 33000004,
+			"item3Num" : 2,
+			"item4" : 0,
+			"item4Num" : 2,
+			"title" : "新手礼包_等级35礼包",
+			"intr" : "说明_新手礼包_等级35礼包"
+		},
+		{
+			"level" : 40,
+			"item1" : -2,
+			"item1Num" : 160,
+			"item2" : 33000012,
+			"item2Num" : 2,
+			"item3" : 33000014,
+			"item3Num" : 2,
+			"item4" : 0,
+			"item4Num" : 1,
+			"title" : "新手礼包_等级40礼包",
+			"intr" : "说明_新手礼包_等级40礼包"
+		},
+		{
+			"level" : 45,
+			"item1" : -2,
+			"item1Num" : 180,
+			"item2" : 0,
+			"item2Num" : 0,
+			"item3" : 0,
+			"item3Num" : 0,
+			"item4" : 0,
+			"item4Num" : 0,
+			"title" : "新手礼包_等级45礼包",
+			"intr" : "说明_新手礼包_等级45礼包"
+		},
+		{
+			"level" : 50,
+			"item1" : -2,
+			"item1Num" : 200,
+			"item2" : 0,
+			"item2Num" : 0,
+			"item3" : 0,
+			"item3Num" : 0,
+			"item4" : 0,
+			"item4Num" : 0,
+			"title" : "新手礼包_等级50礼包",
+			"intr" : "说明_新手礼包_等级50礼包"
+		}
+	],
+	"fightSetup" : [
+		{
+			"guid" : 0,
+			"ipos" : 0,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "light_rider",
+			"fightType" : 0
+		},
+		{
+			"guid" : 1,
+			"ipos" : 1,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "sword",
+			"fightType" : 0
+		},
+		{
+			"guid" : 2,
+			"ipos" : 2,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "spear",
+			"fightType" : 0
+		},
+		{
+			"guid" : 3,
+			"ipos" : 3,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "sword",
+			"fightType" : 0
+		},
+		{
+			"guid" : 4,
+			"ipos" : 4,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "light_rider",
+			"fightType" : 0
+		},
+		{
+			"guid" : 5,
+			"ipos" : 5,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "shoot",
+			"fightType" : 0
+		},
+		{
+			"guid" : 6,
+			"ipos" : 6,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "cross",
+			"fightType" : 0
+		},
+		{
+			"guid" : 7,
+			"ipos" : 7,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "spear",
+			"fightType" : 0
+		},
+		{
+			"guid" : 8,
+			"ipos" : 8,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "cross",
+			"fightType" : 0
+		},
+		{
+			"guid" : 9,
+			"ipos" : 9,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "shoot",
+			"fightType" : 0
+		},
+		{
+			"guid" : 10,
+			"ipos" : 11,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "light_rider",
+			"fightType" : 0
+		},
+		{
+			"guid" : 11,
+			"ipos" : 13,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "light_rider",
+			"fightType" : 0
+		},
+		{
+			"guid" : 12,
+			"ipos" : 0,
+			"order" : "cmd_defend",
+			"heroId" : -1,
+			"heroProf" : "light_rider",
+			"fightType" : 1
+		},
+		{
+			"guid" : 13,
+			"ipos" : 1,
+			"order" : "cmd_defend",
+			"heroId" : -1,
+			"heroProf" : "sword",
+			"fightType" : 1
+		},
+		{
+			"guid" : 14,
+			"ipos" : 2,
+			"order" : "cmd_defend",
+			"heroId" : -1,
+			"heroProf" : "spear",
+			"fightType" : 1
+		},
+		{
+			"guid" : 15,
+			"ipos" : 3,
+			"order" : "cmd_defend",
+			"heroId" : -1,
+			"heroProf" : "sword",
+			"fightType" : 1
+		},
+		{
+			"guid" : 16,
+			"ipos" : 4,
+			"order" : "cmd_defend",
+			"heroId" : -1,
+			"heroProf" : "light_rider",
+			"fightType" : 1
+		},
+		{
+			"guid" : 17,
+			"ipos" : 5,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "shoot",
+			"fightType" : 1
+		},
+		{
+			"guid" : 18,
+			"ipos" : 6,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "shoot",
+			"fightType" : 1
+		},
+		{
+			"guid" : 19,
+			"ipos" : 7,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "cross",
+			"fightType" : 1
+		},
+		{
+			"guid" : 20,
+			"ipos" : 8,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "shoot",
+			"fightType" : 1
+		},
+		{
+			"guid" : 21,
+			"ipos" : 9,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "shoot",
+			"fightType" : 1
+		},
+		{
+			"guid" : 22,
+			"ipos" : 11,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "spear",
+			"fightType" : 1
+		},
+		{
+			"guid" : 23,
+			"ipos" : 13,
+			"order" : "cmd_attack",
+			"heroId" : -1,
+			"heroProf" : "spear",
+			"fightType" : 1
+		}
+	],
+	"specialItem" : [
+		{
+			"itemGuid" : 30000001,
+			"type" : "surrender_letter",
+			"count" : 1,
+			"priceCoins" : 0,
+			"priceJewel" : 0,
+			"描述" : "招降其他势力时候需要消耗的稀有道具"
+		},
+		{
+			"itemGuid" : 30000002,
+			"type" : "kingdom_rename_ticket",
+			"count" : 1,
+			"priceCoins" : 0,
+			"priceJewel" : 0,
+			"描述" : "更改势力名称时使用的稀有道具"
+		},
+		{
+			"itemGuid" : 30000003,
+			"type" : "independent_letter",
+			"count" : 1,
+			"priceCoins" : 0,
+			"priceJewel" : 0,
+			"描述" : "从现任势力中独立为新势力的稀有道具"
+		},
+		{
+			"itemGuid" : 30000004,
+			"type" : "new_land_letter",
+			"count" : 1,
+			"priceCoins" : 0,
+			"priceJewel" : 0,
+			"描述" : "转移到其他世界的稀有道具"
+		},
+		{
+			"itemGuid" : 30000005,
+			"type" : "new_kingdom_ticket",
+			"count" : 1,
+			"priceCoins" : 0,
+			"priceJewel" : 0,
+			"描述" : "创建势力所需的必备道具"
+		},
+		{
+			"itemGuid" : 30000006,
+			"type" : "rally_letter",
+			"count" : 1,
+			"priceCoins" : 0,
+			"priceJewel" : 0,
+			"描述" : "集结部队时需要消耗的道具"
+		},
+		{
+			"itemGuid" : 30000007,
+			"type" : "recruit_letter",
+			"count" : 1,
+			"priceCoins" : 0,
+			"priceJewel" : 0,
+			"描述" : "招募令需求的道具"
+		},
+		{
+			"itemGuid" : 30000008,
+			"type" : "explore_letter",
+			"count" : 1,
+			"priceCoins" : 0,
+			"priceJewel" : 0,
+			"描述" : "探索时需要消耗的道具"
+		}
+	],
+	"wineHero" : [
+		{
+			"wine_lv" : 1,
+			"hero_rate" : 5
+		},
+		{
+			"wine_lv" : 2,
+			"hero_rate" : 6
+		},
+		{
+			"wine_lv" : 3,
+			"hero_rate" : 7
+		},
+		{
+			"wine_lv" : 4,
+			"hero_rate" : 8
+		},
+		{
+			"wine_lv" : 5,
+			"hero_rate" : 9
+		},
+		{
+			"wine_lv" : 6,
+			"hero_rate" : 10
+		},
+		{
+			"wine_lv" : 7,
+			"hero_rate" : 11
+		},
+		{
+			"wine_lv" : 8,
+			"hero_rate" : 12
+		},
+		{
+			"wine_lv" : 9,
+			"hero_rate" : 14
+		},
+		{
+			"wine_lv" : 10,
+			"hero_rate" : 16
+		},
+		{
+			"wine_lv" : 11,
+			"hero_rate" : 18
+		},
+		{
+			"wine_lv" : 12,
+			"hero_rate" : 20
+		},
+		{
+			"wine_lv" : 13,
+			"hero_rate" : 22
+		},
+		{
+			"wine_lv" : 14,
+			"hero_rate" : 24
+		},
+		{
+			"wine_lv" : 15,
+			"hero_rate" : 26
+		},
+		{
+			"wine_lv" : 16,
+			"hero_rate" : 30
+		},
+		{
+			"wine_lv" : 17,
+			"hero_rate" : 34
+		},
+		{
+			"wine_lv" : 18,
+			"hero_rate" : 38
+		},
+		{
+			"wine_lv" : 19,
+			"hero_rate" : 42
+		},
+		{
+			"wine_lv" : 20,
+			"hero_rate" : 55
+		}
+	]
+}

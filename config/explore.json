@@ -1,0 +1,4036 @@
+{
+	"feildList" : [
+		{
+			"guid" : 60000034,
+			"Items1" : "10000013,1;10000014,1;10000007,1",
+			"Items2" : "10000014,1;10000007,1;13000002,1;13000008,1;13000017,1",
+			"Items3" : "13000023,1;13000027,1;13000033,1",
+			"Items4" : "13000004,1;13000010,1;13000020,1",
+			"Items5" : ""
+		},
+		{
+			"guid" : 60000037,
+			"Items1" : "10000003,1;10000022,1;10000030,1",
+			"Items2" : "",
+			"Items3" : "",
+			"Items4" : "",
+			"Items5" : ""
+		},
+		{
+			"guid" : 60000016,
+			"Items1" : "",
+			"Items2" : "",
+			"Items3" : "",
+			"Items4" : "",
+			"Items5" : ""
+		},
+		{
+			"guid" : 60000007,
+			"Items1" : "",
+			"Items2" : "",
+			"Items3" : "",
+			"Items4" : "",
+			"Items5" : ""
+		},
+		{
+			"guid" : 60000001,
+			"Items1" : "",
+			"Items2" : "",
+			"Items3" : "",
+			"Items4" : "",
+			"Items5" : ""
+		},
+		{
+			"guid" : 60000028,
+			"Items1" : "",
+			"Items2" : "",
+			"Items3" : "",
+			"Items4" : "",
+			"Items5" : ""
+		},
+		{
+			"guid" : 60000058,
+			"Items1" : "",
+			"Items2" : "",
+			"Items3" : "",
+			"Items4" : "",
+			"Items5" : ""
+		},
+		{
+			"guid" : 60000065,
+			"Items1" : "",
+			"Items2" : "",
+			"Items3" : "",
+			"Items4" : "",
+			"Items5" : ""
+		},
+		{
+			"guid" : 60000077,
+			"Items1" : "",
+			"Items2" : "",
+			"Items3" : "",
+			"Items4" : "",
+			"Items5" : ""
+		},
+		{
+			"guid" : 60000085,
+			"Items1" : "",
+			"Items2" : "",
+			"Items3" : "",
+			"Items4" : "",
+			"Items5" : ""
+		},
+		{
+			"guid" : 60000100,
+			"Items1" : "",
+			"Items2" : "",
+			"Items3" : "",
+			"Items4" : "",
+			"Items5" : ""
+		}
+	],
+	"randomPool" : [
+		{
+			"feildId" : 60000034,
+			"itemId" : 31000001,
+			"itemNum" : 1,
+			"freeProb" : 60,
+			"diomandProb" : 60
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 35000001,
+			"itemNum" : 1,
+			"freeProb" : 60,
+			"diomandProb" : 60
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 31100001,
+			"itemNum" : 2,
+			"freeProb" : 350,
+			"diomandProb" : 350
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 30000006,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 10
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 30000007,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 30
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 33000001,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 33000005,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 33000009,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 32000001,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 39000011,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"freeProb" : 300,
+			"diomandProb" : 300
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 12000000,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 12000001,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 12000002,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 12000007,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 12000008,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 12000016,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 12000017,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 13000000,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 13000001,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 13000002,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 13000007,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 13000008,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 13000016,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 13000017,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000007,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 50
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000013,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 50
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000014,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 50
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000001,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000003,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000004,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000011,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000015,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000016,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000035,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000018,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000019,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000021,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000022,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000024,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000025,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000034,
+			"itemId" : 10000030,
+			"itemNum" : 1,
+			"freeProb" : 1,
+			"diomandProb" : 2
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 31000001,
+			"itemNum" : 2,
+			"freeProb" : 500,
+			"diomandProb" : 500
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 35000001,
+			"itemNum" : 1,
+			"freeProb" : 60,
+			"diomandProb" : 60
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 31100001,
+			"itemNum" : 2,
+			"freeProb" : 500,
+			"diomandProb" : 500
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 30000006,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 10
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 30000007,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 10
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 33000001,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 33000005,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 33000009,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 32000001,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 39000011,
+			"itemNum" : 1,
+			"freeProb" : 500,
+			"diomandProb" : 500
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 39000010,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 12000002,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 12000003,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 12000004,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 12000007,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 12000010,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 12000022,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 12000018,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 12000019,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 12000020,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 13000002,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 13000003,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 13000004,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 13000010,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 13000022,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 13000023,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 13000018,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 13000019,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 13000020,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000003,
+			"itemNum" : 1,
+			"freeProb" : 15,
+			"diomandProb" : 50
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000022,
+			"itemNum" : 1,
+			"freeProb" : 15,
+			"diomandProb" : 50
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000030,
+			"itemNum" : 1,
+			"freeProb" : 15,
+			"diomandProb" : 50
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000001,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000033,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000004,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000011,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000013,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000014,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000023,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000016,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000017,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000018,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000019,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000021,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000032,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000024,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000037,
+			"itemId" : 10000025,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.5
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 31000001,
+			"itemNum" : 2,
+			"freeProb" : 500,
+			"diomandProb" : 500
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 35000001,
+			"itemNum" : 2,
+			"freeProb" : 60,
+			"diomandProb" : 500
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 31100001,
+			"itemNum" : 1,
+			"freeProb" : 500,
+			"diomandProb" : 60
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 30000006,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 30
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 30000007,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 30
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 33000001,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 33000005,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 33000009,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 32000001,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 500
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 39000011,
+			"itemNum" : 1,
+			"freeProb" : 500,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 39000010,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 12000026,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 12000027,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 12000028,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 12000023,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 12000024,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 12000025,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 12000008,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 12000009,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 12000011,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 13000026,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 13000027,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 13000028,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 13000023,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 13000024,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 13000025,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 13000008,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 13000009,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 13000011,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000001,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000016,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000024,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000005,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000033,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000004,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000007,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000011,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000013,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000014,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000015,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000008,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000017,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000018,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000019,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000021,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000022,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000032,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000025,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000016,
+			"itemId" : 10000030,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 31000002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 500
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 35000002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 500
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 31100002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 30000006,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 30
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 30000007,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 30
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 33000001,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 33000005,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 33000009,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 32000001,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 500
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 12000004,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 12000005,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 12000006,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 12000011,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 12000012,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 12000013,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 12000031,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 12000032,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 12000033,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 13000004,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 13000005,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 13000006,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 13000011,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 13000012,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 13000013,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 13000031,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 13000032,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 13000033,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000004,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000011,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000016,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000001,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000003,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000008,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000007,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000005,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000013,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000014,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000015,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000020,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000017,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000018,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000019,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000020,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000021,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000022,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000024,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000025,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000007,
+			"itemId" : 10000030,
+			"itemNum" : -1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 37000006,
+			"itemNum" : 2,
+			"freeProb" : 900,
+			"diomandProb" : 800
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 37000001,
+			"itemNum" : 8,
+			"freeProb" : 700,
+			"diomandProb" : 800
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 31100002,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 30000006,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 30
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 30000007,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 30
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 33000001,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 33000005,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 33000009,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 32000001,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 800
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 800
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 12000026,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 12000027,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 12000028,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 12000029,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 12000030,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 12000031,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 12000032,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 12000033,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 12000034,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 12000035,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 13000026,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 13000027,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 13000028,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 13000029,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 13000030,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 13000031,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 13000032,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 13000033,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 13000034,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 13000035,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000015,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000018,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000035,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000001,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000003,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000004,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000033,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000011,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000013,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000014,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000026,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000016,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000017,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000029,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000019,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000018,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000023,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000024,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000025,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000001,
+			"itemId" : 10000030,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 31000002,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 35000002,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 31100002,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 37000006,
+			"itemNum" : 2,
+			"freeProb" : 500,
+			"diomandProb" : 700
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 37000001,
+			"itemNum" : 8,
+			"freeProb" : 700,
+			"diomandProb" : 700
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 30000006,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 30000007,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 50
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 33000001,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 33000005,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 33000009,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 32000001,
+			"itemNum" : 3,
+			"freeProb" : 900,
+			"diomandProb" : 900
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 39000021,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 39000020,
+			"itemNum" : 1,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 12000000,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 12000003,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 12000006,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 12000033,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 12000034,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 12000035,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 12000016,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 12000020,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 12000021,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 13000000,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 13000003,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 13000006,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 13000033,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 13000034,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 13000035,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 13000016,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 13000020,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 13000021,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000005,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000008,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000029,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000001,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000003,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000004,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000007,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000011,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000005,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000014,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000015,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000016,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000017,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000012,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000019,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000021,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000022,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000024,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000023,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000028,
+			"itemId" : 10000035,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 31100001,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 30000006,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 30000007,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 50
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 33000001,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 33000005,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 33000009,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 32000001,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 500
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 12000031,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 12000032,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 12000033,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 12000034,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 12000035,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 12000017,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 12000018,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 12000019,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 12000020,
+			"itemNum" : 1,
+			"freeProb" : 45,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 12000021,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 13000031,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 13000032,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 13000033,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 13000034,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 13000035,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 13000017,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 13000018,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 13000019,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 13000020,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 13000021,
+			"itemNum" : 1,
+			"freeProb" : 25,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000017,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000025,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000033,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000001,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000003,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000008,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000007,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000012,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000013,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000014,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000015,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000016,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000023,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000018,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000019,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000026,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000021,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000022,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000024,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000005,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000058,
+			"itemId" : 10000035,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 39000011,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 39000010,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 31100002,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 30000006,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 30000007,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 50
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 33000002,
+			"itemNum" : 1,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 33000006,
+			"itemNum" : 1,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 33000010,
+			"itemNum" : 1,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 32000002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 500
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 39000021,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 39000020,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 12000004,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 12000005,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 12000006,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 12000013,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 12000014,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 12000015,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 12000031,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 12000033,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 12000035,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 13000004,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 13000005,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 13000006,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 13000013,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 13000014,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 13000015,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 13000031,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 13000033,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 13000035,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000012,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000019,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000021,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000023,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000026,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000029,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000032,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000013,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000014,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000015,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000016,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000017,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000018,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000019,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000021,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000022,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000024,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000025,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000065,
+			"itemId" : 10000030,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 31000002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 35000002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 31100002,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 700
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 30000006,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 30000007,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 50
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 33000002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 33000006,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 33000010,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 32000002,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 700
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 39000111,
+			"itemNum" : 1,
+			"freeProb" : 300,
+			"diomandProb" : 380
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 39000110,
+			"itemNum" : 1,
+			"freeProb" : 300,
+			"diomandProb" : 380
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 12000028,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 12000029,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 12000030,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 12000031,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 12000032,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 12000035,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 12000012,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 12000013,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 12000015,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 13000028,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 13000029,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 13000030,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 12000031,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 12000032,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 12000035,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 13000012,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 13000013,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 13000015,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000035,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000023,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000032,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000001,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000003,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000004,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000007,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000005,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000008,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000012,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000016,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000017,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000018,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000019,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000029,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000021,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000022,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000024,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000033,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000077,
+			"itemId" : 10000030,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 31000002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 35000002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 31100002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 700
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 30000006,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 30000007,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 50
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 33000002,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 700
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 33000006,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 700
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 33000010,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 700
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 32000002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 39000111,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 39000110,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 12000000,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 12000001,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 12000002,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 12000022,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 12000023,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 12000010,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 12000016,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 12000017,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 12000018,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 13000000,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 13000001,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 13000002,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 13000022,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 13000023,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 13000010,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 13000016,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 13000017,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 13000018,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000005,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000023,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000026,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000001,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000003,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000004,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000007,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000011,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000013,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000008,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000012,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000017,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000018,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000019,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000021,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000022,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000029,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000032,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000085,
+			"itemId" : 10000033,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 31000002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 35000002,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 31100002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 700
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 30000006,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 30000007,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 50
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 33000002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 700
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 33000006,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 700
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 33000010,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 700
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 32000002,
+			"itemNum" : 2,
+			"freeProb" : 100,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 39000111,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 39000110,
+			"itemNum" : 2,
+			"freeProb" : 700,
+			"diomandProb" : 100
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 12000000,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 12000001,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 12000002,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 12000003,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 12000004,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 12000018,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 12000019,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 12000020,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 12000021,
+			"itemNum" : 1,
+			"freeProb" : 50,
+			"diomandProb" : 20
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 13000000,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 13000001,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 13000002,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 13000003,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 13000004,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 13000018,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 13000019,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 13000020,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 13000021,
+			"itemNum" : 1,
+			"freeProb" : 20,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000012,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000026,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000033,
+			"itemNum" : 1,
+			"freeProb" : 10,
+			"diomandProb" : 40
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000001,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000005,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000008,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000007,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000011,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000013,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000014,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000023,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000017,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000018,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000019,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000020,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000029,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000032,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000035,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000025,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		},
+		{
+			"feildId" : 60000100,
+			"itemId" : 10000030,
+			"itemNum" : 1,
+			"freeProb" : 0.5,
+			"diomandProb" : 1.2
+		}
+	],
+	"randomRes" : [
+		{
+			"feildId" : 60000034,
+			"coins" : 800,
+			"feeds" : 500,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		},
+		{
+			"feildId" : 60000037,
+			"coins" : 1200,
+			"feeds" : 800,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		},
+		{
+			"feildId" : 60000034,
+			"coins" : 1600,
+			"feeds" : 1100,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		},
+		{
+			"feildId" : 60000037,
+			"coins" : 2000,
+			"feeds" : 1400,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		},
+		{
+			"feildId" : 60000016,
+			"coins" : 2400,
+			"feeds" : 1700,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		},
+		{
+			"feildId" : 60000007,
+			"coins" : 2800,
+			"feeds" : 2000,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		},
+		{
+			"feildId" : 60000001,
+			"coins" : 3200,
+			"feeds" : 2300,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		},
+		{
+			"feildId" : 60000028,
+			"coins" : 3600,
+			"feeds" : 2600,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		},
+		{
+			"feildId" : 60000058,
+			"coins" : 4000,
+			"feeds" : 2900,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		},
+		{
+			"feildId" : 60000065,
+			"coins" : 4400,
+			"feeds" : 3200,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		},
+		{
+			"feildId" : 60000077,
+			"coins" : 4800,
+			"feeds" : 3500,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		},
+		{
+			"feildId" : 60000085,
+			"coins" : 5200,
+			"feeds" : 3800,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		},
+		{
+			"feildId" : 60000100,
+			"coins" : 5600,
+			"feeds" : 4500,
+			"jewel" : 25,
+			"prob" : "45,45",
+			"heroProb" : 70
+		}
+	]
+}
