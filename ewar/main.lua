@@ -10,7 +10,6 @@ skynet.start(function()
 	skynet.error("Server start")
 	skynet.uniqueservice("protoloader")
 	skynet.uniqueservice("db")
-	skynet.uniqueservice("db_web")
 
 	skynet.error("Begin loading config")
     sharetable.loadtable('activity', json.decode(util.file_load('./config/Activity.json')))
@@ -38,7 +37,7 @@ skynet.start(function()
 		local console = skynet.newservice("console")
 	end
 	skynet.newservice("debug_console",8000)
-	skynet.newservice("login_http")
+	-- skynet.newservice("login_http")
 	local watchdog = skynet.newservice("watchdog")
 	skynet.call(watchdog, "lua", "start", {
 		port = 8888,

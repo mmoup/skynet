@@ -79,6 +79,8 @@ end
 
 
 skynet.start(function()
+	skynet.uniqueservice("db_web")
+
 	skynet.dispatch("lua", function (_,_,id)
 		socket.start(id)
 		local interface = gen_interface(protocol, id)

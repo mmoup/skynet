@@ -58,38 +58,135 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 	print(util.serialise_value(msg_obj))
 	local respheader = {}
 	local status, resp_body = httpc.request("GET", "127.0.0.1:5000", "/info?token=" .. msg_obj.token, respheader, {})
-	print("[header] =====>")
-    for k,v in pairs(respheader) do
-        print(k,v)
-    end
 	local result = json.decode(resp_body)
 	local player_id = result.user_id
-	print(util.serialise_value(result))
 
-	skynet.call(skynet.queryservice("db"), "lua", "LoadPlayer", player_id)
+	local db_player = skynet.call(skynet.queryservice("db"), "lua", "LoadPlayer", player_id)
+	util.dump(db_player)
 
-	local data = pbcoder.encode(msgdef.message.LoginAuthResp,
-	{
+	local resp_data = {
 		code = "SUCCEED",
 		acct = {
 			user = {
-				acct = 10000,
-				expss = 1,
-				level = 1,
-				land_id = 1,
-				kingdom_id = -1,
-				city_id = 0,
-				name = "test",
-				icon = "",
-				flag = "",
-			}
+				acct = db_player.id,
+				name = db_player.name,
+				icon = db_player.icon,
+				flag = db_player.flag,
+				expss = db_player.exp,
+				level = db_player.level,
+				land_id = db_player.land_id,
+				kingdom_id = db_player.kingdom_id,
+				city_id = db_player.city_id,
+				current_field_conf = db_player.stay_city_conf,
+				from_field_conf = 0,
+				remaining_time = 0,
+				is_online = db_player.is_online > 0,
+				is_giveme = true,
+				is_recvme = true,
+				coins = db_player.coins,
+				feeds = db_player.feeds,
+				jewel = db_player.jewel,
+
+				cd_join_city = 0,
+				cd_join_kingdom = 0,
+				cd_city_build = 0,
+				cd_city_farm = 0,
+				cd_city_trade = 0,
+			},
+			intr = {
+				acct = db_player.id,
+				name = db_player.name,
+				icon = db_player.icon,
+				level = db_player.level,
+				is_vips = db_player.vip_level > 0,
+			},
+			sums = {
+				sum_login_count = 1,
+				sum_user_modify = 0,
+				sum_signin_count = 0,
+
+				sum_hall_taxes_count = 0,
+				sum_hall_taxes_coins = 0,
+				sum_hall_taxes_feeds = 0,
+
+				sum_trains_train_count = 0,
+
+				sum_field_harvest_count = 0,
+				sum_field_harvest_coins = 0,
+				sum_field_harvest_feeds = 0,
+
+				sum_task_finish = 0,
+				sum_task_commit = 0,
+
+				sum_pve_city_num = 0,
+				sum_pve_wild_num = 0,
+				sum_pve_wild_win = 0,
+
+				sum_pvp_fire_num = 0,
+				sum_pvp_fire_win = 0,
+				sum_pvp_back_num = 0,
+				sum_pvp_back_win = 0,
+				sum_pvp_grade_max = 0,
+				sum_pvp_medal_max = 0,
+
+				sum_brief_play = 0,
+				sum_store_count = 0,
+				sum_chest_count = 0,
+				sum_speak_count = 0,
+				sum_contr_hero = 0,
+				sum_contr_prob = 0,
+				sum_arrive_count = 0,
+				sum_friend_count = 0,
+
+				sum_unit_skill_unlock_count = 0,
+				sum_unit_wine_count = 0,
+				sum_unit_max_power = 100,
+			},
+			vips = {
+				vips = db_player.vip_level,
+				time = math.floor(skynet.time()) - db_player.vip_expired
+			},
+			task = {},
+			hall = {
+				levy = 0, --已征收次数
+				time = -1, --下次征收剩余时间(单位:s)，若不能征收则为-1
+			},
+			rank = {},
+			boat = {},
+			tavern = {},
+			trains = {},
+			dailys = {},
+			charge = {},
+			res_buy = {},
+
+			unit = {},
+			arrg = {},
+			pvp_arrg = {},
+
+			prop = {},
+			equip = {},
+			store = {},
+			stall = {},
+
+			inform = {},
+			notice = {},
+			friend = {},
+			shield = {},
+			forum = {},
+			field = {},
+			brief = {},
+			revenge = {},
+			city = {}, --pvp城市数据
+			kingdom = {}, --pvp势力数据
+			troop = {}, --pvp军团数据
 		},
 		gg_major = "1.36.0",
 		gg_minor = "0055",
 		gc_major = "1.36.0",
 		gc_minor = "0055"
-	})
-	send_package(data)
+	}
+	util.dump(resp_data)
+	send_package(pbcoder.encode(msgdef.message.LoginAuthResp, resp_data))
 end
 
 function REQUEST.message.LoginPingReq(msg_obj)

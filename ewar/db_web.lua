@@ -2,6 +2,7 @@ local skynet = require "skynet"
 local mysql = require "skynet.db.mysql"
 local util = require "util"
 require "skynet.manager"	-- import skynet.register
+
 local db = {}
 local user_tokens = {}
 
@@ -47,18 +48,8 @@ function command.Info(token)
 	return user_tokens[token]
 end
 
-function command.GET(key)
-	return db[key]
-end
-
-function command.SET(key, value)
-	local last = db[key]
-	db[key] = value
-	return last
-end
-
 skynet.start(function()
-    skynet.error("启动mysql web服务")
+    skynet.error("Start MySQL for web service")
     local function on_connect(db)
 		skynet.error("db connected")
     end
@@ -74,14 +65,14 @@ skynet.start(function()
 	})
 
 	if not db then
-		skynet.error("failed to connect mysql")
+		skynet.error("failed to connect mysql for web")
 		skynet.exit()
 	else
-		skynet.error('success to connect to mysql')
+		skynet.error('success to connect mysql for web')
 	end
 
-	local res = db:query('set charset utf8mb4')
-	dump(res)
+	db:query('set charset utf8mb4')
+
 	skynet.dispatch("lua", function(session, address, cmd, ...)
 		--cmd = cmd:upper()
 		if cmd == "PING" then
