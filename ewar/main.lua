@@ -9,7 +9,8 @@ local max_client = 64
 skynet.start(function()
 	skynet.error("Server start")
 	skynet.uniqueservice("protoloader")
-	skynet.uniqueservice("db")
+    skynet.uniqueservice("db_game")
+    skynet.uniqueservice("db_guild")
 
 	skynet.error("Begin loading config")
     sharetable.loadtable('activity', json.decode(util.file_load('./config/Activity.json')))

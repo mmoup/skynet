@@ -61,44 +61,39 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 	local result = json.decode(resp_body)
 	local player_id = result.user_id
 
-	local db_player = skynet.call(skynet.queryservice("db"), "lua", "LoadPlayer", player_id)
-	util.dump(db_player)
+	local db_game_user = skynet.call(skynet.queryservice("db_game"), "lua", "LoadUser", player_id)
+	local db_guild_player = skynet.call(skynet.queryservice("db_guild"), "lua", "LoadPlayer", player_id)
+	util.dump(db_game_user)
+	util.dump(db_guild_player)
 
 	local resp_data = {
 		code = "SUCCEED",
 		acct = {
 			user = {
-				acct = db_player.id,
-				name = db_player.name,
-				icon = db_player.icon,
-				flag = db_player.flag,
-				expss = db_player.exp,
-				level = db_player.level,
-				land_id = db_player.land_id,
-				kingdom_id = db_player.kingdom_id,
-				city_id = db_player.city_id,
-				current_field_conf = db_player.stay_city_conf,
+				acct = db_game_user.acct,
+				name = db_game_user.name,
+				icon = db_game_user.icon,
+				flag = db_game_user.flag,
+				expss = db_game_user.exp,
+				level = db_game_user.level,
+				land_id = db_guild_player.land_id,
+				kingdom_id = db_guild_player.kingdom_id,
+				city_id = db_guild_player.city_id,
+				current_field_conf = db_guild_player.stay_city_conf,
 				from_field_conf = 0,
 				remaining_time = 0,
-				is_online = db_player.is_online > 0,
+				is_online = db_guild_player.is_online > 0,
 				is_giveme = true,
 				is_recvme = true,
-				coins = db_player.coins,
-				feeds = db_player.feeds,
-				jewel = db_player.jewel,
+				coins = db_game_user.coins,
+				feeds = db_game_user.feeds,
+				jewel = db_game_user.jewel,
 
 				cd_join_city = 0,
 				cd_join_kingdom = 0,
 				cd_city_build = 0,
 				cd_city_farm = 0,
 				cd_city_trade = 0,
-			},
-			intr = {
-				acct = db_player.id,
-				name = db_player.name,
-				icon = db_player.icon,
-				level = db_player.level,
-				is_vips = db_player.vip_level > 0,
 			},
 			sums = {
 				sum_login_count = 1,
@@ -143,8 +138,8 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 				sum_unit_max_power = 100,
 			},
 			vips = {
-				vips = db_player.vip_level,
-				time = math.floor(skynet.time()) - db_player.vip_expired
+				vips = db_game_user.vip_level,
+				time = db_game_user.vip_Time - math.floor(skynet.time());
 			},
 			task = {},
 			hall = {

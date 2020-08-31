@@ -10,9 +10,9 @@ function command.UUID()
 end
 
 --加载玩家资料
-function command.LoadPlayer(player_id)
+function command.LoadUser(player_id)
 	skynet.error("player_id", player_id)
-    local stmt = db:prepare("SELECT * FROM `player` WHERE `id`=?")
+    local stmt = db:prepare("SELECT * FROM `user` AS u LEFT JOIN `totalinfo` AS ti ON ti.`acct`=u.`acct` LEFT JOIN `userotherinfo` AS uoi ON uoi.`acct`=u.`acct` WHERE u.`acct`=?")
 	local res = db:execute(stmt, player_id)
 --	print("query result=", util.dump(res))
     db:stmt_close(stmt)
