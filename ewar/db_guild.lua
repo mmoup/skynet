@@ -3,14 +3,14 @@ local mysql = require "skynet.db.mysql"
 require "skynet.manager"	-- import skynet.register
 local util = require "util"
 local db
-local command = {}
+local CMD = {}
 
-function command.UUID()
+function CMD.UUID()
 	return db:query("SELECT REPLACE(UUID(),\"-\", \"\") AS `uuid`")[1].uuid
 end
 
 --加载玩家资料
-function command.LoadPlayer(player_id)
+function CMD.LoadPlayer(player_id)
 	skynet.error("player_id", player_id)
     local stmt = db:prepare("SELECT * FROM `player` WHERE `id`=?")
 	local res = db:execute(stmt, player_id)
@@ -19,13 +19,52 @@ function command.LoadPlayer(player_id)
     return res[1]
 end
 
+--加载城市
+function CMD.LoadCityList()
+	local city_list = db:query("SELECT * FROM `city`")
+	return city_list
+end
+
+--加载王国
+function CMD.LoadKingdomList()
+	local kingdom_list = db:query("SELECT * FROM `kingdom`")
+	return kingdom_list
+end
+
+--加载军团
+function CMD.LoadTroopList()
+	local troop_list = db:query("SELECT * FROM `troop`")
+	return troop_list
+end
+
+--加载运输队
+function CMD.LoadTransportList()
+	local transport_list = db:query("SELECT * FROM `transport`")
+	return transport_list
+end
+
+--加载战争
+function CMD.LoadWarList()
+	local war_list = db:query("SELECT * FROM `war`")
+	return war_list
+end
+
+--加载全体玩家资料
+function CMD.LoadPlayerList(land_id)
+    local stmt = db:prepare("SELECT * FROM `player` WHERE `land_id`=?")
+	local res = db:execute(stmt, land_id)
+--	print("query result=", util.dump(res))
+    db:stmt_close(stmt)
+    return res
+end
+
 --保存玩家资料
-function command.SavePlayer(player_id, ...)
+function CMD.SavePlayer(player_id, ...)
     local args = {...}
 end
 
 skynet.start(function()
-    skynet.error("启动mysql服务")
+    skynet.error("启动pvp数据库服务")
     local function on_connect(db)
 		skynet.error("db connected")
     end
@@ -59,12 +98,11 @@ skynet.start(function()
 			skynet.error(string.format("%s ping %s", skynet.address(address), str))
 			return
 		end
-        local f = command[cmd]
-        skynet.error(f)
-		if f then
-			skynet.ret(skynet.pack(f(...)))
+
+		if CMD[cmd] ~= nil then
+			skynet.ret(skynet.pack(CMD[cmd](...)))
 		else
-			error(string.format("Unknown command %s", tostring(cmd)))
+			skynet.error("pvp数据库服务没有定义" .. cmd .. "操作")
 		end
 	end)
 --	skynet.traceproto("lua", false)	-- true off tracelog

@@ -2,15 +2,16 @@ local skynet = require "skynet"
 local mysql = require "skynet.db.mysql"
 require "skynet.manager"	-- import skynet.register
 local util = require "util"
-local db
-local command = {}
 
-function command.UUID()
+local db
+local CMD = {}
+
+function CMD.UUID()
 	return db:query("SELECT REPLACE(UUID(),\"-\", \"\") AS `uuid`")[1].uuid
 end
 
---加载玩家资料
-function command.LoadUser(player_id)
+--加载单个玩家资料
+function CMD.LoadUser(player_id)
 	skynet.error("player_id", player_id)
     local stmt = db:prepare("SELECT * FROM `user` AS u LEFT JOIN `totalinfo` AS ti ON ti.`acct`=u.`acct` LEFT JOIN `userotherinfo` AS uoi ON uoi.`acct`=u.`acct` WHERE u.`acct`=?")
 	local res = db:execute(stmt, player_id)
@@ -19,13 +20,75 @@ function command.LoadUser(player_id)
     return res[1]
 end
 
+--加载全部酒馆资料
+function CMD.LoadTavernList(player_id)
+    local stmt = db:prepare("SELECT * FROM `halltavern` AS ht WHERE ht.`acct`=?")
+	local res = db:execute(stmt, player_id)
+--	print("query result=", util.dump(res))
+    db:stmt_close(stmt)
+    return res
+end
+
+--加载全部要塞资料
+function CMD.LoadStrongholdList(player_id)
+    local stmt = db:prepare("SELECT * FROM `pvecity` AS ht WHERE ht.`acct`=?")
+	local res = db:execute(stmt, player_id)
+--	print("query result=", util.dump(res))
+    db:stmt_close(stmt)
+    return res
+end
+
+--加载全部怪物资料
+function CMD.LoadMonsterList(player_id)
+    local stmt = db:prepare("SELECT * FROM `pvemonster` WHERE `acct`=?")
+	local res = db:execute(stmt, player_id)
+--	print("query result=", util.dump(res))
+    db:stmt_close(stmt)
+    return res
+end
+
+--加载全部装备资料
+function CMD.LoadEquipList(player_id)
+    local stmt = db:prepare("SELECT * FROM `equips` WHERE `acct`=?")
+	local res = db:execute(stmt, player_id)
+--	print("query result=", util.dump(res))
+    db:stmt_close(stmt)
+    return res
+end
+
+--加载全部道具资料
+function CMD.LoadPropList(player_id)
+    local stmt = db:prepare("SELECT * FROM `items` WHERE `acct`=?")
+	local res = db:execute(stmt, player_id)
+--	print("query result=", util.dump(res))
+    db:stmt_close(stmt)
+    return res
+end
+
+--加载全体玩家资料
+function CMD.LoadUserList(land_id)
+    local sql = [[
+        SELECT * FROM `user` AS u
+        LEFT JOIN `totalinfo` AS ti ON ti.`acct`=u.`acct`
+        LEFT JOIN `userotherinfo` AS uoi ON uoi.`acct`=u.`acct`
+        LEFT JOIN `hallmain` AS hm ON hm.`acct`=u.`acct`
+        LEFT JOIN `halltrain` AS ht ON ht.`acct`=u.`acct`
+        WHERE u.`server`=?
+    ]]
+    local stmt = db:prepare(sql)
+	local res = db:execute(stmt, land_id)
+--	print("query result=", util.dump(res))
+    db:stmt_close(stmt)
+    return res
+end
+
 --保存玩家资料
-function command.SavePlayer(player_id, ...)
+function CMD.SavePlayer(player_id, ...)
     local args = {...}
 end
 
 skynet.start(function()
-    skynet.error("启动mysql服务")
+    skynet.error("启动pve数据库服务")
     local function on_connect(db)
 		skynet.error("db connected")
     end
@@ -59,12 +122,11 @@ skynet.start(function()
 			skynet.error(string.format("%s ping %s", skynet.address(address), str))
 			return
 		end
-        local f = command[cmd]
-        skynet.error(f)
-		if f then
-			skynet.ret(skynet.pack(f(...)))
+
+        if CMD[cmd] ~= nil then
+			skynet.ret(skynet.pack(CMD[cmd](...)))
 		else
-			error(string.format("Unknown command %s", tostring(cmd)))
+			skynet.error("pve数据库服务没有定义" .. cmd .. "操作")
 		end
 	end)
 --	skynet.traceproto("lua", false)	-- true off tracelog

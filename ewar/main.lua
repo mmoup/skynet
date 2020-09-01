@@ -8,9 +8,7 @@ local max_client = 64
 
 skynet.start(function()
 	skynet.error("Server start")
-	skynet.uniqueservice("protoloader")
-    skynet.uniqueservice("db_game")
-    skynet.uniqueservice("db_guild")
+    skynet.uniqueservice("protoloader")
 
 	skynet.error("Begin loading config")
     sharetable.loadtable('activity', json.decode(util.file_load('./config/Activity.json')))
@@ -34,10 +32,27 @@ skynet.start(function()
     sharetable.loadtable('wild', json.decode(util.file_load('./config/Wild.json')))
     skynet.error("Config loaded")
 
+    --pve数据库服务
+    skynet.uniqueservice("db_game")
+    --pvp数据库服务
+    skynet.uniqueservice("db_guild")
+    --大陆管理服务
+    skynet.uniqueservice("land")
+    --城市管理服务
+    skynet.uniqueservice("city")
+    --王国管理服务
+    skynet.uniqueservice("kingdom")
+    --军团管理服务
+    skynet.uniqueservice("troop")
+    --战争管理服务
+    skynet.uniqueservice("war")
+    --玩家管理服务
+    skynet.uniqueservice("player")
+
 	if not skynet.getenv "daemon" then
 		local console = skynet.newservice("console")
 	end
-	skynet.newservice("debug_console",8000)
+	skynet.newservice("debug_console", 8000)
 	-- skynet.newservice("login_http")
 	local watchdog = skynet.newservice("watchdog")
 	skynet.call(watchdog, "lua", "start", {
@@ -45,6 +60,7 @@ skynet.start(function()
 		maxclient = max_client,
 		nodelay = true,
 	})
-	skynet.error("Watchdog listen on", 8888)
+    skynet.error("Watchdog listen on", 8888)
+    --执行完就退出
 	skynet.exit()
 end)
