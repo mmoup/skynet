@@ -142,7 +142,7 @@ M.message = {
     RESP_CTOR_SYNC_BOAT = 1212,
 
     --  同步酒馆数据
-    RESP_CTOR_SYNC_TAVERN = 1213,
+    CtorSyncTavernResp = 1213,
 
     --  同步训练数据
     RESP_CTOR_SYNC_TRAINS = 1214,
@@ -280,7 +280,7 @@ M.message = {
     RESP_FIELD_PACKOFF = 2203,
 
     --  关卡同步数据
-    RESP_FIELD_SYNC = 2204,
+    FieldSyncResp = 2204,
 
     --  据点间移动
     REQ_FIELD_MOVE = 2205,
@@ -508,7 +508,7 @@ M.message = {
     --  同步资源购买剩余次数数据
     RESP_RESOURCES_SYNC = 4402,
 
-    RESP_CITY_SYNC = 4500,
+    CitySync = 4500,
 
     RESP_CITY_SYNC_TO_GAME = 4501,
 

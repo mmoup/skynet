@@ -9,6 +9,7 @@ local util = require "util"
 local httpc = require "http.httpc"
 local dns = require "skynet.dns"
 local json = require "cjson"
+local sharetable = require "skynet.sharetable"
 
 local WATCHDOG
 local host
@@ -21,7 +22,12 @@ local REQUEST = {}
 -- 网络接口
 local client_fd
 -- 虚拟服务
+local city_service_addr
 local player_service_addr
+local vland_service_addr
+
+local building_config = {}
+local city_config = {}
 
 local function send_package(pack)
 	-- local package = string.pack(">s2", pack) 将长度自动补在最前面
@@ -35,14 +41,205 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 	local status, resp_body = httpc.request("GET", "127.0.0.1:5000", "/info?token=" .. msg_obj.token, respheader, {})
 	skynet.error(resp_body)
 	local result = json.decode(resp_body)
-	util.dump(result)
 	local player_id = result.user_id
 
-	local ok, player = skynet.call(service_player, "lua", "Login", player_id)
-	player_service_addr = player.service_addr
+	vland_service_addr = skynet.call(player_service_addr, "lua", "Login", player_id)
+	-- skynet.error(util.dump(city_config))
+
+	local function get_building_conf(code, city_conf)
+		if city_conf ~= nil then
+			local race
+			for k, v in pairs(city_config.cityItemList) do
+				if city_conf == v.guid then
+					race = v.race
+				end
+			end
+			for k, v in pairs(building_config) do
+				if code == v.code and race == v.race then
+					return v.guid
+				end
+			end
+		else
+			for k, v in pairs(building_config) do
+				if code == v.code then
+					return v.guid
+				end
+			end
+		end
+	end
+
+	skynet.error(util.dump(building_config))
+
+--[[
+	优先发送数据到客户端
+]]
+	--关卡数据
+	local stronghold = skynet.call(vland_service_addr, "lua", "GetStronghold")
+	local field_resp = {
+		mode = "CREATE",
+		field = {
+			timer = 86400,
+			items = {},
+		}
+	}
+	for k, v in pairs(stronghold) do
+		table.insert( field_resp.field.items, {
+			land_id = 1,
+			conf = v.city_id,
+			is_mine = true,
+		} )
+	end
+	skynet.error(util.dump(field_resp))
+
+	--城市数据
+	local city_list = skynet.call(city_service_addr, "lua", "GetAllCity")
+	local city_resp = {
+		mode = "CREATE",
+		cities = {
+			items = {}
+		}
+	}
+	for k, v in pairs(city_list) do
+		if v.conf > 0 then
+			--skynet.error(util.dump(v))
+			local castellan_data = {}
+			if v.castellan_id > 0 then
+				local castellan = skynet.call(player_service_addr, "lua", "GetPlayer", v.castellan_id)
+				if castellan ~= nil then
+					castellan_data = {
+						acct = castellan.acct,
+						name = castellan.name,
+						icon = castellan.icon,
+						flag = castellan.flag,
+						level = castellan.level,
+						is_online = castellan.online == "true",
+						vip_level = castellan.vip_level,
+						vip_expire_time = 0,
+						contribution = 0,
+						contributionRate = 0.0,
+						contributionRank = 1,
+						job = "LEADER",
+					}
+				else
+					castellan_data = {
+						acct = 0,
+						name = "虚拟城主",
+						icon = "0m",
+						flag = "0+00",
+						level = 1,
+						is_online = false,
+						vip_level = 0,
+					}
+				end
+			else
+				castellan_data = {
+					acct = 0,
+					name = "虚拟城主",
+					icon = "0m",
+					flag = "0+00",
+					level = 1,
+					is_online = false,
+					vip_level = 0,
+				}
+			end
+			local city = {
+				id = v.id,
+				conf = v.conf,
+				land_conf = v.land_id,
+				kingdom_id = v.kingdom_id,
+				castellan = castellan_data,
+				conqueror_id = v.conqueror_id,
+				coins = v.coins,
+				foods = v.foods,
+				tax_rate = tonumber(v.tax_rate * 100),
+				bulletin = v.bulletin,
+				units = {},
+				market = {
+					conf = get_building_conf("market"),
+					level = v.market_level,
+					exp = v.market_exp,
+				},
+				farm = {
+					conf = get_building_conf("farm"),
+					level = v.farm_level,
+					exp = v.farm_exp,
+				},
+				tavern = {
+					conf = get_building_conf("tavern"),
+					level = v.hall_level,
+					exp = v.hall_exp,
+				},
+				gate = {
+					conf = get_building_conf("gate", v.conf),
+					level = v.gate_level,
+					exp = v.gate_exp,
+				},
+				warehouse = {
+					conf = get_building_conf("warehouse"),
+					level = v.warehouse_level,
+					exp = v.warehouse_exp,
+					coins = v.coins,
+					feeds = v.foods,
+				},
+				ground = {
+					conf = get_building_conf("ground"),
+					level = v.ground_level,
+					exp = v.ground_exp,
+					ground_content = v.bulletin,
+				},
+				hall = {
+					conf = get_building_conf("hall", v.conf),
+					level = v.hall_level,
+					exp = v.hall_exp,
+				},
+				house = {
+					conf = get_building_conf("house"),
+					level = v.house_level,
+					exp = v.house_exp,
+				},
+				towers = {
+					{
+						conf = get_building_conf("tower", v.conf),
+						level = v.tower0_level,
+						exp = v.tower0_exp,
+					},
+					{
+						conf = get_building_conf("tower", v.conf),
+						level = v.tower1_level,
+						exp = v.tower1_exp,
+					},
+					{
+						conf = get_building_conf("tower", v.conf),
+						level = v.tower2_level,
+						exp = v.tower2_exp,
+					},
+					{
+						conf = get_building_conf("tower", v.conf),
+						level = v.tower3_level,
+						exp = v.tower3_exp,
+					},
+				},
+				members = {},
+				Applicant = {},
+				transport_tasks = {},
+				arrg = {},
+				ground_hero_level = v.ground_hero_level,
+				ground_unit_level = v.ground_unit_level,
+				farm_rate = v.farm_rate,
+				market_rate = v.market_rate,
+				cd_appoint = -1,
+				member_min_level = 1,
+			}
+			table.insert( city_resp.cities.items, city )
+		end
+	end
+	skynet.error(util.dump(city_resp))
+
+	--获取玩家信息
+	local player = skynet.call(vland_service_addr, "lua", "GetPlayer")
 
 	--获取酒馆数据
-	local tavern = skynet.call(player.service_addr, "lua", "GetTavern")
+	local tavern = skynet.call(vland_service_addr, "lua", "GetTavern")
 	local tavern_data = {}
 	for k, v in pairs(tavern) do
 		table.insert( tavern_data, {
@@ -56,19 +253,40 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 			}
 		} )
 	end
-	local equip = skynet.call(player.service_addr, "lua", "GetEquip")
+	local tavern_resp = {
+		mode = "CREATE",
+		tavern = tavern_data,
+	}
+
+	--装备
+	local equip = skynet.call(vland_service_addr, "lua", "GetEquip")
 	local equip_data = {}
 	for k, v in pairs(equip) do
 		table.insert( equip_data, { conf = v.item_id, num = v.sum_num } )
 	end
 
-	local porp = skynet.call(player.service_addr, "lua", "GetProp")
+	--道具
+	local porp = skynet.call(vland_service_addr, "lua", "GetProp")
 	local porp_data = {}
 	for k, v in pairs(porp) do
 		table.insert( porp_data, { conf = v.id, num = v.num } )
 	end
 
-	if ok then
+	local shop_item_data = {}
+	for i=0, 11 do
+		local rt = {}
+		string.gsub(player["good_" .. i], '[^|]+', function(w) table.insert(rt, w) end )
+		table.insert( shop_item_data, {
+			uuid = tonumber(rt[1]),
+			conf = player["good_" .. i],
+			num = 1,
+			sale = "true" == rt[2],
+			price_coins = 10,
+			price_jewel = -1,
+		} )
+	end
+
+	if vland_service_addr ~= nil then
 		local resp_data = {
 			code = "SUCCEED",
 			acct = {
@@ -151,14 +369,14 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 				},
 				--rank = {},
 				--boat = {},
-				tavern = tavern_data,
+				--tavern = {},
 				trains = {
 					seats = {
 						{ indx = player.seat_0.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_0.UnitId, mode = player.seat_0.LastMode, time = player.seat_0.CoolTime },
-						{ indx = player.seat_1.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_1.UnitId, mode = player.seat_0.LastMode, time = player.seat_1.CoolTime },
-						{ indx = player.seat_2.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_2.UnitId, mode = player.seat_0.LastMode, time = player.seat_2.CoolTime },
-						{ indx = player.seat_3.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_3.UnitId, mode = player.seat_0.LastMode, time = player.seat_3.CoolTime },
-						{ indx = player.seat_4.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_4.UnitId, mode = player.seat_0.LastMode, time = player.seat_4.CoolTime },
+						{ indx = player.seat_1.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_1.UnitId, mode = player.seat_1.LastMode, time = player.seat_1.CoolTime },
+						{ indx = player.seat_2.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_2.UnitId, mode = player.seat_2.LastMode, time = player.seat_2.CoolTime },
+						{ indx = player.seat_3.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_3.UnitId, mode = player.seat_3.LastMode, time = player.seat_3.CoolTime },
+						{ indx = player.seat_4.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_4.UnitId, mode = player.seat_4.LastMode, time = player.seat_4.CoolTime },
 					}
 				},
 				dailys = {
@@ -245,10 +463,8 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 				--store = {},
 				stall = {
 					cost = -1,
-					time = 0,
-					goodss = {
-						{ uuid = 0, conf = 0, num = 1, sale = false, price_coins = 100, price_jewel = -1 }
-					}
+					time = player.last_flush_time,
+					goodss = shop_item_data,
 				},
 
 				--inform = {},
@@ -267,10 +483,22 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 			gg_minor = "0055",
 			gc_major = "1.36.0",
 			gc_minor = "0055",
-			req_id = lastMsgId,
+			--req_id = lastMsgId,
 		}
-		util.dump(resp_data)
+		skynet.error(util.dump(resp_data))
+
+
 		send_package(pbcoder.encode(msgdef.message.LoginAuthResp, resp_data))
+
+		send_package(pbcoder.encode(msgdef.message.FieldSyncResp, field_resp))
+
+		local tavern_resp = {
+			mode = "CREATE",
+			tavern = {},
+		}
+		send_package(pbcoder.encode(msgdef.message.CtorSyncTavernResp, tavern_resp))
+
+		send_package(pbcoder.encode(msgdef.message.CitySync, city_resp))
 	end
 end
 
@@ -326,7 +554,10 @@ skynet.register_protocol {
 }
 
 skynet.init(function()
-	service_player = skynet.queryservice("player")
+	player_service_addr = skynet.queryservice("player")
+	city_service_addr = skynet.queryservice("city")
+	building_config = sharetable.query("building")
+	city_config = sharetable.query("city")
 end)
 
 skynet.start(function()

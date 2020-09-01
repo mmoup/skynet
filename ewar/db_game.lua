@@ -65,6 +65,15 @@ function CMD.LoadPropList(player_id)
     return res
 end
 
+--加载商店物品资料
+function CMD.LoadShopItemList(player_id)
+    local stmt = db:prepare("SELECT * FROM `stall` WHERE `acct`=?")
+	local res = db:execute(stmt, player_id)
+--	print("query result=", util.dump(res))
+    db:stmt_close(stmt)
+    return res
+end
+
 --加载全体玩家资料
 function CMD.LoadUserList(land_id)
     local sql = [[
@@ -73,6 +82,7 @@ function CMD.LoadUserList(land_id)
         LEFT JOIN `userotherinfo` AS uoi ON uoi.`acct`=u.`acct`
         LEFT JOIN `hallmain` AS hm ON hm.`acct`=u.`acct`
         LEFT JOIN `halltrain` AS ht ON ht.`acct`=u.`acct`
+        LEFT JOIN `stall` AS s ON s.`acct`=u.`acct`
         WHERE u.`server`=?
     ]]
     local stmt = db:prepare(sql)

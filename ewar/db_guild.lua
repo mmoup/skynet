@@ -20,8 +20,8 @@ function CMD.LoadPlayer(player_id)
 end
 
 --加载城市
-function CMD.LoadCityList()
-	local city_list = db:query("SELECT * FROM `city`")
+function CMD.LoadCityList(land_id)
+	local city_list = db:query("SELECT * FROM `city` WHERE `land_id`=" .. land_id)
 	return city_list
 end
 

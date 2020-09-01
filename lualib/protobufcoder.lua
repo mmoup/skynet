@@ -8,8 +8,8 @@ local coder = {}
 
 function coder.encode(msgid, data)
     local msg_name = msgdef.get_name(msgid)
-    local stringbuffer =  protobuf.encode(msg_name, data)         -- protobuf序列化 返回lua string
     skynet.error("send ", msg_name)
+    local stringbuffer =  protobuf.encode(msg_name, data)         -- protobuf序列化 返回lua string
     local body = string.pack(">HHc" .. #stringbuffer, #stringbuffer, msgid, stringbuffer)       -- 打包包体 协议名 + 协议数据            -- 打包包体长度
     return body                                       -- 包体长度 + 协议名 + 协议数据
 end

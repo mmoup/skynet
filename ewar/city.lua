@@ -4,9 +4,13 @@ local util = require "util"
 local CITY = {}
 local db_guild
 
+local land_id = 1
+
 local CMD = {}
 
-function CMD.attack()
+function CMD.GetAllCity()
+    skynet.error("返回城市数据")
+    return CITY;
 end
 
 skynet.init(function()
@@ -14,10 +18,9 @@ skynet.init(function()
 
     db_guild = skynet.queryservice("db_guild")
 
-    local db_city_list = skynet.call(db_guild, "lua", "LoadCityList")
+    local db_city_list = skynet.call(db_guild, "lua", "LoadCityList", land_id)
     for key, db_city in pairs(db_city_list) do
         CITY[db_city.id] = db_city
-        --util.dump(db_city)
     end
 end)
 

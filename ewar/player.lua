@@ -18,9 +18,16 @@ function CMD.Login(id)
             --初始化服务
             skynet.call(PLAYER[id].service_addr, "lua", "Init", PLAYER[id])
         end
-        return true, PLAYER[id]
+        return PLAYER[id].service_addr
     end
-    return false, "无此玩家"
+    return nil
+end
+
+function CMD.GetPlayer(id)
+    if PLAYER[id] ~= nil then
+        return PLAYER[id]
+    end
+    return nil
 end
 
 skynet.init(function()

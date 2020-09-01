@@ -18,11 +18,11 @@ assert(arg.n == 1)
 local player_id = tonumber(arg[1])
 
 local player = {}
-local stronghold = {}
 local tavern = {}
 local monster = {}
 local PROP = {}
 local EQUIP = {}
+local SHOP_ITEM = {}
 
 --指令集
 local CMD = {}
@@ -31,8 +31,16 @@ local CMD = {}
 function CMD.Init(player_data)
     skynet.error("初始化玩家", player_id, "的虚拟大陆")
     player = player_data
-    stronghold = skynet.call(db_game, "lua", "LoadStrongholdList", player_id)
+    player.seat_0 = json.decode(player.seat_0)
+    player.seat_1 = json.decode(player.seat_1)
+    player.seat_2 = json.decode(player.seat_2)
+    player.seat_3 = json.decode(player.seat_3)
+    player.seat_4 = json.decode(player.seat_4)
+
+    STRONGHOLD = skynet.call(db_game, "lua", "LoadStrongholdList", player_id)
+
     tavern = skynet.call(db_game, "lua", "LoadTavernList", player_id)
+
     for k, v in pairs(tavern) do
         tavern[k].seat_0 = json.decode(v.seat_0)
         tavern[k].seat_1 = json.decode(v.seat_1)
@@ -44,6 +52,16 @@ function CMD.Init(player_data)
     EQUIP = skynet.call(db_game, "lua", "LoadEquipList", player_id)
     PROP = skynet.call(db_game, "lua", "LoadPropList", player_id)
     return true
+end
+
+function CMD.GetStronghold()
+    skynet.error("返回要塞数据")
+    return STRONGHOLD
+end
+
+function CMD.GetPlayer()
+    skynet.error("返回玩家数据")
+    return player
 end
 
 function CMD.GetTavern()
