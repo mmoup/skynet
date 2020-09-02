@@ -20,6 +20,12 @@ skynet.init(function()
 
     local db_city_list = skynet.call(db_guild, "lua", "LoadCityList", land_id)
     CITY = db_city_list;
+    local vcity = db_city_list[1];
+    vcity.conf = 60000000
+    vcity.name = "虚拟城市"
+    vcity.id = 10000
+    vcity.kingdom_id = 100
+    table.insert( CITY, vcity )
 end)
 
 skynet.start(function()

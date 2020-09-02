@@ -20,6 +20,9 @@ skynet.init(function()
         KINGDOM[db_kingdom.id] = db_kingdom
         --util.dump(db_kingdom)
     end
+    local v_kingdom = db_kingdom_list[1]
+    v_kingdom.id = 100
+    table.insert( KINGDOM, v_kingdom )
 end)
 
 skynet.start(function()
