@@ -23,6 +23,7 @@ local monster = {}
 local PROP = {}
 local EQUIP = {}
 local SHOP_ITEM = {}
+local UNIT = {}
 
 --指令集
 local CMD = {}
@@ -51,6 +52,7 @@ function CMD.Init(player_data)
     monster = skynet.call(db_game, "lua", "LoadMonsterList", player_id)
     EQUIP = skynet.call(db_game, "lua", "LoadEquipList", player_id)
     PROP = skynet.call(db_game, "lua", "LoadPropList", player_id)
+    UNIT = skynet.call(db_game, "lua", "LoadUnitList", player_id)
     return true
 end
 
@@ -77,6 +79,11 @@ end
 function CMD.GetEquip()
     skynet.error("返回装备数据")
     return EQUIP
+end
+
+function CMD.GetUnit()
+    skynet.error("返回部队数据")
+    return UNIT
 end
 
 skynet.init(function()

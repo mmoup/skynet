@@ -67,26 +67,28 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 			end
 		end
 	end
-
 	skynet.error(util.dump(building_config))
 
---[[
-	优先发送数据到客户端
-]]
 	--关卡数据
 	local stronghold = skynet.call(vland_service_addr, "lua", "GetStronghold")
 	local field_resp = {
 		mode = "CREATE",
 		field = {
-			timer = 86400,
+			timer = 600,
 			items = {},
 		}
 	}
 	for k, v in pairs(stronghold) do
 		table.insert( field_resp.field.items, {
-			land_id = 1,
 			conf = v.city_id,
 			is_mine = true,
+			user_acct = -1,
+			wild_city = -1,
+			wild_type = "THIEVES",
+			wild_units = {},
+			yield_coins = 240.0,
+			yield_feeds = 67.0,
+			yield_jewel = 0.0
 		} )
 	end
 	skynet.error(util.dump(field_resp))
@@ -286,220 +288,390 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 		} )
 	end
 
-	if vland_service_addr ~= nil then
-		local resp_data = {
-			code = "SUCCEED",
-			acct = {
-				user = {
-					acct = player.acct,
-					name = player.name,
-					icon = player.icon,
-					flag = player.flag,
-					expss = player.exp,
-					level = player.level,
-					land_id = player.server,
-					kingdom_id = player.kingdom_id,
-					city_id = player.city_id,
-					current_field_conf = player.stay_city_conf,
-					from_field_conf = 0,
-					remaining_time = 0,
-					is_online = player.online == "true",
-					is_giveme = true,
-					is_recvme = true,
-					coins = player.coins,
-					feeds = player.feeds,
-					jewel = player.jewel,
+	local resp_data = {
+		code = "SUCCEED",
+		acct = {
+			user = {
+				acct = player.acct,
+				name = player.name,
+				icon = player.icon,
+				flag = player.flag,
+				expss = player.exp,
+				level = player.level,
+				land_id = player.server,
+				kingdom_id = player.kingdom_id,
+				city_id = player.city_id,
+				current_field_conf = player.stay_city_conf,
+				from_field_conf = 0,
+				remaining_time = 0,
+				is_online = player.online == "true",
+				is_giveme = true,
+				is_recvme = true,
+				coins = player.coins,
+				feeds = player.feeds,
+				jewel = player.jewel,
 
-					cd_join_city = 0,
-					cd_join_kingdom = 0,
-					cd_city_build = 0,
-					cd_city_farm = 0,
-					cd_city_trade = 0,
-				},
-				sums = {
-					sum_login_count = player.login_count,
-					sum_user_modify = player.user_set_info,
-					sum_signin_count = player.daiy_sign_count,
-
-					sum_hall_taxes_count = player.hall_gain_count,
-					sum_hall_taxes_coins = player.hall_gain_coins,
-					sum_hall_taxes_feeds = player.hall_gain_feeds,
-
-					sum_trains_train_count = player.hero_train_count,
-
-					sum_field_harvest_count = player.pve_gain_count,
-					sum_field_harvest_coins = player.pve_gain_coins,
-					sum_field_harvest_feeds = player.pve_gain_feeds,
-
-					sum_task_finish = 0,
-					sum_task_commit = player.achieve_commint_count,
-
-					sum_pve_city_num = player.pve_city_fight_count,
-					sum_pve_wild_num = player.pve_monster_fight_count,
-					sum_pve_wild_win = player.pve_monster_kill_count,
-
-					sum_pvp_fire_num = player.pvp_foray_count,
-					sum_pvp_fire_win = player.pvp_foray_win_count,
-					sum_pvp_back_num = player.pvp_against_count,
-					sum_pvp_back_win = player.pvp_against_win_count,
-					sum_pvp_grade_max = player.pvp_grade_max,
-					sum_pvp_medal_max = player.pvp_medal_max,
-
-					sum_brief_play = player.battle_replay_total,
-					sum_store_count = player.stall_buy_count,
-					sum_chest_count = player.chest_open_total,
-					sum_speak_count = player.use_speaker_total,
-					sum_contr_hero = player.contract_eat_count,
-					sum_contr_prob = player.contract_use_count,
-					sum_arrive_count = player.hero_arrive_total,
-					sum_friend_count = 0,
-
-					sum_unit_skill_unlock_count = player.hero_skill_unlock_count,
-					sum_unit_wine_count = player.hero_wine_count,
-					sum_unit_max_power = player.Arrange_power_max,
-				},
-				vips = {
-					vips = player.vip_level,
-					time = player.vip_Time - math.floor(skynet.time());
-				},
-				--task = {},
-				hall = {
-					levy = player.day_gain_count, --已征收次数
-					time = player.last_gain_time, --下次征收剩余时间(单位:s)，若不能征收则为-1
-				},
-				--rank = {},
-				--boat = {},
-				--tavern = {},
-				trains = {
-					seats = {
-						{ indx = player.seat_0.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_0.UnitId, mode = player.seat_0.LastMode, time = player.seat_0.CoolTime },
-						{ indx = player.seat_1.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_1.UnitId, mode = player.seat_1.LastMode, time = player.seat_1.CoolTime },
-						{ indx = player.seat_2.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_2.UnitId, mode = player.seat_2.LastMode, time = player.seat_2.CoolTime },
-						{ indx = player.seat_3.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_3.UnitId, mode = player.seat_3.LastMode, time = player.seat_3.CoolTime },
-						{ indx = player.seat_4.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_4.UnitId, mode = player.seat_4.LastMode, time = player.seat_4.CoolTime },
-					}
-				},
-				dailys = {
-					signin = {
-						sign_num = 0,
-						time = 0,
-						items = {},
-					}
-				},
-				charge = {
-					goodss = {
-						{
-							type = "VIP",
-							uuid = 0,
-							ggid = "google",
-							asid = "apple",
-							name = "",
-							desc = "",
-							icon = "",
-							give = "",
-							time = 0,
-							price = 10.0,
-							magnification = 1.0,
-							can_buy = true,
-							gains = {
-								conf = 1,
-								num = 1,
-							}
-						}
-					}
-				},
-				res_buy = {
-					coins_total = 0,
-					feeds_total = 0,
-					coins_count = 0,
-					feeds_count = 0,
-					revenge_count = 0,
-					revenge_use = 0,
-					speaker_use = 0,
-				},
-
-				--unit = {},
-				arrg = {
-					used = 0,
-					items = {
-						{
-							index = 0,
-							stands = {},
-						},
-						{
-							index = 1,
-							stands = {},
-						},
-						{
-							index = 2,
-							stands = {},
-						}
-					}
-				},
-				pvp_arrg = {
-					used = 0,
-					items = {
-						{
-							index = 0,
-							stands = {},
-						},
-						{
-							index = 1,
-							stands = {},
-						},
-						{
-							index = 2,
-							stands = {},
-						}
-					}
-				},
-
-				prop = {
-					items = porp_data,
-				},
-				equip = {
-					items = equip_data,
-				},
-				--store = {},
-				stall = {
-					cost = -1,
-					time = player.last_flush_time,
-					goodss = shop_item_data,
-				},
-
-				--inform = {},
-				--notice = {},
-				--friend = {},
-				--shield = {},
-				--forum = {},
-				--field = {},
-				--brief = {},
-				--revenge = {},
-				--city = {}, --pvp城市数据
-				--kingdom = {}, --pvp势力数据
-				--troop = {}, --pvp军团数据
+				cd_join_city = 0,
+				cd_join_kingdom = 0,
+				cd_city_build = 0,
+				cd_city_farm = 0,
+				cd_city_trade = 0,
 			},
-			gg_major = "1.36.0",
-			gg_minor = "0055",
-			gc_major = "1.36.0",
-			gc_minor = "0055",
-			--req_id = lastMsgId,
-		}
-		skynet.error(util.dump(resp_data))
+			sums = {
+				sum_login_count = player.login_count,
+				sum_user_modify = player.user_set_info,
+				sum_signin_count = player.daiy_sign_count,
 
+				sum_hall_taxes_count = player.hall_gain_count,
+				sum_hall_taxes_coins = player.hall_gain_coins,
+				sum_hall_taxes_feeds = player.hall_gain_feeds,
 
-		send_package(pbcoder.encode(msgdef.message.LoginAuthResp, resp_data))
+				sum_trains_train_count = player.hero_train_count,
 
-		send_package(pbcoder.encode(msgdef.message.FieldSyncResp, field_resp))
+				sum_field_harvest_count = player.pve_gain_count,
+				sum_field_harvest_coins = player.pve_gain_coins,
+				sum_field_harvest_feeds = player.pve_gain_feeds,
 
-		local tavern_resp = {
-			mode = "CREATE",
-			tavern = {},
-		}
-		send_package(pbcoder.encode(msgdef.message.CtorSyncTavernResp, tavern_resp))
+				sum_task_finish = 0,
+				sum_task_commit = player.achieve_commint_count,
 
-		send_package(pbcoder.encode(msgdef.message.CitySync, city_resp))
+				sum_pve_city_num = player.pve_city_fight_count,
+				sum_pve_wild_num = player.pve_monster_fight_count,
+				sum_pve_wild_win = player.pve_monster_kill_count,
+
+				sum_pvp_fire_num = player.pvp_foray_count,
+				sum_pvp_fire_win = player.pvp_foray_win_count,
+				sum_pvp_back_num = player.pvp_against_count,
+				sum_pvp_back_win = player.pvp_against_win_count,
+				sum_pvp_grade_max = player.pvp_grade_max,
+				sum_pvp_medal_max = player.pvp_medal_max,
+
+				sum_brief_play = player.battle_replay_total,
+				sum_store_count = player.stall_buy_count,
+				sum_chest_count = player.chest_open_total,
+				sum_speak_count = player.use_speaker_total,
+				sum_contr_hero = player.contract_eat_count,
+				sum_contr_prob = player.contract_use_count,
+				sum_arrive_count = player.hero_arrive_total,
+				sum_friend_count = 0,
+
+				sum_unit_skill_unlock_count = player.hero_skill_unlock_count,
+				sum_unit_wine_count = player.hero_wine_count,
+				sum_unit_max_power = player.Arrange_power_max,
+			},
+			vips = {
+				vips = player.vip_level,
+				time = player.vip_Time - math.floor(skynet.time());
+			},
+			--task = {},
+			hall = {
+				levy = player.day_gain_count, --已征收次数
+				time = player.last_gain_time, --下次征收剩余时间(单位:s)，若不能征收则为-1
+			},
+			--rank = {},
+			--boat = {},
+			--tavern = {},
+			trains = {
+				seats = {
+					{ indx = player.seat_0.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_0.UnitId, mode = player.seat_0.LastMode, time = player.seat_0.CoolTime },
+					{ indx = player.seat_1.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_1.UnitId, mode = player.seat_1.LastMode, time = player.seat_1.CoolTime },
+					{ indx = player.seat_2.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_2.UnitId, mode = player.seat_2.LastMode, time = player.seat_2.CoolTime },
+					{ indx = player.seat_3.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_3.UnitId, mode = player.seat_3.LastMode, time = player.seat_3.CoolTime },
+					{ indx = player.seat_4.Id, is_open=player.seat_0.Open, unit_uuid = player.seat_4.UnitId, mode = player.seat_4.LastMode, time = player.seat_4.CoolTime },
+				}
+			},
+			dailys = {
+				signin = {
+					sign_num = 0,
+					time = 0,
+					items = {},
+				}
+			},
+			charge = {
+				goodss = {
+					{
+						type = "VIP",
+						uuid = 0,
+						ggid = "google",
+						asid = "apple",
+						name = "",
+						desc = "",
+						icon = "",
+						give = "",
+						time = 0,
+						price = 10.0,
+						magnification = 1.0,
+						can_buy = true,
+						gains = {
+							conf = 1,
+							num = 1,
+						}
+					}
+				}
+			},
+			res_buy = {
+				coins_total = 0,
+				feeds_total = 0,
+				coins_count = 0,
+				feeds_count = 0,
+				revenge_count = 0,
+				revenge_use = 0,
+				speaker_use = 0,
+			},
+
+			--unit = {},
+			arrg = {
+				used = 2,
+				items = {
+					{
+						index = 0,
+						stands = {
+							--{ conf = 0, ipos = 6, order = "cmd_attack", prof = "SWORD"}
+						},
+					},
+					{
+						index = 1,
+						stands = {},
+					},
+					{
+						index = 2,
+						stands = {},
+					}
+				}
+			},
+			pvp_arrg = {
+				used = 0,
+				items = {
+					{
+						index = 0,
+						stands = {},
+					},
+					{
+						index = 1,
+						stands = {},
+					},
+					{
+						index = 2,
+						stands = {},
+					}
+				}
+			},
+
+			prop = {
+				items = porp_data,
+			},
+			equip = {
+				items = equip_data,
+			},
+			--store = {},
+			stall = {
+				cost = -1,
+				time = player.last_flush_time,
+				goodss = shop_item_data,
+			},
+
+			--inform = {},
+			--notice = {},
+			--friend = {},
+			--shield = {},
+			--forum = {},
+			--field = {},
+			--brief = {},
+			--revenge = {},
+			--city = {}, --pvp城市数据
+			--kingdom = {}, --pvp势力数据
+			--troop = {}, --pvp军团数据
+		},
+		gg_major = "1.45.0",
+		gg_minor = "0105",
+		gc_major = "1.45.0",
+		gc_minor = "0105",
+		--req_id = lastMsgId,
+	}
+	skynet.error(util.dump(resp_data))
+
+	local unit_data = skynet.call(vland_service_addr, "lua", "GetUnit", player_id)
+	local unit_sync_resp = {
+		mode = "CREATE",
+		unit = {
+			items = {
+			}
+		},
+	}
+	for _, v in pairs(unit_data) do
+		table.insert( unit_sync_resp.unit.items, {
+			uuid = v.unit_uuid,
+			power = 100,
+			expss = v.pawn_exp,
+			grade = v.grade,
+			drink_time = v.wine_times,
+			energy = 1000,
+			hero_conf = v.hero_id,
+			hero_star = v.star,
+			hero_star_list = { v.hero_s1, v.hero_s2, v.hero_s3 },
+			hero_expss = v.herp_exp,
+			hero_level = v.hero_lv,
+			hero_skill_lv1 = 0,
+			hero_skill_lv2 = 0,
+			hero_skill_lv3 = 0,
+			hero_equip_weapon = 0,
+			hero_equip_helmet = 0,
+			hero_equip_armour = 0,
+			hero_equip_caliga = 0,
+			hero_stass_total = {},
+			hero_stass_equip = {},
+			hero_stass_wine = {},
+			eat_equips = json.decode(v.eat_equips),
+			pawn_conf = v.pawn_id,
+			pawn_stass = {},
+			pawn_num = v.pawn_num,
+			prof = "",
+			action = "IDLE",
+			player_name = "",
+		} )
 	end
+
+	local ctor_sync_boat_resp = {
+		mode = "CREATE",
+		boat = {
+			rank = 1,
+			time = 86400,
+			medal = 210,
+			atk_vict = 10,
+			def_vict = 0,
+			awards = {
+				grade = 1,
+				prizes = {
+					{ conf = 0, num = 0 }
+				}
+			},
+		},
+	}
+
+	local stall_sync_resp = {
+		mode = "CREATE",
+		stall = {
+			cost = -1,
+			time = 600,
+			goodss = shop_item_data,
+		},
+	}
+
+	local task_sync_resp = {
+		mode = "CREATE",
+		task = {},
+	}
+
+	local troop_sync = {
+		mode = "CREATE",
+		troops = {
+			items = {},
+		},
+	}
+
+	local kingdom_sync = {
+		mode = "CREATE",
+		kingdoms = {
+			items = {}
+		}
+	}
+	local kingdom_data = skynet.call(skynet.queryservice("kingdom"), "lua", "GetKingdom")
+	for _, v in pairs(kingdom_data) do
+		table.insert( kingdom_sync.kingdoms.items, {
+			id = v.id,
+			name = v.name,
+			flag = v.flag,
+			founder = {},
+			king = {},
+			color = v.color,
+			bulletin = v.bulletin,
+			created_time = 1000,
+			succeeded_time = 500,
+			outstanding_members = {},
+			members = {},
+			member_min_level = 1,
+			recruit_text = "gogogo",
+		} )
+	end
+
+	local war_log_sync = {
+		mode = "CREATE",
+		war_logs = {},
+	}
+
+
+	send_package(pbcoder.encode(msgdef.message.LoginAuthResp, resp_data))
+
+	send_package(pbcoder.encode(msgdef.message.FieldSyncResp, field_resp))
+
+	local field_sync_resp_append = {
+		mode = "APPEND",
+		field = {
+			timer = 0,
+			items = {
+				conf = 60101832,
+				wild_city = 60000091,
+				wild_drop_coins = 175,
+				wild_drop_feeds = 128,
+				wild_drop_ids = {
+					33000005, 31100001
+				},
+				wild_drop_num = {
+					1, 1
+				},
+				wild_hero_expss = 610,
+				wild_jcost = 38,
+				wild_level = 8,
+				wild_name = "盗贼",
+				wild_time = 180,
+				wild_type = "THIEVES",
+				wild_unit_expss = 995,
+				wild_units = {
+					{
+						grade = 1,
+						hero_conf = 10011044,
+						hero_level = 8,
+						ipos = 1,
+						order = "cmd_attack",
+					}
+				},
+			},
+		},
+	}
+	send_package(pbcoder.encode(msgdef.message.FieldSyncResp, field_sync_resp_append))
+	--append
+
+	--create {message.UnitSyncResp}
+	skynet.error(util.dump(unit_sync_resp))
+	send_package(pbcoder.encode(msgdef.message.UnitSyncResp, unit_sync_resp))
+
+	--create {message.CtorSyncBoatResp}
+	send_package(pbcoder.encode(msgdef.message.CtorSyncBoatResp, ctor_sync_boat_resp))
+
+	--create {message.StallSyncResp}
+	send_package(pbcoder.encode(msgdef.message.StallSyncResp, stall_sync_resp))
+
+	--create {message.TaskSyncResp}
+	send_package(pbcoder.encode(msgdef.message.TaskSyncResp, task_sync_resp))
+
+	tavern_resp = {
+		mode = "CREATE",
+		tavern = {},
+	}
+	send_package(pbcoder.encode(msgdef.message.CtorSyncTavernResp, tavern_resp))
+
+	send_package(pbcoder.encode(msgdef.message.CitySync, city_resp))
+
+	--troop sync {message.TroopSync}
+	send_package(pbcoder.encode(msgdef.message.TroopSync, troop_sync))
+
+	--{message.KingdomSync}
+	send_package(pbcoder.encode(msgdef.message.KingdomSync, kingdom_sync))
+
+	--{message.WarLogSync}
+	send_package(pbcoder.encode(msgdef.message.WarLogSync, war_log_sync))
+
+	--{message.StallSyncResp}
 end
 
 function REQUEST.message.LoginPingReq(msg_obj)

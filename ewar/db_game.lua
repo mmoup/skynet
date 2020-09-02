@@ -92,6 +92,18 @@ function CMD.LoadUserList(land_id)
     return res
 end
 
+--加载部队资料
+function CMD.LoadUnitList(player_id)
+    local sql = [[
+        SELECT * FROM `troops` AS t
+        WHERE t.`acct`=?
+    ]]
+    local stmt = db:prepare(sql)
+	local res = db:execute(stmt, player_id)
+    db:stmt_close(stmt)
+    return res
+end
+
 --保存玩家资料
 function CMD.SavePlayer(player_id, ...)
     local args = {...}

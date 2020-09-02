@@ -6,7 +6,8 @@ local db_guild
 
 local CMD = {}
 
-function CMD.attack()
+function CMD.GetKingdom()
+    return KINGDOM
 end
 
 skynet.init(function()

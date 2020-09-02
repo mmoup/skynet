@@ -61,19 +61,19 @@ M.message = {
 
     --[[用户模块]]
     --  创建用户
-    REQ_USER_CREATE = 200,
+    UserCreateReq = 200,
 
-    RESP_USER_CREATE = 201,
+    UserCreateResp = 201,
 
     --  查询用户
-    REQ_USER_QUEST = 202,
+    UserQuestReq = 202,
 
-    RESP_USER_QUEST = 203,
+    UserQuestResp = 203,
 
     --  获取随机用户名
-    REQ_USER_NAME = 204,
+    UserNameReq = 204,
 
-    RESP_USER_NAME = 205,
+    UserNameResp = 205,
 
     --  同步用户经验等级
     RESP_USER_SYNC_LEVEL = 206,
@@ -93,7 +93,7 @@ M.message = {
     RESP_TASK_COMMIT = 601,
 
     --  同步成就
-    RESP_TASK_SYNC = 602,
+    TaskSyncResp = 602,
 
     --  签到
     REQ_DAILYS_SIGNIN_DOIT = 800,
@@ -139,7 +139,7 @@ M.message = {
     RESP_CTOR_SYNC_RANK = 1211,
 
     --  同步远征数据
-    RESP_CTOR_SYNC_BOAT = 1212,
+    CtorSyncBoatResp = 1212,
 
     --  同步酒馆数据
     CtorSyncTavernResp = 1213,
@@ -223,7 +223,7 @@ M.message = {
     RESP_UNIT_ARRANGE = 1429,
 
     --  同步部队
-    RESP_UNIT_SYNC = 1430,
+    UnitSyncResp = 1430,
 
     --  道具购买
     REQ_PROP_BUY = 1600,
@@ -302,7 +302,7 @@ M.message = {
     RESP_WAR_LOG_SYNC_TO_GAME = 2404,
 
     --  PVP战役同步
-    RESP_WAR_LOG_SYNC = 2405,
+    WarLogSync = 2405,
 
     -- PVP战役详情
     REQ_WAR_LOG_DETAIL = 2406,
@@ -498,7 +498,7 @@ M.message = {
     RESP_STALL_REFRESH = 4203,
 
     --  同步商店
-    RESP_STALL_SYNC = 4204,
+    StallSyncResp = 4204,
 
     -- 资源购买
     REQ_RESOURCES_BUY = 4400,
@@ -657,7 +657,7 @@ M.message = {
 
     RESP_CITY_QUERY_BUILDING_IFNO = 4559,
 
-    RESP_KINGDOM_SYNC = 4700,
+    KingdomSync = 4700,
 
     RESP_KINGDOM_SYNC_TO_GAME = 4701,
 
@@ -772,7 +772,7 @@ M.message = {
         PVP军团模块
         ]]
 
-    RESP_TROOP_SYNC = 4900,
+    TroopSync = 4900,
 
     RESP_TROOP_SYNC_TO_GAME = 4901,
 
@@ -807,7 +807,6 @@ M.message = {
     REQ_TROOP_DISBAND = 4913,
 
     RESP_TROPP_DISBAND = 4914,
-
 
     -- 数据同步
     RESP_LAND_SYNC = 5100,
