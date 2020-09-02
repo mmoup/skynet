@@ -81,7 +81,7 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 	for k, v in pairs(stronghold) do
 		table.insert( field_resp.field.items, {
 			conf = v.city_id,
-			is_mine = true,
+			is_mine = false,
 			user_acct = -1,
 			wild_city = -1,
 			wild_type = "THIEVES",
@@ -94,14 +94,16 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 	skynet.error(util.dump(field_resp))
 
 	--城市数据
-	local city_list = skynet.call(city_service_addr, "lua", "GetAllCity")
+	local city_data = skynet.call(city_service_addr, "lua", "GetAllCity")
+	skynet.error("city##", #city_data)
 	local city_resp = {
 		mode = "CREATE",
 		cities = {
 			items = {}
 		}
 	}
-	for k, v in pairs(city_list) do
+	for k, v in pairs(city_data) do
+		skynet.error("city###", k)
 		if v.conf > 0 then
 			--skynet.error(util.dump(v))
 			local castellan_data = {}
@@ -144,6 +146,15 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 					vip_level = 0,
 				}
 			end
+			castellan_data = {
+				acct = 0,
+				name = "虚拟城主",
+				icon = "0m",
+				flag = "0+00",
+				level = 1,
+				is_online = false,
+				vip_level = 0,
+			}
 			local city = {
 				id = v.id,
 				conf = v.conf,
@@ -294,13 +305,13 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 			user = {
 				acct = player.acct,
 				name = player.name,
-				icon = player.icon,
-				flag = player.flag,
+				icon = "0m",
+				flag = "n09",
 				expss = player.exp,
 				level = player.level,
 				land_id = player.server,
 				kingdom_id = player.kingdom_id,
-				city_id = player.city_id,
+				city_id = -1000011,
 				current_field_conf = player.stay_city_conf,
 				from_field_conf = 0,
 				remaining_time = 0,
@@ -580,9 +591,15 @@ function REQUEST.message.LoginAuthReq(msg_obj)
 		table.insert( kingdom_sync.kingdoms.items, {
 			id = v.id,
 			name = v.name,
-			flag = v.flag,
+			flag = "n09",
 			founder = {},
-			king = {},
+			king = {
+				acct = 110,
+				name = "国王",
+				flag = "n10",
+				icon = "3m",
+				level = 1,
+			},
 			color = v.color,
 			bulletin = v.bulletin,
 			created_time = 1000,

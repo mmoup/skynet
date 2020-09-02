@@ -19,9 +19,7 @@ skynet.init(function()
     db_guild = skynet.queryservice("db_guild")
 
     local db_city_list = skynet.call(db_guild, "lua", "LoadCityList", land_id)
-    for key, db_city in pairs(db_city_list) do
-        CITY[db_city.id] = db_city
-    end
+    CITY = db_city_list;
 end)
 
 skynet.start(function()

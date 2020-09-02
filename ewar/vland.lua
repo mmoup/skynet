@@ -53,6 +53,7 @@ function CMD.Init(player_data)
     EQUIP = skynet.call(db_game, "lua", "LoadEquipList", player_id)
     PROP = skynet.call(db_game, "lua", "LoadPropList", player_id)
     UNIT = skynet.call(db_game, "lua", "LoadUnitList", player_id)
+    VCITY = skynet.call(db_game, "lua", "LoadCityList", player_id)
     return true
 end
 

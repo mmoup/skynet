@@ -22,6 +22,7 @@ end
 --加载城市
 function CMD.LoadCityList(land_id)
 	local city_list = db:query("SELECT * FROM `city` WHERE `land_id`=" .. land_id)
+	skynet.error("city#", #city_list);
 	return city_list
 end
 

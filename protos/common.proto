@@ -798,7 +798,7 @@ message City {
 	message Item {
 		required int32 id = 1; //城市id 全局唯一
 		optional int32 conf = 2; //城市配置
-		optional int32 land_conf = 3; //所在大陆
+		optional int32 land_conf = 3; //fa所在大陆
 		optional int32 kingdom_id = 4; //所属势力
 		optional Member castellan = 5; //城主 (acct name level icon flag vip)
 		optional int32 conqueror_id = 6; //征服者（攻陷本城的军团leader_id）
